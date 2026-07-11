@@ -4,20 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colchones Orion</title>
+  <title>Colchones Orión — Duerme como si el mañana dependiera de eso</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-
   <link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 
 <body>
+
   <div class="utility-bar">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
     Garantía de 7 años en toda la línea Paraíso</div>
+
   <header>
     <div class="nav">
       <div class="logo"><img src="img/logo.webp"></div>
@@ -40,8 +39,20 @@
       </div>
     </div>
   </header>
-  <div class=""></div>
 
+  <div class="header-carousel" id="headerCarousel">
+    <button class="hc-arrow prev" onclick="hcMove(-1)" aria-label="Anterior">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    <button class="hc-arrow next" onclick="hcMove(1)" aria-label="Siguiente">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+    <div class="hc-dots" id="hcDots"></div>
+  </div>
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
@@ -69,7 +80,7 @@
         <div class="badge-off">-50% hoy</div>
         <div class="mattress-card">
           <p class="cap">Más vendido de la semana</p>
-          <img src="img/01.png" alt="Colchón orion Gold"
+          <img src="img/02.png?v=1772594318&width=700" alt="Colchón Paraíso Gold"
             style="border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover;">
           <p class="cap" style="margin:16px 0 0;">Colchón Paraíso Gold · Maxi Top</p>
           <div class="price-tag-hero">
@@ -95,9 +106,35 @@
         <p>Todos con garantía de fábrica y despacho a nivel nacional. Los precios "desde" varían según la medida
           elegida.</p>
       </div>
-      <div class="grid-products" id="productGrid"></div>
+      <div class="oferta-carousel-wrap">
+        <div class="oc-nav">
+          <button class="oc-arrow" id="ocPrev" onclick="ocMove(-1)" aria-label="Anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="oc-arrow" id="ocNext" onclick="ocMove(1)" aria-label="Siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+        <div class="oferta-carousel" id="productGrid"></div>
+      </div>
     </div>
   </section>
+
+
+  <section class="combos-band" id="combos">
+    <div class="wrap">
+      <div class="block-head">
+        <h2 class="combostitle">Combos</h2>
+        <p> <span class="combostexto">Colchón + base + accesorios, empacados juntos a un precio especial.</span></p>
+      </div>
+      <div class="grid-products" id="combosGrid"></div>
+    </div>
+  </section>
+
 
   <section class="block" id="firmeza">
     <div class="wrap">
@@ -146,54 +183,7 @@
     </div>
   </section>
 
-  <section class="block" id="opiniones">
-    <div class="wrap">
-      <div class="block-head">
-        <p class="eyebrow">Opiniones</p>
-        <h2>Clientes que ya cambiaron su manera de dormir</h2>
-      </div>
-      <div class="testi-grid">
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p class="quote">Cambié mi colchón de 12 años por el Paraíso Gold y desde la primera semana dejé de
-            despertarme con dolor de espalda. La entrega llegó a Medellín en 4 días.</p>
-          <div class="who">
-            <div class="avatar">MJ</div>
-            <div>
-              <div class="name">María J.</div>
-              <div class="loc">Medellín</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p class="quote">Hice el test de firmeza antes de comprar y acerté con el firme. Mi esposo y yo dormíamos
-            distinto y ahora los dos descansamos bien.</p>
-          <div class="who">
-            <div class="avatar">CR</div>
-            <div>
-              <div class="name">Carlos R.</div>
-              <div class="loc">Bogotá</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi">
-          <div class="stars">★★★★☆</div>
-          <p class="quote">Buena relación precio-calidad. El proceso de compra fue simple y el pago contraentrega me dio
-            confianza para animarme.</p>
-          <div class="who">
-            <div class="avatar">LP</div>
-            <div>
-              <div class="name">Laura P.</div>
-              <div class="loc">Cali</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p class="note-mock">*Testimonios ilustrativos para esta maqueta de landing page, no corresponden a reseñas reales
-        verificadas.</p>
-    </div>
-  </section>
+
 
   <section class="block" id="preguntas">
     <div class="wrap" style="max-width:820px;">
@@ -202,18 +192,6 @@
         <h2>Antes de que preguntes</h2>
       </div>
       <div id="faqList"></div>
-    </div>
-  </section>
-
-  <section class="block" style="padding-top:0;">
-    <div class="wrap">
-      <div class="newsletter">
-        <h2>Entérate primero de nuestras promociones y lanzamientos</h2>
-        <form onsubmit="return subscribe(event)">
-          <input type="email" placeholder="tu@correo.com" required>
-          <button type="submit">Suscribirme</button>
-        </form>
-      </div>
     </div>
   </section>
 
@@ -241,8 +219,8 @@
         </div>
         <div>
           <h5>Contacto</h5>
-          <p>atencionalcliente@ColchonesOrion.co</p>
-          <p>Colchones Orion</p>
+          <p>atencionalcliente@colchonesorion.com.co</p>
+          <p>colchonesorion.com.co SAS</p>
         </div>
       </div>
       <div class="foot-bottom">
@@ -264,227 +242,16 @@
 
   <div class="toast" id="toast"></div>
 
-  <script>
-    const products = [
-      { id: 'ortholife-foam', name: 'Colchón Ortholife Foam', tag: 'Espuma alta densidad · Multi-medidas', old: 1258000, now: 629000, img: 'img/02.png?v=1766081598&width=600' },
-      { id: 'futura', name: 'Colchón Resortado Futura', tag: 'Resortes Bonnell · Firmeza media', old: 1390000, now: 695000, img: 'https://www.todocolchon.co/cdn/shop/files/1_2a774bd0-4505-4e05-8fcc-163cf126d99c.jpg?v=1767815535&width=600' },
-      { id: 'ortholife-firm', name: 'Colchón Ortholife Firm', tag: 'Soporte firme · Zona lumbar', old: 1398000, now: 699000, img: 'img/02.png?v=1766081671&width=600' },
-      { id: 'relaxoflex', name: 'Colchón Relaxoflex', tag: 'Doble cara · Antiácaros', old: 1490000, now: 745000, img: 'https://www.todocolchon.co/cdn/shop/files/7_b9dd4682-3fce-45f4-ad44-3c0b45ad8af6.jpg?v=1769433827&width=600' },
-      { id: 'paradise-200', name: 'Colchón Paradise Serie I 200', tag: 'Comprimido · Fácil transporte', old: 1599800, now: 799900, img: 'img/03.png?v=1767021618&width=600' },
-      { id: 'paraiso-gold', name: 'Colchón Paraíso Gold', tag: 'Maxi Top · Garantía 7 años', old: 1639000, now: 819500, img: 'img/06.png?v=1772594318&width=600' },
-      { id: 'emotion-life', name: 'Colchón Emotion Life Maxi Top', tag: 'Pillow top · Multizona', old: 1790000, now: 895000, img: 'img/04.png?v=1766436427&width=600' },
-      { id: 'paraiso-premium', name: 'Colchón Paraíso Premium Gold', tag: 'Línea premium · Garantía 7 años', old: 1837000, now: 918500, img: 'img/06.png?v=1770383626&width=600' },
-      { id: 'emotion-firm', name: 'Colchón Emotion Firm Maxi Top', tag: 'Firme · Multizonas', old: 1990000, now: 995000, img: 'img/05.png?v=1766435242&width=600' },
-    ];
-
-    function money(n) { return '$' + n.toLocaleString('es-CO'); }
-
-    // ---- render ofertas grid ----
-    const grid = document.getElementById('productGrid');
-    products.forEach(p => {
-      const off = Math.round((1 - p.now / p.old) * 100);
-      const card = document.createElement('div');
-      card.className = 'pcard';
-      card.innerHTML = `
-    <div class="img-wrap">
-      <span class="discount-pill">-${off}%</span>
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
-    </div>
-    <div class="body">
-      <h3>${p.name}</h3>
-      <p class="tag">${p.tag}</p>
-      <div class="prices">
-        <span class="old">${money(p.old)}</span>
-        <span class="now">${money(p.now)}</span>
-      </div>
-      <button class="add-btn" data-id="${p.id}">Agregar al carrito</button>
-    </div>`;
-      grid.appendChild(card);
-    });
-    grid.addEventListener('click', e => {
-      const btn = e.target.closest('.add-btn');
-      if (!btn) return;
-      addToCart(btn.dataset.id);
-      btn.textContent = 'Agregado ✓';
-      btn.classList.add('added');
-      setTimeout(() => { btn.textContent = 'Agregar al carrito'; btn.classList.remove('added'); }, 1400);
-    });
-
-    // ---- urgency ticker ----
-    const urgencyMsgs = [
-      'Hasta <em>50% OFF</em> por lanzamiento',
-      'Garantía de <em>7 años</em> en línea Paraíso',
-      'Envíos a <em>todo el país</em>',
-      'Paga fácil y seguro: tarjetas, PSE y contraentrega',
-    ];
-    const track = document.getElementById('urgencyTrack');
-    track.innerHTML = (urgencyMsgs.concat(urgencyMsgs)).map(m => `<span>${m}</span>`).join('');
-
-    // ---- firmeza finder (signature interactive element) ----
-    const firmness = {
-      suave: {
-        label: 'Blando', desc: 'Acolchado profundo, ideal si duermes de lado.',
-        layers: [
-          { h: 70, c: '#D9C79A' }, { h: 34, c: '#C9A967' }, { h: 18, c: '#8F672A' }
-        ],
-        caption: 'Capas gruesas de espuma multipunto que ceden bajo el cuerpo, aliviando hombros y caderas.'
-      },
-      medio: {
-        label: 'Medio', desc: 'El equilibrio que elige la mayoría de hogares.',
-        layers: [
-          { h: 44, c: '#D9C79A' }, { h: 40, c: '#C9A967' }, { h: 34, c: '#8F672A' }
-        ],
-        caption: 'Balance entre acolchado y soporte de resortes: la opción más versátil para parejas.'
-      },
-      firme: {
-        label: 'Firme', desc: 'Soporte para zona lumbar y dormir boca arriba.',
-        layers: [
-          { h: 22, c: '#D9C79A' }, { h: 30, c: '#C9A967' }, { h: 56, c: '#8F672A' }
-        ],
-        caption: 'Núcleo de resortes de acero de alto carbono al frente: menos hundimiento, más columna alineada.'
-      }
-    };
-    const firmOptionsEl = document.getElementById('firmOptions');
-    const layersHolder = document.getElementById('layersHolder');
-    const crossCaption = document.getElementById('crossCaption');
-    let currentFirm = 'medio';
-
-    function renderFirmOptions() {
-      firmOptionsEl.innerHTML = Object.entries(firmness).map(([key, f]) => `
-    <button class="firm-opt ${key === currentFirm ? 'active' : ''}" data-key="${key}">
-      <div class="name">${f.label}</div>
-      <div class="desc">${f.desc}</div>
-    </button>
-  `).join('');
-    }
-    function renderLayers() {
-      const f = firmness[currentFirm];
-      layersHolder.innerHTML = f.layers.map(l => `<div class="layer" style="height:${l.h}px;background:${l.c};"></div>`).join('<div style="height:4px;"></div>');
-      crossCaption.textContent = f.caption;
-    }
-    firmOptionsEl.addEventListener('click', e => {
-      const btn = e.target.closest('.firm-opt');
-      if (!btn) return;
-      currentFirm = btn.dataset.key;
-      renderFirmOptions();
-      renderLayers();
-    });
-    renderFirmOptions();
-    renderLayers();
-
-    // ---- faq ----
-    const faqs = [
-      { q: '¿Cuánto tarda el envío?', a: 'Depende de tu ciudad: entre 2 y 7 días hábiles según cobertura. Recibes número de guía para seguimiento apenas sale de fábrica.' },
-      { q: '¿Qué pasa si la firmeza no es la que esperaba?', a: 'Tienes 30 días para iniciar un proceso de cambio por inconformidad, siempre que el colchón conserve su empaque y condiciones originales.' },
-      { q: '¿Qué cubre la garantía de 7 años?', a: 'Cubre defectos de fabricación como hundimientos irregulares o fallas en los soportes. No cubre mal uso o desgaste normal.' },
-      { q: '¿Qué medios de pago aceptan?', a: 'Tarjetas de crédito y débito, PSE, y contraentrega en las ciudades habilitadas, con opción a cuotas según tu banco.' },
-    ];
-    const faqList = document.getElementById('faqList');
-    faqList.innerHTML = faqs.map((f, i) => `
-  <div class="faq-item" data-i="${i}">
-    <div class="faq-q">${f.q}<span class="plus">+</span></div>
-    <div class="faq-a">${f.a}</div>
-  </div>
-`).join('');
-    faqList.addEventListener('click', e => {
-      const item = e.target.closest('.faq-item');
-      if (!item) return;
-      item.classList.toggle('open');
-    });
-
-    function subscribe(e) {
-      e.preventDefault();
-      showToast('¡Listo! Te avisaremos de nuestras próximas ofertas.');
-      e.target.reset();
-      return false;
-    }
-
-    // ---- cart ----
-    let cart = [];
-
-    function addToCart(id) {
-      const existing = cart.find(i => i.id === id);
-      if (existing) { existing.qty++; }
-      else { cart.push({ id, qty: 1 }); }
-      renderCart();
-      showToast('Producto agregado al carrito');
-    }
-    function changeQty(id, delta) {
-      const item = cart.find(i => i.id === id);
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
-      renderCart();
-    }
-    function removeItem(id) {
-      cart = cart.filter(i => i.id !== id);
-      renderCart();
-    }
-    function renderCart() {
-      const count = cart.reduce((s, i) => s + i.qty, 0);
-      document.getElementById('cartCount').textContent = count;
-
-      const itemsEl = document.getElementById('drawerItems');
-      const footEl = document.getElementById('drawerFoot');
-
-      if (cart.length === 0) {
-        itemsEl.innerHTML = `<div class="drawer-empty">Tu carrito está vacío.<br>Explora las ofertas y encuentra tu colchón ideal.</div>`;
-        footEl.innerHTML = '';
-        return;
-      }
-
-      itemsEl.innerHTML = cart.map(ci => {
-        const p = products.find(pp => pp.id === ci.id);
-        return `
-    <div class="drawer-item">
-      <img src="${p.img}" alt="${p.name}">
-      <div class="info">
-        <h4>${p.name}</h4>
-        <div class="price">${money(p.now)}</div>
-        <div class="qty-row">
-          <button onclick="changeQty('${p.id}',-1)">–</button>
-          <span>${ci.qty}</span>
-          <button onclick="changeQty('${p.id}',1)">+</button>
-          <button class="remove-item" onclick="removeItem('${p.id}')">Quitar</button>
-        </div>
-      </div>
-    </div>`;
-      }).join('');
-
-      const subtotal = cart.reduce((s, ci) => {
-        const p = products.find(pp => pp.id === ci.id);
-        return s + p.now * ci.qty;
-      }, 0);
-
-      footEl.innerHTML = `
-    <div class="subtotal-row"><span>Subtotal</span><span>${money(subtotal)}</span></div>
-    <button class="checkout-btn" onclick="checkout()">Proceder al pago</button>
-    <p class="drawer-note">Envío calculado en el siguiente paso · Pago 100% seguro</p>
-  `;
-    }
-    function checkout() {
-      showToast('Esta es una maqueta: aquí iría el flujo real de pago.');
-    }
-    function openCart() {
-      document.getElementById('overlay').classList.add('show');
-      document.getElementById('drawer').classList.add('show');
-    }
-    function closeCart() {
-      document.getElementById('overlay').classList.remove('show');
-      document.getElementById('drawer').classList.remove('show');
-    }
-    renderCart();
-
-    // ---- toast ----
-    let toastTimer;
-    function showToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
-    }
-  </script>
+  <script src="js/toast.js"></script>
+  <script src="js/carrusel-header.js"></script>
+  <script src="js/carrusel-ofertas.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/firmeza.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/urgencia.js"></script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/newsletter.js"></script>
+  <script src="js/combos.js"></script>
 </body>
 
 </html>
