@@ -13,29 +13,51 @@
 </head>
 
 <body>
-
-  <div class="utility-bar">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
-    Garantía de 7 años en toda la línea Paraíso</div>
-
+  <section>
+    <div class="wrapper-fluid utility-bar-color">
+      <div class="container utility-bar">
+        <div class="col-3">
+          <div class="brand-badge">
+            <img src="img/logo.png" alt="">
+          </div>
+        </div>
+        <div class="col-9">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
+          Garantía de 7 años en toda la línea Paraíso</div>
+      </div>
+    </div>
+  </section>
   <header>
-    <div class="nav">
-      <div class="logo"><img src="img/logo.webp"></div>
-      <nav class="nav-links">
-        <a href="#ofertas">Ofertas</a>
-        <a href="#firmeza">Encuentra tu firmeza</a>
-        <a href="#confianza">Por qué elegirnos</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#preguntas">Preguntas</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="cart-btn" onclick="openCart()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1" />
-            <circle cx="20" cy="21" r="1" />
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-          </svg>
-          Carrito <span class="cart-count" id="cartCount">0</span>
-        </button>
+    <div class="wrapper-fluid menu-bar-color ">
+      <div class="container menu-bar">
+        <div class="col-3">
+        </div>
+        <div class="col-9">
+          <div class="nav">
+            <nav class="nav-links" id="navLinks">
+              <a href="#ofertas">Ofertas</a>
+              <a href="#firmeza">Encuentra tu firmeza</a>
+              <a href="#confianza">Por qué elegirnos</a>
+              <a href="#opiniones">Opiniones</a>
+              <a href="#preguntas">Preguntas</a>
+            </nav>
+            <div class="nav-actions">
+              <button class="cart-btn" onclick="openCart()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                Carrito <span class="cart-count" id="cartCount">0</span>
+              </button>
+              <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -56,10 +78,9 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Colchones · Bases · Ropa de cama</p>
-        <h1>Duerme profundo.<br>Rinde <em>distinto</em> mañana.</h1>
-        <p class="lead">Colchones diseñados y fabricados en Colombia, con hasta 7 años de garantía. Elige tu firmeza
-          ideal y paga desde $629.000, con envío a todo el país.</p>
+
+        <h1>Combo<br><em> Base cama - Colchon doble</em> </h1>
+
         <div class="hero-ctas">
           <a href="#ofertas" class="btn-primary">Ver ofertas de hoy</a>
           <a href="#firmeza" class="btn-ghost">Encontrar mi firmeza ideal</a>
@@ -79,10 +100,10 @@
       <div class="hero-visual">
         <div class="badge-off">-50% hoy</div>
         <div class="mattress-card">
-          <p class="cap">Más vendido de la semana</p>
-          <img src="img/02.png?v=1772594318&width=700" alt="Colchón Paraíso Gold"
-            style="border-radius:14px;width:100%;aspect-ratio:4/3;object-fit:cover;">
-          <p class="cap" style="margin:16px 0 0;">Colchón Paraíso Gold · Maxi Top</p>
+
+          <img src="img/20.png" alt="Colchón Paraíso Gold">
+          <p class="cap" style="margin:16px 0 0;">Colchón Paraíso Gold · Maxi Top <span style="color:#8f672a;">Cama
+              doble</span></p>
           <div class="price-tag-hero">
             <span class="old">$1.639.000</span>
             <span class="now">$819.500</span>
@@ -101,12 +122,13 @@
   <section class="block" id="ofertas">
     <div class="wrap">
       <div class="block-head">
-        <p class="eyebrow">Ofertas activas</p>
-        <h2>Precios de lanzamiento, mientras duren las unidades</h2>
-        <p>Todos con garantía de fábrica y despacho a nivel nacional. Los precios "desde" varían según la medida
+        <h2>Todos con garantía de fábrica y <span style="color:#8f672a;">despacho a nivel nacional.</span></h2>
+        <p>Los precios "desde" varían según la medida
           elegida.</p>
       </div>
       <div class="oferta-carousel-wrap">
+
+        <div class="oferta-carousel" id="productGrid"></div>
         <div class="oc-nav">
           <button class="oc-arrow" id="ocPrev" onclick="ocMove(-1)" aria-label="Anterior">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
@@ -119,7 +141,6 @@
             </svg>
           </button>
         </div>
-        <div class="oferta-carousel" id="productGrid"></div>
       </div>
     </div>
   </section>
@@ -155,8 +176,12 @@
   <section class="block" id="confianza">
     <div class="wrap">
       <div class="block-head">
-        <p class="eyebrow">Por qué elegirnos</p>
-        <h2>Lo que sí te decimos antes de que compres</h2>
+
+        <h2>Lo que sí te decimos <span style="color:#8f672a;">antes de que compres</span>
+
+
+
+        </h2>
       </div>
       <div class="features">
         <div class="feature">
@@ -199,7 +224,7 @@
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="logo"><img src="img/logo.webp"></div>
+          <div class="logo"><img src="img/logo.png"></div>
           <p style="margin-top:14px;max-width:260px;">Colchones, bases y ropa de cama diseñados y fabricados en
             Colombia. Envíos a todo el país.</p>
         </div>
@@ -243,6 +268,7 @@
   <div class="toast" id="toast"></div>
 
   <script src="js/toast.js"></script>
+  <script src="js/nav.js"></script>
   <script src="js/carrusel-header.js"></script>
   <script src="js/carrusel-ofertas.js"></script>
   <script src="js/carrito.js"></script>
