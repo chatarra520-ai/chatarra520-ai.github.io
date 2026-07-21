@@ -4,11 +4,25 @@
        --ink: #17223B;
        --ink-soft: #4A5570;
        --gold: #d4af37;
-       --gold-deep: #8F672A;
+       --gold-deep: #8f672a;
        --clay: #d4af37;
        --clay-deep: #917b3f;
        --line: #E4DACB;
        --green: #3C6E52;
+   }
+
+   .wrapper-fluid {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+   }
+
+   .container {
+       width: 100%;
+       max-width: 1200px;
+       /* ancho típico de escritorio */
+       padding: 0 15px;
+       box-sizing: border-box;
    }
 
    * {
@@ -36,7 +50,7 @@
    }
 
    a {
-       color: inherit;
+       color: rgb(85, 79, 71);
        text-decoration: none;
    }
 
@@ -66,8 +80,12 @@
        font-weight: 700;
    }
 
+
+
+
    /* ---------- top utility bar ---------- */
    .utility-bar {
+       display: flex;
        background: var(--ink);
        color: #EFE8D8;
        font-size: 13px;
@@ -76,8 +94,64 @@
        letter-spacing: .02em;
    }
 
+   .utility-bar-color {
+       background: var(--ink);
+   }
+
    .utility-bar strong {
        color: var(--gold);
+   }
+
+   .col-3 {
+       flex: 2;
+       position: relative;
+   }
+
+   .col-9 {
+       flex: 10;
+   }
+
+   .brand-badge {
+       position: absolute;
+
+       box-shadow: 0 6px 22px rgba(0, 0, 0, .18);
+       z-index: 70;
+       background-color: var(--ink);
+       padding: 30px 20px;
+   }
+
+   /* Recuadro más pequeño en móvil: en 860px+ el nav sigue con su
+      tamaño de escritorio (60px de logo, mismo padding), así que ahí
+      dejamos el badge como está. Por debajo de 560px sí lo reducimos
+      para que no se coma la barra ni tape el texto de utility-bar. */
+   @media(max-width:560px) {
+       .brand-badge {
+           width: 120px;
+           height: 90px;
+           left: 0;
+       }
+
+       .col-3 {
+           flex: 30%;
+           position: relative;
+       }
+
+       .col-9 {
+           flex: 70%;
+       }
+   }
+
+   .menu-bar {
+       display: flex;
+       color: #EFE8D8;
+       font-size: 13px;
+       text-align: center;
+       padding: 8px 12px;
+       letter-spacing: .02em;
+   }
+
+   .menu-bar-color {
+       background: rgba(246, 241, 230, .92);
    }
 
    /* ---------- header ---------- */
@@ -92,9 +166,8 @@
 
    .nav {
        display: flex;
-       align-items: center;
        justify-content: space-between;
-       padding: 18px 28px;
+       /*  padding: 5px 28px;*/
        max-width: 1180px;
        margin: 0 auto;
    }
@@ -110,7 +183,7 @@
    }
 
    .logo img {
-       height: 45px;
+       height: 60px;
        width: auto;
        /* Mantiene la proporción */
        display: block;
@@ -121,6 +194,7 @@
        gap: 34px;
        font-size: 14.5px;
        font-weight: 600;
+       margin: auto;
    }
 
    .nav-links a {
@@ -138,13 +212,52 @@
        gap: 18px;
    }
 
+   @media(max-width:560px) {
+       .nav {
+
+           justify-content: flex-end;
+
+       }
+   }
+
+   .hamburger-btn {
+       display: none;
+       flex-direction: column;
+       justify-content: center;
+       gap: 5px;
+       width: 32px;
+       height: 32px;
+       padding: 0;
+   }
+
+   .hamburger-btn span {
+       display: block;
+       width: 100%;
+       height: 2px;
+       background: var(--ink);
+       border-radius: 2px;
+       transition: transform .2s, opacity .2s;
+   }
+
+   .hamburger-btn[aria-expanded="true"] span:nth-child(1) {
+       transform: translateY(7px) rotate(45deg);
+   }
+
+   .hamburger-btn[aria-expanded="true"] span:nth-child(2) {
+       opacity: 0;
+   }
+
+   .hamburger-btn[aria-expanded="true"] span:nth-child(3) {
+       transform: translateY(-7px) rotate(-45deg);
+   }
+
    .cart-btn {
        display: flex;
        align-items: center;
        gap: 8px;
        background: var(--ink);
        color: var(--bg);
-       padding: 10px 16px;
+       padding: 5px 10px;
        border-radius: 100px;
        font-size: 14px;
        font-weight: 700;
@@ -170,10 +283,40 @@
    }
 
    @media(max-width:860px) {
+       .hamburger-btn {
+           display: flex;
+       }
+
        .nav-links {
-           display: none;
+           display: flex;
+           flex-direction: column;
+           position: absolute;
+           top: 100%;
+           left: 0;
+           right: 0;
+           background: var(--bg, #fff);
+           padding: 18px 28px;
+           gap: 18px;
+           border-bottom: 1px solid var(--line);
+           /* oculto por defecto: la clase .open lo despliega vía JS */
+           max-height: 0;
+           overflow: hidden;
+           padding-top: 0;
+           padding-bottom: 0;
+           transition: max-height .25s ease;
+       }
+
+       .nav-links.open {
+           max-height: 320px;
+           padding-top: 18px;
+           padding-bottom: 18px;
+       }
+
+       .nav {
+           position: relative;
        }
    }
+
 
    /* ---------- hero ---------- */
    .hero {
@@ -810,6 +953,16 @@
        border-bottom: 1px solid rgba(255, 255, 255, .1);
    }
 
+   .foot-grid a {
+       color: var(--line);
+
+   }
+
+   .foot-grid a:hover {
+       color: #ffffff;
+
+   }
+
    .foot-grid h5 {
        color: #fff;
        font-size: 13px;
@@ -1053,8 +1206,9 @@
    .hc-text-box {
        background: var(--ink);
        border-radius: 5px;
-       padding: 36px 40px;
+       padding: 36px 20px;
        box-shadow: -2px 12px 13px -7px rgba(0, 0, 0, 0.59);
+       width: 400px;
    }
 
    .hc-slide {
@@ -1068,10 +1222,12 @@
        opacity: 1;
    }
 
+   .hc-slide picture,
    .hc-slide img {
        width: 100%;
        height: 100%;
        object-fit: cover;
+       display: block;
    }
 
    .hc-slide::after {
@@ -1139,7 +1295,7 @@
 
    .hc-arrow {
        position: absolute;
-       top: 50%;
+       top: 95%;
        transform: translateY(-50%);
        z-index: 3;
        width: 44px;
@@ -1298,38 +1454,20 @@
        display: flex;
        gap: 20px;
        overflow-x: auto;
-       scroll-snap-type: x mandatory;
+
        padding: 6px 2px 20px;
-       scrollbar-width: thin;
-       scrollbar-color: var(--clay) var(--line);
-       -webkit-overflow-scrolling: touch;
-   }
 
-   .oferta-carousel::-webkit-scrollbar {
-       height: 7px;
-   }
-
-   .oferta-carousel::-webkit-scrollbar-track {
-       background: var(--line);
-       border-radius: 10px;
-   }
-
-   .oferta-carousel::-webkit-scrollbar-thumb {
-       background: var(--clay);
-       border-radius: 10px;
    }
 
    .oferta-carousel .pcard {
        flex: 0 0 auto;
        width: 270px;
-       scroll-snap-align: start;
+
    }
 
    .oc-nav {
        display: flex;
-       gap: 10px;
-       justify-content: flex-end;
-       margin-bottom: 18px;
+       justify-content: space-between;
    }
 
    .oc-arrow {
@@ -1353,6 +1491,8 @@
        opacity: .3;
        pointer-events: none;
    }
+
+
 
    @media(max-width:700px) {
        .oferta-carousel .pcard {
