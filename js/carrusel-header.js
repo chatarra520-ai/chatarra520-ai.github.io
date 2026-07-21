@@ -17,23 +17,26 @@
   const hcSlidesData = [
     {
       img: 'img/carrusel/07.png?v=1772594318&width=1400',
-      eyebrow: 'Línea Paraíso Gold',
+      imgMobile: 'img/carrusel/07-movil.png?v=1772594318&width=900',
+      //eyebrow: 'Línea Paraíso Gold',
       title: 'El descanso que tu espalda pide hace meses',
-      text: 'Maxi top, garantía de 7 años y hasta 50% de descuento por lanzamiento de temporada.',
+      //text: 'Maxi top, garantía de 7 años y hasta 50% de descuento por lanzamiento de temporada.',
       cta: 'Ver oferta', target: '#ofertas'
     },
     {
       img: 'img/carrusel/08.png?v=1767815535&width=1400',
-      eyebrow: 'Resortado Futura',
+      imgMobile: 'img/carrusel/08-movil.png?v=1767815535&width=900',
+      //eyebrow: 'Resortado Futura',
       title: 'Firmeza media para parejas que duermen distinto',
-      text: 'Resortes Bonnell independientes y doble cara antiácaros, desde $695.000.',
+      //text: 'Resortes Bonnell independientes y doble cara antiácaros, desde $695.000.',
       cta: 'Comprar ahora', target: '#ofertas'
     },
     {
       img: 'img/carrusel/09.png?v=1766436427&width=1400',
-      eyebrow: 'Encuentra tu firmeza',
+      imgMobile: 'img/carrusel/09-movil.png?v=1766436427&width=900',
+      // eyebrow: 'Encuentra tu firmeza',
       title: 'No adivines: hazte el test de firmeza ideal',
-      text: 'Blando, medio o firme — te mostramos por qué funciona antes de comprar.',
+      //text: 'Blando, medio o firme — te mostramos por qué funciona antes de comprar.',
       cta: 'Hacer el test', target: '#firmeza'
     }
   ];
@@ -50,18 +53,22 @@
     let hcIndex = 0;
     let hcTimer = null;
 
-    // slides
+    // slides 
+
     hcSlidesData.forEach((s, i) => {
       const slide = document.createElement('div');
       slide.className = 'hc-slide' + (i === 0 ? ' active' : '');
       slide.dataset.i = i;
       slide.innerHTML = `
-        <img src="${s.img}" alt="${s.title}">
+        <picture>
+          <source media="(max-width: 700px)" srcset="${s.imgMobile}">
+          <img src="${s.img}" alt="${s.title}">
+        </picture>
         <div class="hc-text">
           <div class="hc-text-box">
-            <p class="eyebrow">${s.eyebrow}</p>
+          <!-- <p class="eyebrow">${s.eyebrow}</p>  --> 
             <h2>${s.title}</h2>
-            <p>${s.text}</p>
+           <!--  <p>${s.text}</p>--> 
             <a href="${s.target}" class="btn-primary" style="width:fit-content;">${s.cta}</a>
           </div>
         </div>`;

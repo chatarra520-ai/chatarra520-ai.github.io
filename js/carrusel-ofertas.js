@@ -110,4 +110,3 @@ window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
   }
 
 })();
-
