@@ -528,13 +528,6 @@
        line-height: 1.6;
    }
 
-   /* ---------- ofertas grid ---------- */
-   .grid-products {
-       display: grid;
-       grid-template-columns: repeat(3, 1fr);
-       gap: 24px;
-   }
-
    .pcard {
        background: var(--panel);
        border: 1px solid var(--line);
@@ -558,12 +551,6 @@
    }
 
    .pcard .img-wrap img {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-   }
-
-   .pcard .combos img {
        width: 100%;
        height: 100%;
        object-fit: cover;
@@ -623,26 +610,23 @@
    }
 
 
-   .pcard-combos {
-       background: var(--panel);
-       border: 1px solid var(--line);
-       border-radius: 18px;
-       overflow: hidden;
-       display: flex;
-       flex-direction: column;
-       transition: transform .2s, box-shadow .2s;
+   .ver-detalle {
+       display: block;
+       text-align: center;
+       font-size: 13.5px;
+       font-weight: 700;
+       color: var(--ink);
+       margin-bottom: 10px;
+       padding: 11px 16px;
+       border: 1.5px solid var(--ink);
+       border-radius: 10px;
+       text-decoration: none;
+       transition: .18s;
    }
 
-   .pcard .combosdiscount-pill {
-       position: absolute;
-       top: 12px;
-       left: 12px;
-       background: var(--clay);
-       color: #fff;
-       font-size: 11.5px;
-       font-weight: 800;
-       padding: 5px 10px;
-       border-radius: 100px;
+   .ver-detalle:hover {
+       background: var(--ink);
+       color: var(--bg);
    }
 
    .add-btn {
@@ -665,6 +649,10 @@
    }
 
    /* ---------- firmeza finder (signature) ---------- */
+   .hero-card-actions {
+       margin-top: 16px;
+   }
+
    .firmeza {
        background: var(--ink);
        color: var(--bg);
@@ -991,21 +979,10 @@
    @media(max-width:860px) {
 
        .hero-grid,
-       .grid-products,
        .firmeza-grid,
        .features,
        .testi-grid,
        .foot-grid {
-           grid-template-columns: 1fr;
-       }
-
-       .grid-products {
-           grid-template-columns: 1fr 1fr;
-       }
-   }
-
-   @media(max-width:560px) {
-       .grid-products {
            grid-template-columns: 1fr;
        }
    }
@@ -1341,87 +1318,6 @@
        color: var(--gold)
    }
 
-   @media(max-width:860px) {
-
-       .hero-grid,
-       .firmeza-grid,
-       .features,
-       .testi-grid,
-       .foot-grid {
-           grid-template-columns: 1fr;
-       }
-   }
-
-
-   @media(max-width:860px) {
-
-       .hero-grid,
-       .firmeza-grid,
-       .features,
-       .testi-grid,
-       .foot-grid {
-           grid-template-columns: 1fr;
-       }
-   }
-
-   @media(max-width:860px) {
-       .grid-products {
-           display: flex;
-           overflow-x: auto;
-           gap: 18px;
-           scroll-snap-type: x mandatory;
-           padding-bottom: 12px;
-           -webkit-overflow-scrolling: touch;
-       }
-
-       .grid-products .pcard {
-           flex: 0 0 78%;
-           scroll-snap-align: start;
-       }
-   }
-
-   @media(max-width:560px) {
-       .grid-products .pcard {
-           flex: 0 0 84%;
-       }
-   }
-
-   /* ---------- section shell ---------- */
-   section.block-combo {
-       padding: 30px 0;
-   }
-
-   .block-comb-head {
-       max-width: 640px;
-       margin-bottom: 48px;
-   }
-
-   .block-head h2 {
-       font-size: clamp(28px, 3.4vw, 42px);
-       font-weight: 600;
-       margin-top: 12px;
-       letter-spacing: -.01em;
-   }
-
-   .block-head p {
-       color: var(--ink-soft);
-       font-size: 16px;
-       margin-top: 14px;
-       line-height: 1.6;
-   }
-
-   .hc-arrow:hover {
-       background: rgba(251, 246, 236, .28);
-   }
-
-   .hc-arrow.prev {
-       left: 24px;
-   }
-
-   .hc-arrow.next {
-       right: 24px;
-   }
-
    @media(max-width:700px) {
        .header-carousel {
            height: 75vh;
@@ -1457,6 +1353,17 @@
 
        padding: 6px 2px 20px;
 
+       /* el scroll sigue funcionando (mouse, trackpad, touch, flechas);
+          solo se oculta la barra nativa del navegador. */
+       scrollbar-width: none;
+       /* Firefox */
+       -ms-overflow-style: none;
+       /* IE / Edge legacy */
+   }
+
+   .oferta-carousel::-webkit-scrollbar {
+       display: none;
+       /* Chrome, Safari, Edge Chromium */
    }
 
    .oferta-carousel .pcard {
@@ -1501,5 +1408,311 @@
 
        .oc-nav {
            display: none;
+       }
+   }
+
+   /* La sección de combos tiene fondo oscuro (#17223B, igual a --ink),
+      así que sus flechas no pueden usar el mismo color --ink por defecto
+      o quedan invisibles. Acá se sobreescriben con tonos claros. */
+   .combos-band .oc-arrow {
+       border-color: rgba(246, 241, 230, .5);
+       color: var(--bg);
+   }
+
+   .combos-band .oc-arrow:hover {
+       background: var(--gold);
+       border-color: var(--gold);
+       color: var(--ink);
+   }
+
+   .combos-band .oc-arrow:disabled {
+       opacity: .25;
+   }
+
+   /* ---------- botón flotante de WhatsApp ---------- */
+   .wa-float {
+       position: fixed;
+       right: 22px;
+       bottom: 22px;
+       width: 58px;
+       height: 58px;
+       border-radius: 100px;
+       background: #25D366;
+       color: #fff;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 12px 28px -8px rgba(0, 0, 0, .4);
+       z-index: 95;
+       transition: transform .18s;
+   }
+
+   .wa-float:hover {
+       transform: translateY(-3px) scale(1.05);
+   }
+
+   @media(max-width:560px) {
+       .wa-float {
+           width: 52px;
+           height: 52px;
+           right: 16px;
+           bottom: 16px;
+       }
+   }
+
+   /* ---------- página de detalle de producto ---------- */
+   .breadcrumb {
+       font-size: 13px;
+       color: var(--ink-soft);
+       margin-bottom: 24px;
+   }
+
+   .breadcrumb a {
+       color: var(--ink-soft);
+       text-decoration: underline;
+   }
+
+   .breadcrumb a:hover {
+       color: var(--ink);
+   }
+
+   .detail-grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 56px;
+       align-items: start;
+   }
+
+   .detail-image {
+       background: var(--panel);
+       border: 1px solid var(--line);
+       border-radius: 22px;
+       overflow: hidden;
+       aspect-ratio: 1/1;
+       position: relative;
+   }
+
+   .detail-image img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+   }
+
+   .detail-image .discount-pill {
+       position: absolute;
+       top: 16px;
+       left: 16px;
+       background: var(--clay);
+       color: #fff;
+       font-size: 12px;
+       font-weight: 800;
+       padding: 6px 12px;
+       border-radius: 100px;
+   }
+
+   .detail-body .tag {
+       font-size: 13px;
+       color: var(--ink-soft);
+       margin-bottom: 10px;
+   }
+
+   .detail-body h1 {
+       font-size: clamp(26px, 3.2vw, 38px);
+       font-weight: 600;
+       margin-bottom: 16px;
+       line-height: 1.15;
+   }
+
+   .detail-prices {
+       display: flex;
+       align-items: baseline;
+       gap: 12px;
+       margin-bottom: 22px;
+   }
+
+   .detail-prices .old {
+       font-size: 16px;
+       color: #9A9182;
+       text-decoration: line-through;
+   }
+
+   .detail-prices .now {
+       font-size: 30px;
+       font-weight: 700;
+       color: var(--clay-deep);
+       font-family: 'Fraunces', serif;
+   }
+
+   .detail-off {
+       background: var(--clay);
+       color: #fff;
+       font-size: 12.5px;
+       font-weight: 800;
+       padding: 4px 10px;
+       border-radius: 100px;
+   }
+
+   .detail-desc {
+       font-size: 15.5px;
+       line-height: 1.7;
+       color: var(--ink-soft);
+       margin-bottom: 24px;
+   }
+
+   .detail-subhead {
+       font-size: 17px;
+       font-weight: 700;
+       margin: 30px 0 14px;
+   }
+
+   .detail-specs {
+       list-style: none;
+       margin: 20px 0 26px;
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+   }
+
+   .detail-specs li {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       font-size: 14px;
+       color: var(--ink-soft);
+   }
+
+   .detail-specs svg {
+       flex-shrink: 0;
+       color: var(--gold-deep);
+   }
+
+   .qty-selector {
+       display: flex;
+       align-items: center;
+       gap: 14px;
+       margin-bottom: 20px;
+   }
+
+   .qty-selector button {
+       width: 36px;
+       height: 36px;
+       border: 1.5px solid var(--ink);
+       border-radius: 8px;
+       font-weight: 700;
+       font-size: 16px;
+   }
+
+   .qty-selector span {
+       min-width: 24px;
+       text-align: center;
+       font-weight: 700;
+   }
+
+   .detail-actions {
+       display: flex;
+       gap: 14px;
+       flex-wrap: wrap;
+       margin-bottom: 18px;
+   }
+
+   .detail-actions .add-btn {
+       flex: 1;
+       min-width: 200px;
+   }
+
+   .detail-wa {
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       padding: 12px 20px;
+       border-radius: 10px;
+       border: 1.5px solid var(--ink);
+       font-weight: 700;
+       font-size: 13.5px;
+   }
+
+   .detail-wa:hover {
+       background: var(--ink);
+       color: var(--bg);
+   }
+
+   .detail-notfound {
+       text-align: center;
+       padding: 100px 20px;
+   }
+
+   .detail-notfound h1 {
+       margin-bottom: 14px;
+   }
+
+   .detail-notfound p {
+       color: var(--ink-soft);
+       margin-bottom: 26px;
+   }
+
+   @media(max-width:860px) {
+       .detail-grid {
+           grid-template-columns: 1fr;
+           gap: 30px;
+       }
+   }
+
+   /* ---------- relacionados (detalle.html) ---------- */
+   .related-wrap {
+       margin-top: 56px;
+       padding-top: 40px;
+       border-top: 1px solid var(--line);
+   }
+
+   .related-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 20px;
+   }
+
+   .related-card {
+       background: var(--panel);
+       border: 1px solid var(--line);
+       border-radius: 16px;
+       overflow: hidden;
+       display: block;
+       transition: transform .18s, box-shadow .18s;
+   }
+
+   .related-card:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 14px 28px -14px rgba(0, 0, 0, .25);
+   }
+
+   .related-card img {
+       width: 100%;
+       aspect-ratio: 4/3;
+       object-fit: cover;
+   }
+
+   .related-body {
+       padding: 12px 14px 16px;
+   }
+
+   .related-body h4 {
+       font-size: 14px;
+       font-weight: 600;
+       margin-bottom: 6px;
+   }
+
+   .related-now {
+       font-weight: 700;
+       color: var(--clay-deep);
+   }
+
+   @media(max-width:700px) {
+       .related-grid {
+           grid-template-columns: 1fr 1fr;
+       }
+   }
+
+   @media(max-width:480px) {
+       .related-grid {
+           grid-template-columns: 1fr;
        }
    }
