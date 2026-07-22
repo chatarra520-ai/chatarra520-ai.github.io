@@ -17,18 +17,26 @@
    ============================================================ */
 
 window.products = [
-  { id: 'ortholife-foam', name: 'Colchón Ortholife Foam', tag: 'Espuma alta densidad · Multi-medidas', old: 1258000, now: 629000, img: 'img/02.png?v=1766081598&width=600' },
-  { id: 'futura', name: 'Colchón Resortado Futura', tag: 'Resortes Bonnell · Firmeza media', old: 1390000, now: 695000, img: 'img/02.png?v=1767815535&width=600' },
-  { id: 'ortholife-firm', name: 'Colchón Ortholife Firm', tag: 'Soporte firme · Zona lumbar', old: 1398000, now: 699000, img: 'img/03.png?v=1766081671&width=600' },
-  { id: 'relaxoflex', name: 'Colchón Relaxoflex', tag: 'Doble cara · Antiácaros', old: 1490000, now: 745000, img: 'img/04.png?v=1769433827&width=600' },
-  { id: 'paradise-200', name: 'Colchón Paradise Serie I 200', tag: 'Comprimido · Fácil transporte', old: 1599800, now: 799900, img: 'img/05.png?v=1767021618&width=600' },
-  { id: 'paraiso-gold', name: 'Colchón Paraíso Gold', tag: 'Maxi Top · Garantía 7 años', old: 1639000, now: 819500, img: 'img/04.png?v=1772594318&width=600' },
-  { id: 'emotion-life', name: 'Colchón Emotion Life Maxi Top', tag: 'Pillow top · Multizona', old: 1790000, now: 895000, img: 'img/03.png?v=1766436427&width=600' },
-  { id: 'paraiso-premium', name: 'Colchón Paraíso Premium Gold', tag: 'Línea premium · Garantía 7 años', old: 1837000, now: 918500, img: 'img/02.png?v=1770383626&width=600' },
-  { id: 'emotion-firm', name: 'Colchón Emotion Firm Maxi Top', tag: 'Firme · Multizonas', old: 1990000, now: 995000, img: 'img/06.png?v=1766435242&width=600' },
+  { id: 'ortholife-foam', name: 'Colchón Ortholife Foam', tag: 'Espuma alta densidad · Multi-medidas', desc: 'Colchón en espuma de alta densidad, pensado para un soporte uniforme y buena adaptabilidad al cuerpo. Disponible en varias medidas.', old: 1258000, now: 629000, img: 'img/02.png?v=1766081598&width=600' },
+  { id: 'futura', name: 'Colchón Resortado Futura', tag: 'Resortes Bonnell · Firmeza media', desc: 'Colchón resortado con sistema Bonnell y firmeza media: una opción intermedia entre suavidad y soporte para el descanso diario.', old: 1390000, now: 695000, img: 'img/02.png?v=1767815535&width=600' },
+  { id: 'ortholife-firm', name: 'Colchón Ortholife Firm', tag: 'Soporte firme · Zona lumbar', desc: 'Colchón de soporte firme, orientado a quienes buscan mayor respaldo en la zona lumbar durante el descanso.', old: 1398000, now: 699000, img: 'img/03.png?v=1766081671&width=600' },
+  { id: 'relaxoflex', name: 'Colchón Relaxoflex', tag: 'Doble cara · Antiácaros', desc: 'Colchón doble cara con tratamiento antiácaros, pensado para un descanso más higiénico y versátil según la temporada.', old: 1490000, now: 745000, img: 'img/04.png?v=1769433827&width=600' },
+  { id: 'paradise-200', name: 'Colchón Paradise Serie I 200', tag: 'Comprimido · Fácil transporte', desc: 'Colchón comprimido para facilitar el transporte y la instalación, conservando el soporte propio de la línea Paradise.', old: 1599800, now: 799900, img: 'img/05.png?v=1767021618&width=600' },
+  { id: 'paraiso-gold', name: 'Colchón Paraíso Gold', tag: 'Maxi Top · Garantía 7 años', desc: 'Colchón de la línea Paraíso con acabado Maxi Top, cubierto por la garantía de fábrica de 7 años.', old: 1639000, now: 819500, img: 'img/04.png?v=1772594318&width=600' },
+  { id: 'emotion-life', name: 'Colchón Emotion Life Maxi Top', tag: 'Pillow top · Multizona', desc: 'Colchón con acabado pillow top y soporte multizona, pensado para adaptarse a distintas posiciones de descanso.', old: 1790000, now: 895000, img: 'img/03.png?v=1766436427&width=600' },
+  { id: 'paraiso-premium', name: 'Colchón Paraíso Premium Gold', tag: 'Línea premium · Garantía 7 años', desc: 'Colchón de la línea premium Paraíso, con acabado Gold y garantía de fábrica de 7 años.', old: 1837000, now: 918500, img: 'img/02.png?v=1770383626&width=600' },
+  { id: 'emotion-firm', name: 'Colchón Emotion Firm Maxi Top', tag: 'Firme · Multizonas', desc: 'Colchón firme con soporte multizona, para quienes prefieren una superficie de descanso más resistente.', old: 1990000, now: 995000, img: 'img/06.png?v=1766435242&width=600' },
 ];
 
 window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
+
+// Copia propia e inmutable del catálogo de OFERTAS, tomada en el momento en
+// que este script se ejecuta (antes de que combos.js u otro script le pegue
+// más productos a window.products). El carrusel de ofertas siempre pinta
+// esta copia, nunca window.products directamente — así nunca le aparecen
+// combos ni ningún otro producto agregado después, sin importar el orden
+// o el timing de carga de los demás scripts.
+const ofertasCatalog = window.products.slice();
 
 (function () {
 
@@ -44,8 +52,8 @@ window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
       return;
     }
 
-    // ---- pintar tarjetas del catálogo ----
-    products.forEach(p => {
+    // ---- pintar tarjetas del catálogo (solo ofertas, nunca combos) ----
+    ofertasCatalog.forEach(p => {
       const off = Math.round((1 - p.now / p.old) * 100);
       const card = document.createElement('div');
       card.className = 'pcard';
@@ -61,6 +69,7 @@ window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
             <span class="old">${money(p.old)}</span>
             <span class="now">${money(p.now)}</span>
           </div>
+          <a class="ver-detalle" href="detalle.html?id=${encodeURIComponent(p.id)}">Ver especificaciones</a>
           <button class="add-btn" data-id="${p.id}">Agregar al carrito</button>
         </div>`;
       grid.appendChild(card);

@@ -13,10 +13,36 @@
      - window.showToast(msg)            → toast.js
    Expone globalmente: window.addToCart, window.changeQty,
      window.removeItem, window.checkout, window.openCart, window.closeCart
+
+   El carrito se guarda en localStorage bajo la clave "orion-cart" para que
+   NO se pierda al navegar entre páginas del sitio (por ejemplo entre
+   index.html y detalle.html) ni al refrescar. Antes vivía solo en memoria
+   y se perdía con cualquier recarga.
    ============================================================ */
 (function(){
 
-  let cart = [];
+  const STORAGE_KEY = 'orion-cart';
+
+  function loadCart(){
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (err) {
+      console.warn('[carrito] No se pudo leer el carrito guardado:', err);
+      return [];
+    }
+  }
+
+  function saveCart(){
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    } catch (err) {
+      console.warn('[carrito] No se pudo guardar el carrito:', err);
+    }
+  }
+
+  let cart = loadCart();
 
   function renderCart(){
     const countEl = document.getElementById('cartCount');
@@ -70,10 +96,12 @@
     `;
   }
 
-  window.addToCart = function(id){
+  window.addToCart = function(id, qty){
+    qty = qty && qty > 0 ? qty : 1;
     const existing = cart.find(i => i.id === id);
-    if(existing){ existing.qty++; }
-    else { cart.push({ id, qty: 1 }); }
+    if(existing){ existing.qty += qty; }
+    else { cart.push({ id, qty }); }
+    saveCart();
     renderCart();
     if(window.showToast) window.showToast('Producto agregado al carrito');
   };
@@ -83,11 +111,13 @@
     if(!item) return;
     item.qty += delta;
     if(item.qty <= 0){ cart = cart.filter(i => i.id !== id); }
+    saveCart();
     renderCart();
   };
 
   window.removeItem = function(id){
     cart = cart.filter(i => i.id !== id);
+    saveCart();
     renderCart();
   };
 
