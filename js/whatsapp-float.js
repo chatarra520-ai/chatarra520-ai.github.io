@@ -8,7 +8,7 @@
    Para cambiar el número o el mensaje, editar las constantes de abajo.
    ============================================================ */
 (function () {
-  const PHONE = '573002853282'; // +57 300 2853282, formato internacional sin '+' ni espacios
+  const PHONE = '573115330695'; // +57 311 5330695, formato internacional sin '+' ni espacios
   const MESSAGE = 'Hola, quiero más información sobre los colchones Orión';
 
   function buildHref() {
