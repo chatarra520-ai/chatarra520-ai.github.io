@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especificaciones del producto — Colchones Orión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <section>
+    <div class="wrapper-fluid utility-bar-color">
+      <div class="container utility-bar">
+        <div class="col-3">
+          <div class="brand-badge">
+            <a href="index.html"><img src="img/logo.png" alt="Colchones Orión"></a>
+          </div>
+        </div>
+        <div class="col-9">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
+          Garantía de 7 años en toda la línea Paraíso</div>
+      </div>
+    </div>
+  </section>
+  <header>
+    <div class="wrapper-fluid menu-bar-color ">
+      <div class="container menu-bar">
+        <div class="col-3">
+        </div>
+        <div class="col-9">
+          <div class="nav">
+            <nav class="nav-links" id="navLinks">
+              <a href="index.html#ofertas">Ofertas</a>
+              <a href="index.html#firmeza">Encuentra tu firmeza</a>
+              <a href="index.html#confianza">Por qué elegirnos</a>
+              <a href="index.html#opiniones">Opiniones</a>
+              <a href="index.html#preguntas">Preguntas</a>
+            </nav>
+            <div class="nav-actions">
+              <button class="cart-btn" onclick="openCart()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                Carrito <span class="cart-count" id="cartCount">0</span>
+              </button>
+              <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="block">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="index.html">Inicio</a> / <span id="crumbName">Producto</span></p>
+      <div id="detailRoot"><!-- lo llena js/detalle.js --></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Colchones Orión"></a></div>
+          <p style="margin-top:14px;max-width:260px;">Colchones, bases y ropa de cama diseñados y fabricados en
+            Colombia. Envíos a todo el país.</p>
+        </div>
+        <div>
+          <h5>Categorías</h5>
+          <a href="index.html#ofertas" style="display:block;">Colchones</a>
+          <a href="index.html#combos" style="display:block;">Combos</a>
+          <a href="index.html#ofertas" style="display:block;">Bases cama</a>
+          <a href="index.html#ofertas" style="display:block;">Ropa de cama</a>
+        </div>
+        <div>
+          <h5>Información</h5>
+          <a href="index.html#preguntas" style="display:block;">Preguntas frecuentes</a>
+          <a href="#" style="display:block;">Política de garantía</a>
+          <a href="#" style="display:block;">Política de envío</a>
+          <a href="#" style="display:block;">Términos y condiciones</a>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <p>atencionalcliente@colchonesorion.com.co</p>
+          <p>colchonesorion.com.co SAS</p>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Colchones Orion. Todos los derechos reservados.</span>
+        <span>Maqueta de landing page — no es el sitio oficial</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" onclick="closeCart()"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-head">
+      <h3>Tu carrito</h3>
+      <button class="drawer-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="drawer-items" id="drawerItems"></div>
+    <div class="drawer-foot" id="drawerFoot"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/toast.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/carrusel-ofertas.js"></script>
+  <script src="js/combos.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/detalle.js"></script>
+  <script src="js/whatsapp-float.js"></script>
+</body>
+
+</html>

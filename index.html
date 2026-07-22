@@ -18,11 +18,11 @@
       <div class="container utility-bar">
         <div class="col-3">
           <div class="brand-badge">
-            <img src="img/logo.png" alt="">
+            <a href="index.html"><img src="img/logo.png" alt="Colchones Orión"></a>
           </div>
         </div>
         <div class="col-9">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
-          Garantía de 7 años en toda la línea Paraíso</div>
+          Garantía de 5 años en toda la línea Paraíso</div>
       </div>
     </div>
   </section>
@@ -88,7 +88,7 @@
         <div class="hero-trust">
           <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BE8A3D" stroke-width="2.5">
               <path d="M20 6L9 17l-5-5" />
-            </svg> Garantía de 7 años</div>
+            </svg> Garantía de 5 años</div>
           <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BE8A3D" stroke-width="2.5">
               <path d="M20 6L9 17l-5-5" />
             </svg> Envíos a todo el país</div>
@@ -107,6 +107,10 @@
           <div class="price-tag-hero">
             <span class="old">$1.639.000</span>
             <span class="now">$819.500</span>
+          </div>
+          <div class="hero-card-actions">
+            <a href="detalle.html?id=paraiso-gold" class="ver-detalle">Ver especificaciones</a>
+            <button class="add-btn" onclick="addToCart('paraiso-gold')">Agregar al carrito</button>
           </div>
         </div>
       </div>
@@ -152,7 +156,21 @@
         <h2 class="combostitle">Combos</h2>
         <p> <span class="combostexto">Colchón + base + accesorios, empacados juntos a un precio especial.</span></p>
       </div>
-      <div class="grid-products" id="combosGrid"></div>
+      <div class="oferta-carousel-wrap">
+        <div class="oferta-carousel" id="combosGrid"></div>
+        <div class="oc-nav">
+          <button class="oc-arrow" id="ccPrev" onclick="ccMove(-1)" aria-label="Anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="oc-arrow" id="ccNext" onclick="ccMove(1)" aria-label="Siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -185,7 +203,7 @@
       </div>
       <div class="features">
         <div class="feature">
-          <div class="num">7 años</div>
+          <div class="num">5 años</div>
           <h4>Garantía real</h4>
           <p>Cubrimos defectos de fabricación en toda la línea Paraíso, con manual de uso claro.</p>
         </div>
@@ -224,7 +242,7 @@
     <div class="wrap">
       <div class="foot-grid">
         <div>
-          <div class="logo"><img src="img/logo.png"></div>
+          <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Colchones Orión"></a></div>
           <p style="margin-top:14px;max-width:260px;">Colchones, bases y ropa de cama diseñados y fabricados en
             Colombia. Envíos a todo el país.</p>
         </div>
@@ -276,8 +294,8 @@
   <script src="js/faq.js"></script>
   <script src="js/urgencia.js"></script>
   <script src="js/newsletter.js"></script>
-  <script src="js/newsletter.js"></script>
   <script src="js/combos.js"></script>
+  <script src="js/whatsapp-float.js"></script>
 </body>
 
 </html>
