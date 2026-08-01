@@ -113,11 +113,17 @@
 
    .brand-badge {
        position: absolute;
-
+       top: -15px;
        box-shadow: 0 6px 22px rgba(0, 0, 0, .18);
        z-index: 70;
        background-color: var(--ink);
-       padding: 30px 20px;
+       padding: 20px 20px;
+   }
+
+   .cat-logo {
+       display: flex;
+       padding: 8px 12px;
+       letter-spacing: .02em;
    }
 
    /* Recuadro más pequeño en móvil: en 860px+ el nav sigue con su
@@ -126,6 +132,7 @@
       para que no se coma la barra ni tape el texto de utility-bar. */
    @media(max-width:560px) {
        .brand-badge {
+           position: absolute;
            width: 120px;
            height: 90px;
            left: 0;
