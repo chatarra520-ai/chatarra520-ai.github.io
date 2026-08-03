@@ -44,8 +44,7 @@
 
    h1,
    h2,
-   h3,
-   .serif {
+   h3 {
        font-family: 'Fraunces', serif;
    }
 
@@ -350,14 +349,6 @@
        font-style: italic;
        color: var(--clay);
        font-weight: 500;
-   }
-
-   .hero p.lead {
-       font-size: 17.5px;
-       color: var(--ink-soft);
-       max-width: 460px;
-       line-height: 1.55;
-       margin-bottom: 30px;
    }
 
    .hero-ctas {
@@ -783,70 +774,6 @@
        line-height: 1.5;
    }
 
-   /* ---------- testimonios ---------- */
-   .testi-grid {
-       display: grid;
-       grid-template-columns: repeat(3, 1fr);
-       gap: 22px;
-   }
-
-   .testi {
-       background: var(--panel);
-       border: 1px solid var(--line);
-       border-radius: 16px;
-       padding: 26px;
-   }
-
-   .stars {
-       color: var(--gold);
-       font-size: 14px;
-       letter-spacing: 2px;
-       margin-bottom: 14px;
-   }
-
-   .testi p.quote {
-       font-size: 14.5px;
-       line-height: 1.6;
-       color: var(--ink);
-       margin-bottom: 18px;
-   }
-
-   .testi .who {
-       display: flex;
-       align-items: center;
-       gap: 10px;
-   }
-
-   .avatar {
-       width: 34px;
-       height: 34px;
-       border-radius: 100px;
-       background: var(--gold);
-       color: #2A1E08;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       font-weight: 800;
-       font-size: 13px;
-   }
-
-   .who .name {
-       font-size: 13.5px;
-       font-weight: 700;
-   }
-
-   .who .loc {
-       font-size: 12px;
-       color: var(--ink-soft);
-   }
-
-   .note-mock {
-       font-size: 12px;
-       color: var(--ink-soft);
-       margin-top: 20px;
-       opacity: .7;
-   }
-
    /* ---------- faq ---------- */
    .faq-item {
        border-bottom: 1px solid var(--line);
@@ -988,7 +915,6 @@
        .hero-grid,
        .firmeza-grid,
        .features,
-       .testi-grid,
        .foot-grid {
            grid-template-columns: 1fr;
        }
@@ -1557,6 +1483,34 @@
        font-weight: 800;
        padding: 4px 10px;
        border-radius: 100px;
+   }
+
+   .size-selector {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+       margin-bottom: 22px;
+   }
+
+   .size-btn {
+       padding: 10px 18px;
+       border-radius: 8px;
+       border: 1.5px solid transparent;
+       background: #E9E4D8;
+       color: var(--ink-soft);
+       font-size: 14px;
+       font-weight: 700;
+       cursor: pointer;
+       transition: .15s;
+   }
+
+   .size-btn:hover {
+       border-color: var(--ink);
+   }
+
+   .size-btn.active {
+       background: var(--ink);
+       color: var(--gold);
    }
 
    .detail-desc {
