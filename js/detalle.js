@@ -17,7 +17,7 @@
   // especificaciones técnicas (materiales, densidades, etc.) que no están
   // confirmadas — eso hay que completarlo con la info real de cada producto.
   const TRUST_ITEMS = [
-    'Garantía de fábrica de 7 años en toda la línea Paraíso',
+    'Garantía de fábrica de 5 años',
     'Despacho a nivel nacional, con seguimiento del pedido',
     'Pago 100% seguro: tarjetas, PSE, contraentrega y cuotas',
     'Cambio por inconformidad dentro de los primeros 30 días'

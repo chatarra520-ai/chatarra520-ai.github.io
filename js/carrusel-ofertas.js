@@ -42,7 +42,7 @@ window.products = [
   },
 
   {
-    id: 'medio-orion-galaxi', name: 'Colchón Orion Galaxi', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500, img: 'img/medio/Medio-orion-galaxi.png?v=1766081671&width=600', sizes: [
+    id: 'medio-orion-galaxi', name: 'Colchón Orion Galaxi', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500, img: 'img/Medio/Medio-orion-galaxi.png?v=1766081671&width=600', sizes: [
       { label: "Sencillo", now: 1204500, old: 2409000 },
       { label: "Semidoble", now: 1358500, old: 2717000 },
       { label: "Doble", now: 1479500, old: 2959000 },
@@ -99,14 +99,18 @@ window.products = [
       { label: "Queen", now: 1299900, old: 2599800 },
       { label: "King", now: 1899900, old: 3799800 }]
   },
-
-
-
-
-
-
-
+  {
+    id: 'firme-imperium', name: 'Colchón Imperium', tag: 'Doble cara · Multi-medidas  · Firmeza firme', desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo', old: 6290000, now: 3145000, img: 'img/Firme/firme-orion-imperium.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 5390000, old: 2692000 },
+      { label: "Semidoble", now: 3145000, old: 6290000 },
+      { label: "Doble", now: 3645000, old: 7290000 },
+      { label: "Queen", now: 4045000, old: 8090000 },
+      { label: "King", now: 4845000, old: 6990000 }]
+  },
 ];
+
+
+
 
 window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
 

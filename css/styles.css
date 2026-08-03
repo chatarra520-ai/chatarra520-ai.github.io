@@ -1394,10 +1394,13 @@
    }
 
    /* ---------- página de detalle de producto ---------- */
+
    .breadcrumb {
+       margin-top: -25px;
        font-size: 13px;
        color: var(--ink-soft);
-       margin-bottom: 24px;
+       margin-bottom: 60px;
+       padding: 0 0 0 185px;
    }
 
    .breadcrumb a {
@@ -1408,6 +1411,25 @@
    .breadcrumb a:hover {
        color: var(--ink);
    }
+
+   /* ---------- Tablet ---------- */
+   @media (max-width: 1024px) {
+       /* estilos para tablet */
+   }
+
+   /* ---------- Tablet chica / Móvil grande ---------- */
+   @media (max-width: 768px) {
+       /* estilos para tablet chica */
+   }
+
+   /* ---------- Móvil ---------- */
+   @media (max-width: 480px) {
+       .breadcrumb {
+           padding: 0 0 0 0px;
+       }
+   }
+
+
 
    .detail-grid {
        display: grid;

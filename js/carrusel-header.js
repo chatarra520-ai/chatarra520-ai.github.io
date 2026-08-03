@@ -18,25 +18,25 @@
     {
       img: 'img/carrusel/07.png?v=1772594318&width=1400',
       imgMobile: 'img/carrusel/07-movil.png?v=1772594318&width=900',
-      //eyebrow: 'Línea Paraíso Gold',
+
       title: 'El descanso que tu espalda pide hace meses',
-      //text: 'Maxi top, garantía de 7 años y hasta 50% de descuento por lanzamiento de temporada.',
+
       cta: 'Ver oferta', target: '#ofertas'
     },
     {
       img: 'img/carrusel/08.png?v=1767815535&width=1400',
       imgMobile: 'img/carrusel/08-movil.png?v=1767815535&width=900',
-      //eyebrow: 'Resortado Futura',
+
       title: 'Firmeza media para parejas que duermen distinto',
-      //text: 'Resortes Bonnell independientes y doble cara antiácaros, desde $695.000.',
+
       cta: 'Comprar ahora', target: '#ofertas'
     },
     {
       img: 'img/carrusel/09.png?v=1766436427&width=1400',
       imgMobile: 'img/carrusel/09-movil.png?v=1766436427&width=900',
-      // eyebrow: 'Encuentra tu firmeza',
+
       title: 'No adivines: hazte el test de firmeza ideal',
-      //text: 'Blando, medio o firme — te mostramos por qué funciona antes de comprar.',
+
       cta: 'Hacer el test', target: '#firmeza'
     }
   ];

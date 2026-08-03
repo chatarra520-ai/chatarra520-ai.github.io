@@ -18,41 +18,44 @@
 
   const combos = [
     {
-      id: 'combo-uno',
-      name: 'Colchom + Base Cama',
-      tag: 'Colchón Ortholife Foam + Base cama + 2 almohadas',
-      desc: 'Combo para amoblar el dormitorio completo: colchón Ortholife Foam junto con base cama y 2 almohadas, despachados juntos.',
-      old: 1450000, now: 850000,
-      img: 'img/combos/10.png'
+      id: 'Almohada siliconada',
+      name: 'Almohada Sox 70',
+      tag: 'Interior en fibra siliconada brinda una sensación de soporte. Material 100% hecho en microfibra para una postura adecuada y descansada',
+      desc: 'Una unidad',
+      old: 49800, now: 24900,
+      img: 'img/combos/Al-sox70.png',
+
     },
     {
-      id: 'combo-dos',
-      name: 'Colchon + Plumon',
-      tag: 'Colchón Paraíso Gold + Base cama + Protector antifluidos',
-      desc: 'Combo con el colchón Paraíso Gold, base cama y protector antifluidos, para cuidar el colchón desde el primer día.',
-      old: 1950000, now: 1050000,
-      img: 'img/combos/11.png'
+      id: 'Protector acolchado',
+      name: 'Protector acolchado',
+      tag: 'Protector de colchón fuelle completo en tela y resorte en todo el contorno asegura el máximo ajuste al colchón',
+      desc: 'Multi medidas',
+      old: 49900, now: 99800,
+      img: 'img/combos/Protector-acolchado.png',
+      sizes: [
+        { label: "Sencillo", now: 44900, old: 89800 },
+        { label: "Semidoble", now: 49900, old: 99800 },
+        { label: "Doble", now: 119800, old: 59900 },
+        { label: "Queen", now: 64900, old: 129800 },
+        { label: "King", now: 74900, old: 149800 }]
     },
+
     {
-      id: 'combo-tres',
-      name: 'Combo Tres',
-      tag: 'Colchón Paraíso Premium Gold + Base tapizada + Sábanas + 2 almohadas',
-      desc: 'El combo más completo de la línea: colchón Paraíso Premium Gold, base tapizada, sábanas y 2 almohadas.',
-      old: 2350000, now: 1250000,
-      img: 'img/combos/10.png'
+      id: 'Base-Cama',
+      name: 'Base Cama Royal',
+      tag: 'Una opción práctica para el dormitorio es crear un espacio cómodo y funcional que favorezca el descanso.',
+      desc: 'Multi medidas',
+      old: 858000, now: 429000,
+      img: 'img/combos/Protector-acolchado.png',
+      sizes: [
+        { label: "Sencillo", now: 858000, old: 422900 },
+        { label: "Semidoble", now: 429000, old: 858000 },
+        { label: "Doble", now: 479000, old: 958000 },
+        { label: "Queen", now: 319000, old: 638000 },
+        { label: "King", now: 329000, old: 658000 }]
     },
-    // ⚠️ PLACEHOLDER — combo de relleno para completar los 5 del carrusel,
-    // pedido por el cliente ("crea una y yo hago lo demás"). Nombre, precios
-    // e imagen son de ejemplo: hay que reemplazarlos por datos reales antes
-    // de publicar. Falta un 5º combo, que el cliente agrega directamente.
-    {
-      id: 'combo-cuatro',
-      name: '[PLACEHOLDER] Combo Cuatro',
-      tag: '[Completar: colchón + base + accesorios de este combo]',
-      desc: '[Completar: descripción real de este combo antes de publicar]',
-      old: 1690000, now: 890000,
-      img: 'img/combos/11.png'
-    }
+
   ];
 
   function initCombos() {

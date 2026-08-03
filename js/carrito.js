@@ -11,6 +11,9 @@
    Requiere en el ámbito global (cargar ANTES que este archivo):
      - window.products, window.money   → carrusel-ofertas.js
      - window.showToast(msg)            → toast.js
+   Opcional: window.categoriaCatalogoReady → categoria-catalogo.js. Si
+   está presente, el carrito se vuelve a pintar cuando resuelva, para
+   mostrar bien los colchones de firme/medio/suave en cualquier página.
    Expone globalmente: window.addToCart, window.changeQty,
      window.removeItem, window.checkout, window.openCart, window.closeCart
 
@@ -18,6 +21,16 @@
    NO se pierda al navegar entre páginas del sitio (por ejemplo entre
    index.html y detalle.html) ni al refrescar. Antes vivía solo en memoria
    y se perdía con cualquier recarga.
+
+   ⚠️ TAMAÑOS: los colchones tienen precio distinto por tamaño (ver
+   "sizes" en carrusel-ofertas.js). Cada línea del carrito guarda
+   { id, size, qty }: "size" es el label del tamaño elegido (ej.
+   "Semidoble") o null si el producto no maneja tamaños (ej. combos).
+   Dos líneas con el mismo id pero distinto size son líneas SEPARADAS
+   (ej. el mismo colchón en Sencillo y en Queen a la vez), tal como se
+   acordó. El precio de cada línea se resuelve SIEMPRE contra el
+   catálogo (p.sizes / p.now), nunca se guarda un precio suelto en el
+   carrito, para que si el catálogo cambia el carrito no quede desfasado.
    ============================================================ */
 (function(){
 
@@ -44,6 +57,22 @@
 
   let cart = loadCart();
 
+  // Resuelve el precio "ahora" de una línea del carrito contra el
+  // catálogo actual: si la línea tiene "size", busca ese tamaño dentro
+  // de p.sizes; si no, usa el precio base del producto (combos y
+  // cualquier producto sin tamaños).
+  function resolvePrice(p, size){
+    if (size && Array.isArray(p.sizes)) {
+      const s = p.sizes.find(sz => sz.label === size);
+      if (s) return s.now;
+    }
+    return p.now;
+  }
+
+  function lineLabel(p, size){
+    return size ? `${p.name} · ${size}` : p.name;
+  }
+
   function renderCart(){
     const countEl = document.getElementById('cartCount');
     const itemsEl = document.getElementById('drawerItems');
@@ -68,17 +97,19 @@
     itemsEl.innerHTML = cart.map(ci => {
       const p = products.find(pp => pp.id === ci.id);
       if(!p) return '';
+      const price = resolvePrice(p, ci.size);
+      const sizeAttr = ci.size ? `'${ci.size}'` : 'null';
       return `
       <div class="drawer-item">
         <img src="${p.img}" alt="${p.name}">
         <div class="info">
-          <h4>${p.name}</h4>
-          <div class="price">${money(p.now)}</div>
+          <h4>${lineLabel(p, ci.size)}</h4>
+          <div class="price">${money(price)}</div>
           <div class="qty-row">
-            <button onclick="changeQty('${p.id}',-1)">–</button>
+            <button onclick="changeQty('${p.id}',-1,${sizeAttr})">–</button>
             <span>${ci.qty}</span>
-            <button onclick="changeQty('${p.id}',1)">+</button>
-            <button class="remove-item" onclick="removeItem('${p.id}')">Quitar</button>
+            <button onclick="changeQty('${p.id}',1,${sizeAttr})">+</button>
+            <button class="remove-item" onclick="removeItem('${p.id}',${sizeAttr})">Quitar</button>
           </div>
         </div>
       </div>`;
@@ -86,7 +117,7 @@
 
     const subtotal = cart.reduce((s,ci) => {
       const p = products.find(pp => pp.id === ci.id);
-      return s + (p ? p.now * ci.qty : 0);
+      return s + (p ? resolvePrice(p, ci.size) * ci.qty : 0);
     }, 0);
 
     footEl.innerHTML = `
@@ -96,27 +127,33 @@
     `;
   }
 
-  window.addToCart = function(id, qty){
+  // size es opcional (null/undefined para productos sin tamaños, como
+  // los combos). Dos llamadas con el mismo id pero distinto size crean
+  // dos líneas separadas en el carrito.
+  window.addToCart = function(id, qty, size){
     qty = qty && qty > 0 ? qty : 1;
-    const existing = cart.find(i => i.id === id);
+    size = size || null;
+    const existing = cart.find(i => i.id === id && i.size === size);
     if(existing){ existing.qty += qty; }
-    else { cart.push({ id, qty }); }
+    else { cart.push({ id, qty, size }); }
     saveCart();
     renderCart();
     if(window.showToast) window.showToast('Producto agregado al carrito');
   };
 
-  window.changeQty = function(id, delta){
-    const item = cart.find(i => i.id === id);
+  window.changeQty = function(id, delta, size){
+    size = size || null;
+    const item = cart.find(i => i.id === id && i.size === size);
     if(!item) return;
     item.qty += delta;
-    if(item.qty <= 0){ cart = cart.filter(i => i.id !== id); }
+    if(item.qty <= 0){ cart = cart.filter(i => !(i.id === id && i.size === size)); }
     saveCart();
     renderCart();
   };
 
-  window.removeItem = function(id){
-    cart = cart.filter(i => i.id !== id);
+  window.removeItem = function(id, size){
+    size = size || null;
+    cart = cart.filter(i => !(i.id === id && i.size === size));
     saveCart();
     renderCart();
   };
@@ -145,4 +182,13 @@
     console.warn('[carrito] No se pudo inicializar:', err);
   }
 
+  // Si esta página incluye js/categoria-catalogo.js (fetch de firme/medio/
+  // suave.html), el carrito puede pintarse ANTES de que esos productos
+  // terminen de llegar. Cuando lleguen, se vuelve a pintar para que se vean
+  // bien nombre/imagen/precio de cualquier colchón de esas categorías.
+  if (window.categoriaCatalogoReady) {
+    window.categoriaCatalogoReady.then(renderCart).catch(() => {});
+  }
+
 })();
+
