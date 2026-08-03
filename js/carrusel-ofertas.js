@@ -14,18 +14,98 @@
    Requiere en el ámbito global: window.addToCart(id), definido en el
    <script> del HTML (para el carrito).
    Expone globalmente: window.ocMove(dir), window.products, window.money
+
+   ⚠️ Cada producto tiene un array "sizes" (Sencillo, Semidoble, Doble,
+   Queen, King) con precio propio por tamaño, usado en detalle.html.
+   Los valores de "sizes" son PLACEHOLDER (calculados con un multiplicador
+   parejo a partir del precio base) — reemplázalos por los precios reales.
+   Cuando un tamaño no tiene oferta, su "old" es null.
    ============================================================ */
 
 window.products = [
-  { id: 'ortholife-foam', name: 'Colchón Ortholife Foam', tag: 'Espuma alta densidad · Multi-medidas', desc: 'Colchón en espuma de alta densidad, pensado para un soporte uniforme y buena adaptabilidad al cuerpo. Disponible en varias medidas.', old: 1258000, now: 629000, img: 'img/02.png?v=1766081598&width=600' },
-  { id: 'futura', name: 'Colchón Resortado Futura', tag: 'Resortes Bonnell · Firmeza media', desc: 'Colchón resortado con sistema Bonnell y firmeza media: una opción intermedia entre suavidad y soporte para el descanso diario.', old: 1390000, now: 695000, img: 'img/02.png?v=1767815535&width=600' },
-  { id: 'ortholife-firm', name: 'Colchón Ortholife Firm', tag: 'Soporte firme · Zona lumbar', desc: 'Colchón de soporte firme, orientado a quienes buscan mayor respaldo en la zona lumbar durante el descanso.', old: 1398000, now: 699000, img: 'img/03.png?v=1766081671&width=600' },
-  { id: 'relaxoflex', name: 'Colchón Relaxoflex', tag: 'Doble cara · Antiácaros', desc: 'Colchón doble cara con tratamiento antiácaros, pensado para un descanso más higiénico y versátil según la temporada.', old: 1490000, now: 745000, img: 'img/04.png?v=1769433827&width=600' },
-  { id: 'paradise-200', name: 'Colchón Paradise Serie I 200', tag: 'Comprimido · Fácil transporte', desc: 'Colchón comprimido para facilitar el transporte y la instalación, conservando el soporte propio de la línea Paradise.', old: 1599800, now: 799900, img: 'img/05.png?v=1767021618&width=600' },
-  { id: 'paraiso-gold', name: 'Colchón Paraíso Gold', tag: 'Maxi Top · Garantía 7 años', desc: 'Colchón de la línea Paraíso con acabado Maxi Top, cubierto por la garantía de fábrica de 7 años.', old: 1639000, now: 819500, img: 'img/04.png?v=1772594318&width=600' },
-  { id: 'emotion-life', name: 'Colchón Emotion Life Maxi Top', tag: 'Pillow top · Multizona', desc: 'Colchón con acabado pillow top y soporte multizona, pensado para adaptarse a distintas posiciones de descanso.', old: 1790000, now: 895000, img: 'img/03.png?v=1766436427&width=600' },
-  { id: 'paraiso-premium', name: 'Colchón Paraíso Premium Gold', tag: 'Línea premium · Garantía 7 años', desc: 'Colchón de la línea premium Paraíso, con acabado Gold y garantía de fábrica de 7 años.', old: 1837000, now: 918500, img: 'img/02.png?v=1770383626&width=600' },
-  { id: 'emotion-firm', name: 'Colchón Emotion Firm Maxi Top', tag: 'Firme · Multizonas', desc: 'Colchón firme con soporte multizona, para quienes prefieren una superficie de descanso más resistente.', old: 1990000, now: 995000, img: 'img/06.png?v=1766435242&width=600' },
+  {
+    id: 'suave-orion-nube', name: 'Colchón Orion Nube', tag: 'Doble cara · Multi-medidas  · Firmeza Suave', desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ', old: 3890000, now: 1945000, img: 'img/suave/suave-orion-nube.png?v=1766081598&width=600', sizes: [
+      { label: "Sencillo", now: 516000, old: 1032000 },
+      { label: "Semidoble", now: 1945000, old: 3890000 },
+      { label: "Doble", now: 2254000, old: 4490000 },
+      { label: "Queen", now: 2845000, old: 5690000 },
+      { label: "King", now: 3695000, old: 7390000 }]
+  },
+
+  {
+    id: 'medio-Orion-Aurora', name: 'Colchón Orion Aurora', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2409000, now: 1204500, img: 'img/Medio/medio-Orion-Aurora.png?v=1767815535&width=600', sizes: [
+      { label: "Sencillo", now: 1094500, old: 2189000 },
+      { label: "Semidoble", now: 1204500, old: 2409000 },
+      { label: "Doble", now: 1369500, old: 2739000 },
+      { label: "Queen", now: 1567500, old: 3135500 },
+      { label: "King", now: 2117500, old: 4235500 }]
+  },
+
+  {
+    id: 'medio-orion-galaxi', name: 'Colchón Orion Galaxi', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500, img: 'img/medio/Medio-orion-galaxi.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 1204500, old: 2409000 },
+      { label: "Semidoble", now: 1358500, old: 2717000 },
+      { label: "Doble", now: 1479500, old: 2959000 },
+      { label: "Queen", now: 1699500, old: 3399000 },
+      { label: "King", now: 2359500, old: 4719000 }]
+  },
+
+  {
+    id: 'firme-super-flex-foam', name: 'Colchón Super Flex Foam', tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme', desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo', old: 2018000, now: 1009000, img: 'img/Firme/firme-super-flex-foam.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 879000, old: 1758000 },
+      { label: "Semidoble", now: 1009000, old: 2018000 },
+      { label: "Doble", now: 1069000, old: 2138000 },
+      { label: "Queen", now: 1259000, old: 2518000 },
+      { label: "King", now: 1639000, old: 3278000 }]
+  },
+
+  {
+    id: 'firme-super-flex-firm', name: 'Colchón Super Flex Firm', tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme', desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo', old: 2138000, now: 1069000, img: 'img/Firme/firme-super-flex-firm.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 949000, old: 1898000 },
+      { label: "Semidoble", now: 1069000, old: 2138000 },
+      { label: "Doble", now: 1199000, old: 2398000 },
+      { label: "Queen", now: 1399000, old: 2798000 },
+      { label: "King", now: 1899000, old: 3798000 }]
+  },
+
+  {
+    id: 'firme-sensation-firm', name: 'Colchón Sensation Firm', tag: 'Una cara · Multi-medidas  · Firmeza Firme', desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo', old: 1690000, now: 845000, img: 'img/Firme/firme-sensation-firm.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 745000, old: 1490000 },
+      { label: "Semidoble", now: 845000, old: 1690000 },
+      { label: "Doble", now: 945000, old: 1890000 }]
+  },
+
+
+  {
+    id: 'medio-estelar', name: 'Colchón Estelar', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2490000, now: 1245000, img: 'img/Medio/medio-estelar.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 1095000, old: 2190000 },
+      { label: "Semidoble", now: 1245000, old: 2490000 },
+      { label: "Doble", now: 1395000, old: 2790000 }]
+  },
+
+  {
+    id: 'medio-orion-cosmos', name: 'Colchón Orion Cosmos', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 1445000, now: 1245000, img: 'img/Medio/medio-orion-cosmos.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 1195000, old: 2390000 },
+      { label: "Semidoble", now: 1445000, old: 2490000 },
+      { label: "Doble", now: 1845000, old: 3690000 },
+      { label: "Queen", now: 1995000, old: 3990000 },
+      { label: "King", now: 2445000, old: 4890000 }]
+  },
+  {
+    id: 'Medio-orion-infinity', name: 'Colchón Orion infinity (Comprimido)', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 899900, now: 1799800, img: 'img/Medio/Medio-orion-infinity.png?v=1766081671&width=600', sizes: [
+      { label: "Sencillo", now: 799900, old: 1599800 },
+      { label: "Semidoble", now: 899900, old: 1799800 },
+      { label: "Doble", now: 999900, old: 1999800 },
+      { label: "Queen", now: 1299900, old: 2599800 },
+      { label: "King", now: 1899900, old: 3799800 }]
+  },
+
+
+
+
+
+
+
 ];
 
 window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };

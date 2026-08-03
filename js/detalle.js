@@ -6,6 +6,9 @@
    pueda hacer click en "Agregar al carrito"):
      - window.products, window.money   → carrusel-ofertas.js / combos.js
      - window.addToCart(id, qty)        → carrito.js
+     - window.categoriaCatalogoReady    → categoria-catalogo.js (opcional;
+       si está presente, se espera antes de buscar el producto, para que
+       los colchones de firme/medio/suave también se encuentren aquí)
    ============================================================ */
 (function () {
 
@@ -38,30 +41,48 @@
 
   function renderProduct(root, p) {
     const money = window.money || (n => '$' + n);
-    const off = Math.round((1 - p.now / p.old) * 100);
     const isPlaceholder = /\[PLACEHOLDER\]|\[Completar/.test(p.name + p.tag);
+    const hasSizes = Array.isArray(p.sizes) && p.sizes.length > 0;
 
     document.title = `${p.name} — Colchones Orión`;
     const crumb = document.getElementById('crumbName');
     if (crumb) crumb.textContent = p.name;
 
+    // Tamaño seleccionado por defecto: "Semidoble" si existe, si no el
+    // primero de la lista. Productos sin "sizes" (ej. combos) no usan
+    // selector y siguen mostrando el precio único p.now / p.old de siempre.
+    let selectedSize = hasSizes
+      ? (p.sizes.find(s => s.label === 'Semidoble') || p.sizes[0])
+      : null;
+
+    function currentPricing() {
+      if (hasSizes) return { now: selectedSize.now, old: selectedSize.old };
+      return { now: p.now, old: p.old };
+    }
+
+    function offPercent(pricing) {
+      if (!pricing.old) return 0;
+      return Math.round((1 - pricing.now / pricing.old) * 100);
+    }
+
     root.innerHTML = `
       <div class="detail-grid">
         <div class="detail-image">
-          <span class="discount-pill">-${off}%</span>
+          <span class="discount-pill" id="detailPill" style="display:none;"></span>
           <img src="${p.img}" alt="${p.name}">
         </div>
         <div class="detail-body">
           ${isPlaceholder ? `<p class="tag" style="color:var(--clay-deep);font-weight:800;">⚠️ Contenido de ejemplo — reemplazar antes de publicar</p>` : ''}
           <p class="tag">${p.tag}</p>
           <h1>${p.name}</h1>
-          <div class="detail-prices">
-            <span class="old">${money(p.old)}</span>
-            <span class="now">${money(p.now)}</span>
-            <span class="detail-off">-${off}%</span>
-          </div>
+          <div class="detail-prices" id="detailPrices"></div>
 
           <p class="detail-desc">${p.desc || p.tag}</p>
+
+          ${hasSizes ? `
+          <div class="size-selector" id="sizeSelector">
+            ${p.sizes.map(s => `<button type="button" class="size-btn" data-size="${s.label}">${s.label}</button>`).join('')}
+          </div>` : ''}
 
           <div class="qty-selector">
             <button type="button" id="qtyMinus" aria-label="Restar">–</button>
@@ -85,6 +106,50 @@
         </div>
       </div>`;
 
+    const pricesEl = document.getElementById('detailPrices');
+    const pillEl = document.getElementById('detailPill');
+
+    function renderPricing() {
+      const pricing = currentPricing();
+      const off = offPercent(pricing);
+
+      // El bloque "old + pill" solo aparece si ESTE tamaño (o el producto,
+      // si no maneja tamaños) tiene oferta. Si no, se omite por completo,
+      // no se deja un hueco vacío ni un -0% falso.
+      pricesEl.innerHTML = pricing.old
+        ? `<span class="old">${money(pricing.old)}</span><span class="now">${money(pricing.now)}</span><span class="detail-off">-${off}%</span>`
+        : `<span class="now">${money(pricing.now)}</span>`;
+
+      if (pricing.old) {
+        pillEl.textContent = `-${off}%`;
+        pillEl.style.display = '';
+      } else {
+        pillEl.style.display = 'none';
+      }
+    }
+
+    renderPricing();
+
+    if (hasSizes) {
+      const selector = document.getElementById('sizeSelector');
+      function updateActiveBtn() {
+        selector.querySelectorAll('.size-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.size === selectedSize.label);
+        });
+      }
+      updateActiveBtn();
+
+      selector.addEventListener('click', e => {
+        const btn = e.target.closest('.size-btn');
+        if (!btn) return;
+        const size = p.sizes.find(s => s.label === btn.dataset.size);
+        if (!size) return;
+        selectedSize = size;
+        updateActiveBtn();
+        renderPricing();
+      });
+    }
+
     let qty = 1;
     const qtyValue = document.getElementById('qtyValue');
     document.getElementById('qtyMinus').addEventListener('click', () => {
@@ -99,7 +164,10 @@
     const addBtn = document.getElementById('detailAddBtn');
     addBtn.addEventListener('click', () => {
       if (typeof window.addToCart === 'function') {
-        window.addToCart(p.id, qty);
+        // El tamaño elegido viaja al carrito: mismo id + distinto tamaño
+        // queda como línea separada, y el precio se resuelve allí mismo
+        // contra el catálogo (p.sizes), nunca se manda un precio suelto.
+        window.addToCart(p.id, qty, hasSizes ? selectedSize.label : null);
       } else {
         console.warn('[detalle] window.addToCart no está definido.');
       }
@@ -136,16 +204,24 @@
     const root = document.getElementById('detailRoot');
     if (!root) return;
 
-    const id = getIdFromUrl();
-    const products = window.products || [];
-    const p = products.find(pp => pp.id === id);
+    // Si el sitio ya agregó window.categoriaCatalogoReady (js/categoria-catalogo.js),
+    // esperamos a que termine de sumar los productos de firme/medio/suave antes de
+    // buscar por id — si no, un producto de categoría se vería como "no encontrado"
+    // aunque sí exista, solo porque todavía no había cargado.
+    const ready = window.categoriaCatalogoReady || Promise.resolve();
 
-    if (!p) {
-      renderNotFound(root);
-      return;
-    }
-    renderProduct(root, p);
-    renderRelated(root, p);
+    ready.finally(() => {
+      const id = getIdFromUrl();
+      const products = window.products || [];
+      const p = products.find(pp => pp.id === id);
+
+      if (!p) {
+        renderNotFound(root);
+        return;
+      }
+      renderProduct(root, p);
+      renderRelated(root, p);
+    });
   }
 
   try {
