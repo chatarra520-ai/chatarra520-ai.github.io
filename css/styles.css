@@ -1786,14 +1786,15 @@
 
 
    .measures-title {
-       font-size: 15px;
+       font-size: 18px;
        font-weight: 800;
        color: var(--ink);
        margin: 4px 0 6px;
    }
 
    .measures-text {
-       font-size: 14px;
+       font-size: 16px;
        color: var(--ink-soft);
+       font-weight: 600;
        margin-bottom: 18px;
    }

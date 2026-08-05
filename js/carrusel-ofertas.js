@@ -34,7 +34,7 @@ window.products = [
   },
 
   {
-    id: 'medio-Orion-Aurora', name: 'Colchón Orion Aurora', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2409000, now: 1204500, img: 'img/Medio/medio-Orion-Aurora.png?v=1767815535&width=600', sizes: [
+    id: 'medio-Orion-Venuz', name: 'Colchón Orion Venus', tag: 'Doble cara · Multi-medidas  · Firmeza Media', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2409000, now: 1204500, img: 'img/Medio/medio-Orion-Aurora.png?v=1767815535&width=600', sizes: [
       { label: "Sencillo", now: 1094500, old: 2189000 },
       { label: "Semidoble", now: 1204500, old: 2409000 },
       { label: "Doble", now: 1369500, old: 2739000 },
@@ -109,9 +109,6 @@ window.products = [
       { label: "King", now: 4845000, old: 6990000 }]
   },
 ];
-
-
-
 
 window.money = function (n) { return '$' + n.toLocaleString('es-CO'); };
 

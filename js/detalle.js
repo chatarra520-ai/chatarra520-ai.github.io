@@ -120,9 +120,9 @@
     }
 
     const MEASURE_ORDER = [
-      { key: 'alto', label: 'Alto' },
       { key: 'ancho', label: 'Ancho' },
-      { key: 'largo', label: 'Largo' }
+      { key: 'largo', label: 'Largo' },
+      { key: 'alto', label: 'Alto' }
     ];
 
     function renderMeasures() {
@@ -135,7 +135,7 @@
         : [];
 
       measuresEl.innerHTML = parts.length
-        ? `<h3 class="measures-title">Medidas</h3><p class="measures-text">${selectedSize.label} — ${parts.join(' · ')}</p>`
+        ? `<h3 class="measures-title">Confirma el tamaño de tu colchón.</h3><p class="measures-text">${selectedSize.label} — ${parts.join(' · ')}</p>`
         : '';
     }
 
