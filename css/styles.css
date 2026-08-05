@@ -1783,3 +1783,17 @@
            flex: 0 0 calc(50% - 12px);
        }
    }
+
+
+   .measures-title {
+       font-size: 15px;
+       font-weight: 800;
+       color: var(--ink);
+       margin: 4px 0 6px;
+   }
+
+   .measures-text {
+       font-size: 14px;
+       color: var(--ink-soft);
+       margin-bottom: 18px;
+   }

@@ -12,10 +12,6 @@
    ============================================================ */
 (function () {
 
-  // Textos de garantía reales del sitio (sección "Por qué elegirnos"),
-  // reutilizados acá porque son datos ciertos ya publicados; no se inventan
-  // especificaciones técnicas (materiales, densidades, etc.) que no están
-  // confirmadas — eso hay que completarlo con la info real de cada producto.
   const TRUST_ITEMS = [
     'Garantía de fábrica de 5 años',
     'Despacho a nivel nacional, con seguimiento del pedido',
@@ -48,9 +44,6 @@
     const crumb = document.getElementById('crumbName');
     if (crumb) crumb.textContent = p.name;
 
-    // Tamaño seleccionado por defecto: "Semidoble" si existe, si no el
-    // primero de la lista. Productos sin "sizes" (ej. combos) no usan
-    // selector y siguen mostrando el precio único p.now / p.old de siempre.
     let selectedSize = hasSizes
       ? (p.sizes.find(s => s.label === 'Semidoble') || p.sizes[0])
       : null;
@@ -82,7 +75,8 @@
           ${hasSizes ? `
           <div class="size-selector" id="sizeSelector">
             ${p.sizes.map(s => `<button type="button" class="size-btn" data-size="${s.label}">${s.label}</button>`).join('')}
-          </div>` : ''}
+          </div>
+          <div class="size-measures" id="sizeMeasures"></div>` : ''}
 
           <div class="qty-selector">
             <button type="button" id="qtyMinus" aria-label="Restar">–</button>
@@ -113,9 +107,6 @@
       const pricing = currentPricing();
       const off = offPercent(pricing);
 
-      // El bloque "old + pill" solo aparece si ESTE tamaño (o el producto,
-      // si no maneja tamaños) tiene oferta. Si no, se omite por completo,
-      // no se deja un hueco vacío ni un -0% falso.
       pricesEl.innerHTML = pricing.old
         ? `<span class="old">${money(pricing.old)}</span><span class="now">${money(pricing.now)}</span><span class="detail-off">-${off}%</span>`
         : `<span class="now">${money(pricing.now)}</span>`;
@@ -128,7 +119,28 @@
       }
     }
 
+    const MEASURE_ORDER = [
+      { key: 'alto', label: 'Alto' },
+      { key: 'ancho', label: 'Ancho' },
+      { key: 'largo', label: 'Largo' }
+    ];
+
+    function renderMeasures() {
+      const measuresEl = document.getElementById('sizeMeasures');
+      if (!measuresEl) return;
+
+      const medidas = selectedSize && selectedSize.medidas;
+      const parts = medidas
+        ? MEASURE_ORDER.filter(m => medidas[m.key]).map(m => `${m.label}: ${medidas[m.key]}`)
+        : [];
+
+      measuresEl.innerHTML = parts.length
+        ? `<h3 class="measures-title">Medidas</h3><p class="measures-text">${selectedSize.label} — ${parts.join(' · ')}</p>`
+        : '';
+    }
+
     renderPricing();
+    if (hasSizes) renderMeasures();
 
     if (hasSizes) {
       const selector = document.getElementById('sizeSelector');
@@ -147,6 +159,7 @@
         selectedSize = size;
         updateActiveBtn();
         renderPricing();
+        renderMeasures();
       });
     }
 
@@ -164,9 +177,6 @@
     const addBtn = document.getElementById('detailAddBtn');
     addBtn.addEventListener('click', () => {
       if (typeof window.addToCart === 'function') {
-        // El tamaño elegido viaja al carrito: mismo id + distinto tamaño
-        // queda como línea separada, y el precio se resuelve allí mismo
-        // contra el catálogo (p.sizes), nunca se manda un precio suelto.
         window.addToCart(p.id, qty, hasSizes ? selectedSize.label : null);
       } else {
         console.warn('[detalle] window.addToCart no está definido.');
@@ -204,10 +214,6 @@
     const root = document.getElementById('detailRoot');
     if (!root) return;
 
-    // Si el sitio ya agregó window.categoriaCatalogoReady (js/categoria-catalogo.js),
-    // esperamos a que termine de sumar los productos de firme/medio/suave antes de
-    // buscar por id — si no, un producto de categoría se vería como "no encontrado"
-    // aunque sí exista, solo porque todavía no había cargado.
     const ready = window.categoriaCatalogoReady || Promise.resolve();
 
     ready.finally(() => {

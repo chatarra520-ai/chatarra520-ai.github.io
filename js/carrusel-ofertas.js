@@ -24,12 +24,13 @@
 
 window.products = [
   {
-    id: 'suave-orion-nube', name: 'Colchón Orion Nube', tag: 'Doble cara · Multi-medidas  · Firmeza Suave', desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ', old: 3890000, now: 1945000, img: 'img/suave/suave-orion-nube.png?v=1766081598&width=600', sizes: [
-      { label: "Sencillo", now: 516000, old: 1032000 },
-      { label: "Semidoble", now: 1945000, old: 3890000 },
-      { label: "Doble", now: 2254000, old: 4490000 },
-      { label: "Queen", now: 2845000, old: 5690000 },
-      { label: "King", now: 3695000, old: 7390000 }]
+    id: 'suave-orion-nube', name: 'Colchón Orion Nube', tag: 'Doble cara · Multi-medidas  · Firmeza Suave', desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ', old: 3890000, now: 1945000, img: 'img/suave/suave-orion-nube.png?v=1766081598&width=600',
+    sizes: [
+      { label: "Sencillo", now: 2692000, old: 5390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 3645000, old: 7290000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 4045000, old: 8090000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 4845000, old: 9690000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 
   {
