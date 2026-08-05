@@ -10,25 +10,25 @@
 
   const firmness = {
     suave: {
-      label: 'Suave', desc: 'Acolchado profundo, ideal si duermes de lado.',
+      label: 'Suave', desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas',
       layers: [
         { h: 70, c: '#D9C79A' }, { h: 34, c: '#C9A967' }, { h: 18, c: '#8F672A' }
       ],
-      caption: 'Bajo peso corporal, mayor sensibilidad a la presión, adultos mayores o personas con poca movilidad'
+      caption: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas'
     },
     medio: {
-      label: 'Medio', desc: 'El equilibrio que elige la mayoría de hogares.',
+      label: 'Medio', desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
       layers: [
         { h: 44, c: '#D9C79A' }, { h: 40, c: '#C9A967' }, { h: 34, c: '#8F672A' }
       ],
-      caption: 'Balance entre acolchado y soporte de resortes: la opción más versátil para parejas.'
+      caption: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil'
     },
     firme: {
-      label: 'Firme', desc: 'Soporte para zona lumbar y dormir boca arriba.',
+      label: 'Firme', desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
       layers: [
         { h: 22, c: '#D9C79A' }, { h: 30, c: '#C9A967' }, { h: 56, c: '#8F672A' }
       ],
-      caption: 'Núcleo de resortes de acero de alto carbono al frente: menos hundimiento, más columna alineada.'
+      caption: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo'
     }
   };
 

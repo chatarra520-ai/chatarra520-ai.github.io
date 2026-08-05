@@ -47,7 +47,7 @@
       tag: 'Una opción práctica para el dormitorio es crear un espacio cómodo y funcional que favorezca el descanso.',
       desc: 'Multi medidas',
       old: 858000, now: 429000,
-      img: 'img/combos/Protector-acolchado.png',
+      img: 'img/combos/base-cama.png',
       sizes: [
         { label: "Sencillo", now: 858000, old: 422900 },
         { label: "Semidoble", now: 429000, old: 858000 },
