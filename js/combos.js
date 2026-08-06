@@ -18,42 +18,62 @@
 
   const combos = [
     {
-      id: 'Almohada siliconada',
-      name: 'Almohada Sox 70',
-      tag: 'Interior en fibra siliconada brinda una sensación de soporte. Material 100% hecho en microfibra para una postura adecuada y descansada',
-      desc: 'Una unidad',
-      old: 49800, now: 24900,
-      img: 'img/combos/Al-sox70.png',
-
+      id: 'ColchonNube+BaseCama',
+      name: 'Super Combo Orion Nube',
+      tag: 'Colchon Nube firmeza suabe + basecama multimedidad',
+      desc: 'Multi medidas',
+      old: 2409995, now: 1982990,
+      img: 'img/combos/cbc-01.png',
+      sizes: [
+        { label: "Sencillo", now: 1916990, old: 2317995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1982990, old: 2409995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 2257990, old: 2719995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 2990990, old: 3175995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 4120995, old: 3750990, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
     {
-      id: 'Protector acolchado',
-      name: 'Protector acolchado',
-      tag: 'Protector de colchón fuelle completo en tela y resorte en todo el contorno asegura el máximo ajuste al colchón',
+      id: 'ColchonNube+RopaCama',
+      name: 'Combo Estreno',
+      tag: 'Colchón Orion Nube firmeza suave + almohada siliconada y protector siliconado',
       desc: 'Multi medidas',
-      old: 49900, now: 99800,
-      img: 'img/combos/Protector-acolchado.png',
+      old: 2043770, now: 1809990,
+      img: 'img/combos/crc-01.png',
       sizes: [
-        { label: "Sencillo", now: 44900, old: 89800 },
-        { label: "Semidoble", now: 49900, old: 99800 },
-        { label: "Doble", now: 119800, old: 59900 },
-        { label: "Queen", now: 64900, old: 129800 },
-        { label: "King", now: 74900, old: 149800 }]
+        { label: "Sencillo", now: 1764990, old: 1993770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1809990, old: 2043770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 2097990, old: null, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 2643990, old: 2983040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 3414990, old: null, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
 
     {
-      id: 'Base-Cama',
-      name: 'Base Cama Royal',
-      tag: 'Una opción práctica para el dormitorio es crear un espacio cómodo y funcional que favorezca el descanso.',
+      id: 'ColchonVenus+BaseCama',
+      name: 'Combo Astral',
+      tag: 'Colchón Orion Venuz, firmeza media + Basecama',
       desc: 'Multi medidas',
-      old: 858000, now: 429000,
-      img: 'img/combos/base-cama.png',
+      old: 1559995, now: 1316990,
+      img: 'img/combos/cbc-02.png',
       sizes: [
-        { label: "Sencillo", now: 858000, old: 422900 },
-        { label: "Semidoble", now: 429000, old: 858000 },
-        { label: "Doble", now: 479000, old: 958000 },
-        { label: "Queen", now: 319000, old: 638000 },
-        { label: "King", now: 329000, old: 658000 }]
+        { label: "Sencillo", now: 1696990, old: 1417995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1316990, old: 1559995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1469990, old: 1719995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1741990, old: 1755995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 2331990, old: null, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
+
+    {
+      id: 'ColchonVenus+RopaCama',
+      name: 'Combo Nova',
+      tag: 'Colchón Orion Venuz, firmeza media + Ropa de cama',
+      desc: 'Multi medidas',
+      old: 1193770, now: 1143990,
+      img: 'img/combos/crc-02.png',
+      sizes: [
+        { label: "Sencillo", now: 1044990, old: 1093770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1143990, old: 1193770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1309990, old: 1373520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1493990, old: 1563040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 1994990, old: 2072500, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
 
   ];
