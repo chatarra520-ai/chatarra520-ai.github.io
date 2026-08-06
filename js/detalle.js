@@ -190,7 +190,20 @@
   function renderRelated(root, current) {
     const products = window.products || [];
     const money = window.money || (n => '$' + n);
-    const related = products.filter(pp => pp.id !== current.id).slice(0, 3);
+
+    const configEl = document.getElementById('destacadosConfig');
+    const idsRaw = configEl ? (configEl.dataset.ids || '') : '';
+    const ids = [...new Set(idsRaw.split(',').map(s => s.trim()).filter(Boolean))];
+
+    const related = ids
+      .map(id => products.find(p => p.id === id))
+      .filter(p => p && p.id !== current.id);
+
+    const missing = ids.filter(id => !products.find(p => p.id === id));
+    if (missing.length) {
+      console.warn('[detalle] Estos ids de #destacadosConfig no existen en el catálogo:', missing);
+    }
+
     if (related.length === 0) return;
 
     const wrap = document.createElement('div');
@@ -209,6 +222,18 @@
       </div>`;
     root.appendChild(wrap);
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   function init() {
     const root = document.getElementById('detailRoot');
