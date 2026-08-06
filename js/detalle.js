@@ -207,16 +207,18 @@
     if (related.length === 0) return;
 
     const wrap = document.createElement('div');
-    wrap.className = 'related-wrap';
+    wrap.className = 'suggested-wrap';
     wrap.innerHTML = `
       <h2 class="detail-subhead">También te puede interesar</h2>
-      <div class="related-grid">
+      <div class="suggested-grid">
         ${related.map(p => `
-          <a class="related-card" href="detalle.html?id=${encodeURIComponent(p.id)}">
-            <img src="${p.img}" alt="${p.name}" loading="lazy">
-            <div class="related-body">
+          <a class="suggested-card" href="detalle.html?id=${encodeURIComponent(p.id)}">
+            <div class="suggested-img-wrap">
+              <img src="${p.img}" alt="${p.name}" loading="lazy">
+            </div>
+            <div class="suggested-body">
               <h4>${p.name}</h4>
-              <span class="related-now">${money(p.now)}</span>
+              <span class="suggested-now">${money(p.now)}</span>
             </div>
           </a>`).join('')}
       </div>`;
