@@ -34,6 +34,12 @@
                       {"label":"Semidoble","now":699000,"old":null}, ...]'
                     Si un tamaño no tiene oferta, su "old" va en null.
                     Si el producto no maneja tamaños, se omite data-sizes.
+     data-gallery → (opcional) JSON con hasta 10 fotos extra para la fila
+                    de miniaturas de detalle.html. Formato:
+                    '["img/foto1.jpg","img/foto2.jpg","img/foto3.jpg"]'
+                    Si el producto no tiene fotos extra, se omite
+                    data-gallery — detalle.html no muestra fila de
+                    miniaturas para ese producto, solo la foto principal.
 
    Requiere en el ámbito global, cargado ANTES que este archivo:
      - window.products, window.money   → carrusel-ofertas.js / combos.js
@@ -71,6 +77,15 @@
           sizes = JSON.parse(node.dataset.sizes);
         } catch (err) {
           console.warn(`[firme] data-sizes inválido en "${rawId}" (revisa que sea JSON válido):`, err);
+        }
+      }
+
+      let gallery = [];
+      if (node.dataset.gallery) {
+        try {
+          gallery = JSON.parse(node.dataset.gallery);
+        } catch (err) {
+          console.warn(`[firme] data-gallery inválido en "${rawId}" (revisa que sea JSON válido):`, err);
         }
       }
 

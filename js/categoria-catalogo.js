@@ -54,6 +54,12 @@
         catch (err) { console.warn(`[categoria-catalogo] data-sizes inválido en "${rawId}" (${prefix}):`, err); }
       }
 
+      let gallery = [];
+      if (node.dataset.gallery) {
+        try { gallery = JSON.parse(node.dataset.gallery); }
+        catch (err) { console.warn(`[categoria-catalogo] data-gallery inválido en "${rawId}" (${prefix}):`, err); }
+      }
+
       list.push({
         id: `${prefix}-${rawId}`,
         name: node.dataset.name || 'Colchón sin nombre',
@@ -62,7 +68,8 @@
         img: node.dataset.img || '',
         now,
         old,
-        sizes
+        sizes,
+        gallery
       });
     });
 

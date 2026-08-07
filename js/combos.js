@@ -24,6 +24,7 @@
       desc: 'Multi medidas',
       old: 2409995, now: 1982990,
       img: 'img/combos/cbc-01.png',
+      gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
       sizes: [
         { label: "Sencillo", now: 1916990, old: 2317995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1982990, old: 2409995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -38,6 +39,7 @@
       desc: 'Multi medidas',
       old: 2043770, now: 1809990,
       img: 'img/combos/crc-01.png',
+      gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
       sizes: [
         { label: "Sencillo", now: 1764990, old: 1993770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1809990, old: 2043770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -53,6 +55,7 @@
       desc: 'Multi medidas',
       old: 1559995, now: 1316990,
       img: 'img/combos/cbc-02.png',
+      gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
       sizes: [
         { label: "Sencillo", now: 1696990, old: 1417995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1316990, old: 1559995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -68,6 +71,7 @@
       desc: 'Multi medidas',
       old: 1193770, now: 1143990,
       img: 'img/combos/crc-02.png',
+      gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
       sizes: [
         { label: "Sencillo", now: 1044990, old: 1093770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1143990, old: 1193770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },

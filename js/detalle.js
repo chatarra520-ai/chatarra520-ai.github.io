@@ -58,11 +58,28 @@
       return Math.round((1 - pricing.now / pricing.old) * 100);
     }
 
+    const hasGallery = Array.isArray(p.gallery) && p.gallery.length > 0;
+    const initialImg = hasGallery ? p.gallery[0] : p.img;
+
     root.innerHTML = `
       <div class="detail-grid">
-        <div class="detail-image">
-          <span class="discount-pill" id="detailPill" style="display:none;"></span>
-          <img src="${p.img}" alt="${p.name}">
+        <div class="detail-image-col">
+          <div class="detail-image">
+            <span class="discount-pill" id="detailPill" style="display:none;"></span>
+            <img src="${initialImg}" alt="${p.name}" id="detailImg">
+          </div>
+
+          ${hasGallery ? `
+          <div class="detail-gallery" id="detailGallery">
+            <button type="button" class="gallery-arrow gallery-prev" id="galleryPrev" aria-label="Ver miniaturas anteriores">‹</button>
+            <div class="gallery-track" id="galleryTrack">
+              ${p.gallery.map((src, i) => `
+                <button type="button" class="gallery-thumb${i === 0 ? ' active' : ''}" data-src="${src}">
+                  <img src="${src}" alt="${p.name} — foto ${i + 1}" loading="lazy">
+                </button>`).join('')}
+            </div>
+            <button type="button" class="gallery-arrow gallery-next" id="galleryNext" aria-label="Ver más miniaturas">›</button>
+          </div>` : ''}
         </div>
         <div class="detail-body">
           ${isPlaceholder ? `<p class="tag" style="color:var(--clay-deep);font-weight:800;">⚠️ Contenido de ejemplo — reemplazar antes de publicar</p>` : ''}
@@ -163,6 +180,36 @@
       });
     }
 
+    if (hasGallery) {
+      const track = document.getElementById('galleryTrack');
+      const mainImg = document.getElementById('detailImg');
+      const prevBtn = document.getElementById('galleryPrev');
+      const nextBtn = document.getElementById('galleryNext');
+
+      track.addEventListener('click', e => {
+        const thumb = e.target.closest('.gallery-thumb');
+        if (!thumb) return;
+        mainImg.src = thumb.dataset.src;
+        track.querySelectorAll('.gallery-thumb').forEach(t => t.classList.toggle('active', t === thumb));
+      });
+
+      function scrollGallery(dir) {
+        const firstThumb = track.querySelector('.gallery-thumb');
+        const step = firstThumb ? firstThumb.getBoundingClientRect().width + 12 : 100;
+        track.scrollBy({ left: dir * step * 3, behavior: 'smooth' });
+      }
+      prevBtn.addEventListener('click', () => scrollGallery(-1));
+      nextBtn.addEventListener('click', () => scrollGallery(1));
+
+      function updateGalleryArrows() {
+        prevBtn.disabled = track.scrollLeft <= 4;
+        nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      }
+      track.addEventListener('scroll', updateGalleryArrows);
+      window.addEventListener('resize', updateGalleryArrows);
+      setTimeout(updateGalleryArrows, 200);
+    }
+
     let qty = 1;
     const qtyValue = document.getElementById('qtyValue');
     document.getElementById('qtyMinus').addEventListener('click', () => {
@@ -224,6 +271,19 @@
       </div>`;
     root.appendChild(wrap);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
   function init() {
     const root = document.getElementById('detailRoot');
     if (!root) return;
