@@ -224,19 +224,6 @@
       </div>`;
     root.appendChild(wrap);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
   function init() {
     const root = document.getElementById('detailRoot');
     if (!root) return;
