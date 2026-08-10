@@ -326,8 +326,9 @@
 
    /* ---------- hero ---------- */
    .hero {
-       padding: 74px 0 40px;
        position: relative;
+       padding: 0 0 75px 0;
+
    }
 
    .hero-grid {
@@ -356,6 +357,28 @@
        gap: 14px;
        flex-wrap: wrap;
    }
+
+   .hero-franja {
+       margin: 0 0 80px 0;
+       background: var(--ink);
+       color: var(--bg);
+       padding: 13px 0;
+       overflow: hidden;
+       position: relative;
+   }
+
+   .hero-title {
+       text-align: center;
+   }
+
+
+
+
+
+
+
+
+
 
    .btn-primary {
        background: var(--clay);
