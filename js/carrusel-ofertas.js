@@ -30,7 +30,7 @@ window.products = [
     desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ',
     old: 3890000, now: 1945000,
     img: 'img/suave/suave-orion-nube.png',
-    gallery: ['img/suave/suave-orion-nube.png', 'img/03.png', 'img/m-altura.png', 'img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube.png'],
+    gallery: ['img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/m-altura.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png'],
 
 
     sizes: [
@@ -47,8 +47,8 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 2409000, now: 1204500,
-    img: 'img/Medio/medio-Orion-Aurora.png',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Medio/medio-Orion-Venus.png',
+    gallery: ['img/Medio/medio-Orion-Venus.png', 'img/Medio/medio-Orion-Venus-02.png', 'img/m-normal.png'],
     sizes: [
       { label: "Sencillo", now: 1094500, old: 2189000 },
       { label: "Semidoble", now: 1204500, old: 2409000 },
@@ -62,7 +62,7 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500,
     img: 'img/Medio/Medio-orion-galaxi.png',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    gallery: ['img/Medio/Medio-orion-galaxi.png', 'img/Medio/Medio-orion-galaxi-02.png', 'img/m-normal.png', 'img/Medio/Medio-orion-galaxi-03.png'],
     sizes: [
       { label: "Sencillo", now: 1204500, old: 2409000 },
       { label: "Semidoble", now: 1358500, old: 2717000 },
@@ -77,8 +77,8 @@ window.products = [
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2018000, now: 1009000,
-    img: 'img/Firme/firme-super-flex-foam.png?',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Firme/firme-super-flex-foam.png',
+    gallery: ['img/Firme/firme-super-flex-foam.png', 'img/03.png', 'img/m-normal.png'],
     sizes: [
       { label: "Sencillo", now: 879000, old: 1758000 },
       { label: "Semidoble", now: 1009000, old: 2018000 },
