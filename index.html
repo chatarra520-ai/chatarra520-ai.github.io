@@ -100,19 +100,20 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="badge-off">-50% hoy</div>
-        <div class="mattress-card">
+        <div class="badge-off" id="heroBadge" style="display:none;"></div>
 
-          <img src="img/combos/BaseColchon-Nube.png" alt="Super Combo Orion Nube">
-          <p class="cap" style="margin:16px 0 0;">Colchón Paraíso Gold · Maxi Top <span style="color:#8f672a;">Cama
-              doble</span></p>
-          <div class="price-tag-hero">
-            <span class="old">$1.639.000</span>
-            <span class="now">$819.500</span>
-          </div>
+        <!-- ⚠️ Para cambiar el producto destacado del hero, edita SOLO el
+             "data-hero-product" de aquí abajo con el id real del producto
+             (el mismo que usas en detalle.html?id=...). Nombre, precio,
+             % de descuento, imagen, link y botón se arman solos con
+             js/hero.js — no se escriben a mano en ningún lado. -->
+        <div class="mattress-card" data-hero-product="ColchonNube+BaseCama">
+          <img id="heroImg" src="" alt="">
+          <p class="cap" id="heroCap" style="margin:16px 0 0;"></p>
+          <div class="price-tag-hero" id="heroPrices"></div>
           <div class="hero-card-actions">
-            <a href="detalle.html?id=ColchonNube+BaseCama" class="ver-detalle">Ver especificaciones</a>
-            <button class="add-btn" onclick="addToCart('paraiso-gold')">Agregar al carrito</button>
+            <a href="#" class="ver-detalle" id="heroDetalleLink">Ver especificaciones</a>
+            <button class="add-btn" id="heroAddBtn">Agregar al carrito</button>
           </div>
         </div>
       </div>
@@ -314,6 +315,7 @@
   <script src="js/urgencia.js"></script>
   <script src="js/newsletter.js"></script>
   <script src="js/combos.js"></script>
+  <script src="js/hero.js"></script>
   <script src="js/whatsapp-float.js"></script>
 </body>
 

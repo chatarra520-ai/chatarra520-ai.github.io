@@ -50,11 +50,11 @@ window.products = [
     img: 'img/Medio/medio-Orion-Venus.png',
     gallery: ['img/Medio/medio-Orion-Venus.png', 'img/Medio/medio-Orion-Venus-02.png', 'img/m-normal.png'],
     sizes: [
-      { label: "Sencillo", now: 1094500, old: 2189000 },
-      { label: "Semidoble", now: 1204500, old: 2409000 },
-      { label: "Doble", now: 1369500, old: 2739000 },
-      { label: "Queen", now: 1567500, old: 3135500 },
-      { label: "King", now: 2117500, old: 4235500 }]
+      { label: "Sencillo", now: 1094500, old: 2189000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 1204500, old: 2409000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 1369500, old: 2739000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 1567500, old: 3135500, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 2117500, old: 4235500, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
   {
     id: 'medio-orion-galaxi',
@@ -64,43 +64,43 @@ window.products = [
     img: 'img/Medio/Medio-orion-galaxi.png',
     gallery: ['img/Medio/Medio-orion-galaxi.png', 'img/Medio/Medio-orion-galaxi-02.png', 'img/m-normal.png', 'img/Medio/Medio-orion-galaxi-03.png'],
     sizes: [
-      { label: "Sencillo", now: 1204500, old: 2409000 },
-      { label: "Semidoble", now: 1358500, old: 2717000 },
-      { label: "Doble", now: 1479500, old: 2959000 },
-      { label: "Queen", now: 1699500, old: 3399000 },
-      { label: "King", now: 2359500, old: 4719000 }]
+      { label: "Sencillo", now: 1204500, old: 2409000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 1358500, old: 2717000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 1479500, old: 2959000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 1699500, old: 3399000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 2359500, old: 4719000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 
   {
     id: 'firme-super-flex-foam',
-    name: 'Colchón Super Flex Foam',
+    name: 'Colchón Super FlexFoam',
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2018000, now: 1009000,
     img: 'img/Firme/firme-super-flex-foam.png',
-    gallery: ['img/Firme/firme-super-flex-foam.png', 'img/03.png', 'img/m-normal.png'],
+    gallery: ['img/Firme/firme-super-flex-foam.png', 'img/Firme/firme-super-flex-foam-02.png', 'img/m-altura.png', 'img/Firme/firme-super-flex-foam-03.png'],
     sizes: [
-      { label: "Sencillo", now: 879000, old: 1758000 },
-      { label: "Semidoble", now: 1009000, old: 2018000 },
-      { label: "Doble", now: 1069000, old: 2138000 },
-      { label: "Queen", now: 1259000, old: 2518000 },
-      { label: "King", now: 1639000, old: 3278000 }]
+      { label: "Sencillo", now: 879000, old: 1758000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Semidoble", now: 1009000, old: 2018000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Doble", now: 1069000, old: 2138000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Queen", now: 1259000, old: 2518000, medidas: { ancho: "160 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "King", now: 1639000, old: 3278000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 
   {
     id: 'firme-super-flex-firm',
-    name: 'Colchón Super Flex Firm',
+    name: 'Colchón Super FlexFirm',
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2138000, now: 1069000,
-    img: 'img/Firme/firme-super-flex-firm.png?',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Firme/firme-superflex-firm.png',
+    gallery: ['img/Firme/firme-superflex-firm.png', 'img/Firme/firme-superflex-firm-02.png', 'img/m-altura.png', 'img/Firme/firme-superflex-firm-03.png'],
     sizes: [
-      { label: "Sencillo", now: 949000, old: 1898000 },
-      { label: "Semidoble", now: 1069000, old: 2138000 },
-      { label: "Doble", now: 1199000, old: 2398000 },
-      { label: "Queen", now: 1399000, old: 2798000 },
-      { label: "King", now: 1899000, old: 3798000 }]
+      { label: "Sencillo", now: 949000, old: 1898000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Semidoble", now: 1069000, old: 2138000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Doble", now: 1199000, old: 2398000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "Queen", now: 1399000, old: 2798000, medidas: { ancho: "160 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "King", now: 1899000, old: 3798000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 
   {
@@ -109,12 +109,12 @@ window.products = [
     tag: 'Una cara · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 1690000, now: 845000,
-    img: 'img/Firme/firme-sensation-firm.png?',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Firme/firme-sensacionFirm.png',
+    gallery: ['img/Firme/firme-sensacionFirm.png', 'img/Firme/firme-sensacionFirm-02.png', 'img/m-normal.png', 'img/Firme/firme-sensacionFirm-03.png', 'img/Firme/firme-sensacionFirm-04.png'],
     sizes: [
-      { label: "Sencillo", now: 745000, old: 1490000 },
-      { label: "Semidoble", now: 845000, old: 1690000 },
-      { label: "Doble", now: 945000, old: 1890000 }]
+      { label: "Sencillo", now: 745000, old: 1490000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 845000, old: 1690000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 945000, old: 1890000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
   },
 
 
@@ -124,28 +124,28 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 2490000, now: 1245000,
-    img: 'img/Medio/medio-estelar.png?v=1766081671&width=600',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Medio/Medio-Stelar.png',
+    gallery: ['img/Medio/Medio-Stelar.png', 'img/Medio/Medio-Stelar-02.png', 'img/m-normal.png', 'img/Medio/Medio-Stelar-03.png', 'img/Medio/Medio-Stelar-04.png'],
     sizes: [
-      { label: "Sencillo", now: 1095000, old: 2190000 },
-      { label: "Semidoble", now: 1245000, old: 2490000 },
-      { label: "Doble", now: 1395000, old: 2790000 }]
+      { label: "Sencillo", now: 1095000, old: 2190000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 1245000, old: 2490000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 1395000, old: 2790000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
   },
 
   {
-    id: 'medio-orion-cosmos',
-    name: 'Colchón Orion Cosmos',
+    id: 'medio-orion-cosmo',
+    name: 'Colchón Orion Cosmo',
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 1445000, now: 1245000,
-    img: 'img/Medio/medio-orion-cosmos.png?',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Medio/medio-orion-cosmo.png',
+    gallery: ['img/Medio/medio-orion-cosmo.png', 'img/Medio/medio-orion-cosmo-02.png', 'img/m-normal.png', 'img/Medio/medio-orion-cosmo-03.png', 'img/Medio/medio-orion-cosmo-04.png'],
     sizes: [
-      { label: "Sencillo", now: 1195000, old: 2390000 },
-      { label: "Semidoble", now: 1445000, old: 2490000 },
-      { label: "Doble", now: 1845000, old: 3690000 },
-      { label: "Queen", now: 1995000, old: 3990000 },
-      { label: "King", now: 2445000, old: 4890000 }]
+      { label: "Sencillo", now: 1195000, old: 2390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 1445000, old: 2490000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 1845000, old: 3690000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 1995000, old: 3990000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 2445000, old: 4890000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
   {
     id: 'Medio-orion-infinity',
@@ -156,11 +156,11 @@ window.products = [
     img: 'img/Medio/Medio-orion-infinity.png',
     gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
     sizes: [
-      { label: "Sencillo", now: 799900, old: 1599800 },
-      { label: "Semidoble", now: 899900, old: 1799800 },
-      { label: "Doble", now: 999900, old: 1999800 },
-      { label: "Queen", now: 1299900, old: 2599800 },
-      { label: "King", now: 1899900, old: 3799800 }]
+      { label: "Sencillo", now: 799900, old: 1599800, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 899900, old: 1799800, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 999900, old: 1999800, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 1299900, old: 2599800, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 1899900, old: 3799800, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
   {
     id: 'firme-imperium',
@@ -171,11 +171,11 @@ window.products = [
     img: 'img/Firme/firme-orion-imperium.png?',
     gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
     sizes: [
-      { label: "Sencillo", now: 5390000, old: 2692000 },
-      { label: "Semidoble", now: 3145000, old: 6290000 },
-      { label: "Doble", now: 3645000, old: 7290000 },
-      { label: "Queen", now: 4045000, old: 8090000 },
-      { label: "King", now: 4845000, old: 6990000 }]
+      { label: "Sencillo", now: 5390000, old: 2692000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 3645000, old: 7290000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 4045000, old: 8090000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 4845000, old: 6990000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 ];
 
