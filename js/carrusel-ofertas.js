@@ -154,13 +154,14 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 899900, now: 1799800,
     img: 'img/Medio/Medio-orion-infinity.png',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    gallery: ['img/Medio/Medio-orion-infinity.png', 'img/Medio/Medio-orion-infinity-02.png', 'img/m-normal.png',
+      'img/Medio/Medio-orion-infinity-03.png', 'img/Medio/Medio-orion-infinity-04.png', 'img/Medio/Medio-orion-infinity-05.png'],
     sizes: [
       { label: "Sencillo", now: 799900, old: 1599800, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 899900, old: 1799800, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
       { label: "Doble", now: 999900, old: 1999800, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
       { label: "Queen", now: 1299900, old: 2599800, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-      { label: "King", now: 1899900, old: 3799800, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
+      { label: "King", now: 1899900, old: 3799800, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
   },
   {
     id: 'firme-imperium',
@@ -168,8 +169,8 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 6290000, now: 3145000,
-    img: 'img/Firme/firme-orion-imperium.png?',
-    gallery: ['img/02.png', 'img/03.png', 'img/04.png'],
+    img: 'img/Firme/firme-orion-imperium.png',
+    gallery: ['img/Firme/firme-orion-imperium.png', 'img/Firme/firme-orion-imperium-02.png', 'img/m-normal.png', 'img/Firme/firme-orion-imperium-04.png'],
     sizes: [
       { label: "Sencillo", now: 5390000, old: 2692000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
