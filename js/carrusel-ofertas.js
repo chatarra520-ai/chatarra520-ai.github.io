@@ -30,7 +30,7 @@ window.products = [
     desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ',
     old: 3890000, now: 1945000,
     img: 'img/suave/suave-orion-nube.png',
-    gallery: ['img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/m-altura.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png'],
+    gallery: ['img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png', 'img/m-normal.png', 'img/firm-suave.png'],
 
 
     sizes: [
@@ -48,7 +48,8 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 2409000, now: 1204500,
     img: 'img/Medio/medio-Orion-Venus.png',
-    gallery: ['img/Medio/medio-Orion-Venus.png', 'img/Medio/medio-Orion-Venus-02.png', 'img/m-normal.png'],
+    gallery: ['img/Medio/medio-Orion-Venus.png', 'img/Medio/medio-Orion-Venus-02.png', 'img/Medio/medio-Orion-Venus-03.png',
+      'img/m-normal.png', 'img/firm-medio.png'],
     sizes: [
       { label: "Sencillo", now: 1094500, old: 2189000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1204500, old: 2409000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -62,7 +63,8 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500,
     img: 'img/Medio/Medio-orion-galaxi.png',
-    gallery: ['img/Medio/Medio-orion-galaxi.png', 'img/Medio/Medio-orion-galaxi-02.png', 'img/m-normal.png', 'img/Medio/Medio-orion-galaxi-03.png'],
+    gallery: ['img/Medio/Medio-orion-galaxi.png', 'img/Medio/Medio-orion-galaxi-02.png', 'img/Medio/Medio-orion-galaxi-03.png',
+      'img/m-normal.png', 'img/firm-medio.png'],
     sizes: [
       { label: "Sencillo", now: 1204500, old: 2409000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1358500, old: 2717000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -78,7 +80,7 @@ window.products = [
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2018000, now: 1009000,
     img: 'img/Firme/firme-super-flex-foam.png',
-    gallery: ['img/Firme/firme-super-flex-foam.png', 'img/Firme/firme-super-flex-foam-02.png', 'img/m-altura.png', 'img/Firme/firme-super-flex-foam-03.png'],
+    gallery: ['img/Firme/firme-super-flex-foam.png', 'img/Firme/firme-super-flex-foam-02.png', 'img/Firme/firme-super-flex-foam-03.png', 'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 879000, old: 1758000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } },
       { label: "Semidoble", now: 1009000, old: 2018000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
@@ -94,7 +96,8 @@ window.products = [
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2138000, now: 1069000,
     img: 'img/Firme/firme-superflex-firm.png',
-    gallery: ['img/Firme/firme-superflex-firm.png', 'img/Firme/firme-superflex-firm-02.png', 'img/m-altura.png', 'img/Firme/firme-superflex-firm-03.png'],
+    gallery: ['img/Firme/firme-superflex-firm.png', 'img/Firme/firme-superflex-firm-02.png', 'img/Firme/firme-superflex-firm-03.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 949000, old: 1898000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } },
       { label: "Semidoble", now: 1069000, old: 2138000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
@@ -110,7 +113,8 @@ window.products = [
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 1690000, now: 845000,
     img: 'img/Firme/firme-sensacionFirm.png',
-    gallery: ['img/Firme/firme-sensacionFirm.png', 'img/Firme/firme-sensacionFirm-02.png', 'img/m-normal.png', 'img/Firme/firme-sensacionFirm-03.png', 'img/Firme/firme-sensacionFirm-04.png'],
+    gallery: ['img/Firme/firme-sensacionFirm.png', 'img/Firme/firme-sensacionFirm-02.png', 'img/Firme/firme-sensacionFirm-03.png', 'img/Firme/firme-sensacionFirm-04.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 745000, old: 1490000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 845000, old: 1690000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -125,7 +129,8 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 2490000, now: 1245000,
     img: 'img/Medio/Medio-Stelar.png',
-    gallery: ['img/Medio/Medio-Stelar.png', 'img/Medio/Medio-Stelar-02.png', 'img/m-normal.png', 'img/Medio/Medio-Stelar-03.png', 'img/Medio/Medio-Stelar-04.png'],
+    gallery: ['img/Medio/Medio-Stelar.png', 'img/Medio/Medio-Stelar-02.png', 'img/Medio/Medio-Stelar-03.png', 'img/Medio/Medio-Stelar-04.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 1095000, old: 2190000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1245000, old: 2490000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -139,7 +144,8 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 1445000, now: 1245000,
     img: 'img/Medio/medio-orion-cosmo.png',
-    gallery: ['img/Medio/medio-orion-cosmo.png', 'img/Medio/medio-orion-cosmo-02.png', 'img/m-normal.png', 'img/Medio/medio-orion-cosmo-03.png', 'img/Medio/medio-orion-cosmo-04.png'],
+    gallery: ['img/Medio/medio-orion-cosmo.png', 'img/Medio/medio-orion-cosmo-02.png', 'img/Medio/medio-orion-cosmo-03.png', 'img/Medio/medio-orion-cosmo-04.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 1195000, old: 2390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1445000, old: 2490000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -154,8 +160,9 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 899900, now: 1799800,
     img: 'img/Medio/Medio-orion-infinity.png',
-    gallery: ['img/Medio/Medio-orion-infinity.png', 'img/Medio/Medio-orion-infinity-02.png', 'img/m-normal.png',
-      'img/Medio/Medio-orion-infinity-03.png', 'img/Medio/Medio-orion-infinity-04.png', 'img/Medio/Medio-orion-infinity-05.png'],
+    gallery: ['img/Medio/Medio-orion-infinity.png', 'img/Medio/Medio-orion-infinity-02.png',
+      'img/Medio/Medio-orion-infinity-03.png', 'img/Medio/Medio-orion-infinity-04.png', 'img/Medio/Medio-orion-infinity-05.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 799900, old: 1599800, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 899900, old: 1799800, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -170,7 +177,8 @@ window.products = [
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 6290000, now: 3145000,
     img: 'img/Firme/firme-orion-imperium.png',
-    gallery: ['img/Firme/firme-orion-imperium.png', 'img/Firme/firme-orion-imperium-02.png', 'img/m-normal.png', 'img/Firme/firme-orion-imperium-04.png'],
+    gallery: ['img/Firme/firme-orion-imperium.png', 'img/Firme/firme-orion-imperium-02.png', 'img/Firme/firme-orion-imperium-04.png',
+      'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 5390000, old: 2692000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },

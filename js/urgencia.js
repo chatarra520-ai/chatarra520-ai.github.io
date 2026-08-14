@@ -3,27 +3,27 @@
    Requiere en el HTML: <div id="urgencyTrack"></div>
    Autocontenido, no depende de otros scripts.
    ============================================================ */
-(function(){
+(function () {
 
   const urgencyMsgs = [
     'Hasta <em>50% OFF</em> por lanzamiento',
-    'Garantía de <em>7 años</em> en línea Paraíso',
-    'Envíos a <em>todo el país</em>',
+    'Garantía de <em>5 años</em> en colchones',
+    'Consulta los puntos<em> de entrega disponibles en tu ciudad</em>',
     'Paga fácil y seguro: tarjetas, PSE y contraentrega',
   ];
 
-  function initUrgencyTicker(){
+  function initUrgencyTicker() {
     const track = document.getElementById('urgencyTrack');
-    if(!track){
+    if (!track) {
       console.warn('[urgencia] Falta #urgencyTrack en el HTML.');
       return;
     }
     track.innerHTML = urgencyMsgs.concat(urgencyMsgs).map(m => `<span>${m}</span>`).join('');
   }
 
-  try{
+  try {
     initUrgencyTicker();
-  }catch(err){
+  } catch (err) {
     console.warn('[urgencia] No se pudo inicializar:', err);
   }
 
