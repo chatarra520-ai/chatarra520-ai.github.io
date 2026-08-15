@@ -1514,7 +1514,7 @@
    .detail-image {
        background: var(--panel);
        border: 1px solid var(--line);
-       border-radius: 22px;
+       border-radius: 10px;
        overflow: hidden;
        aspect-ratio: 1/1;
        position: relative;
@@ -1537,6 +1537,24 @@
        padding: 6px 12px;
        border-radius: 100px;
    }
+
+   @media(max-width:860px) {
+       .detail-grid {
+           grid-template-columns: 1fr;
+           gap: 30px;
+       }
+
+       .detail-image {
+           max-width: 340px;
+           width: 100%;
+           height: auto;
+       }
+   }
+
+
+
+
+
 
    .detail-gallery {
        display: flex;
@@ -1578,6 +1596,7 @@
        overflow-x: auto;
        scroll-behavior: smooth;
        scrollbar-width: none;
+       min-width: 0;
    }
 
    .gallery-track::-webkit-scrollbar {
