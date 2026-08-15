@@ -184,30 +184,42 @@
       </div>
       <div class="destacado">
 
-        <div class="columna">
+        <div class="destacado-columna">
           <h3 class="destacado-sub">Almohadas</h3>
 
-          <div class="subcolumnas">
-            <div class="subcolumna">
-              <div class="pcard">d</div>
-            </div>
-
-            <div class="subcolumna">
-              <div class="pcard">e</div>
+          <div class="destacado-carousel-wrap">
+            <div class="destacado-carousel" id="almohadasGrid"></div>
+            <div class="oc-nav">
+              <button class="oc-arrow" id="amPrev" aria-label="Anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="oc-arrow" id="amNext" aria-label="Siguiente">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="columna">
+        <div class="destacado-columna">
           <h3 class="destacado-sub">Basecamas</h3>
 
-          <div class="subcolumnas">
-            <div class="subcolumna">
-              <div class="pcard">t</div>
-            </div>
-
-            <div class="subcolumna">
-              <div class="pcard">f</div>
+          <div class="destacado-carousel-wrap">
+            <div class="destacado-carousel" id="basecamasGrid"></div>
+            <div class="oc-nav">
+              <button class="oc-arrow" id="bcPrev" aria-label="Anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="oc-arrow" id="bcNext" aria-label="Siguiente">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -248,6 +260,59 @@
         <div class="firmeza-col">
           <img src="img/firm-03.png" alt="">
           <a href="suave.html" class="ver-colchones">Ver colchones suave</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚠️ DESTACADOS — 2 columnas, cada una es un carrusel INDEPENDIENTE
+       (Almohadas / Bases cama). Los productos son placeholder de
+       ejemplo, viven en js/destacados.js — reemplázalos ahí por los
+       reales cuando los tengas (mismo formato que carrusel-ofertas.js:
+       objetos con id/name/tag/img/now/old, sin comillas alrededor del
+       array porque es JavaScript, no HTML). -->
+  <section class="block" id="destacados">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Destacados</h2>
+      </div>
+      <div class="destacados-grid">
+        <div class="destacados-col">
+          <h3 class="destacados-col-title">Almohadas</h3>
+          <div class="oferta-carousel-wrap">
+            <div class="oferta-carousel" id="almohadasGrid"></div>
+            <div class="oc-nav">
+              <button class="oc-arrow" id="amPrev" aria-label="Anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="oc-arrow" id="amNext" aria-label="Siguiente">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="destacados-col">
+          <h3 class="destacados-col-title">Bases cama</h3>
+          <div class="oferta-carousel-wrap">
+            <div class="oferta-carousel" id="basecamasGrid"></div>
+            <div class="oc-nav">
+              <button class="oc-arrow" id="bcPrev" aria-label="Anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="oc-arrow" id="bcNext" aria-label="Siguiente">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -391,6 +456,7 @@
   <script src="js/newsletter.js"></script>
   <script src="js/combos.js"></script>
   <script src="js/hero.js"></script>
+  <script src="js/destacados.js"></script>
   <script src="js/whatsapp-float.js"></script>
 </body>
 
