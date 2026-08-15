@@ -1,21 +1,28 @@
 /* ============================================================
-   DESTACADOS — 2 carruseles INDEPENDIENTES en index.html:
-   "Almohadas" y "Bases cama". Cada uno hace scroll por separado,
-   con sus propias flechas — no comparten posición ni catálogo.
+   DESTACADOS — UN solo carrusel en index.html, con filtros arriba
+   (Almohadas / Bases cama / lo que agregues) que se generan SOLOS
+   según qué categorías tengan productos — no se editan a mano en el
+   HTML. Sin hacer clic en nada, se ve TODO el carrusel completo.
+   Al hacer clic en una categoría, filtra solo esos productos (si son
+   pocos, quedan centrados en vez de pegados a la izquierda). El botón
+   "Ver todo" vuelve a mostrar todo.
 
-   ⚠️ Los productos de abajo (ALMOHADAS y BASECAMAS) son PLACEHOLDER
-   de ejemplo — reemplázalos por los reales cuando los tengas. Mismo
-   formato que carrusel-ofertas.js: es código JavaScript (sin comillas
-   alrededor de todo el array, a diferencia de un data-* en HTML).
-   Si un producto no tiene oferta, deja su "old" en null (no se
-   muestra el tachado ni el pill de descuento para ese, igual que en
-   el resto del sitio).
+   Mismo comportamiento que el carrusel de ofertas: cards de ancho fijo,
+   scroll horizontal con flechas.
+
+   ⚠️ Para agregar productos: los metes en el array PRODUCTOS de abajo,
+   con su "category" (el texto exacto que quieres que aparezca como
+   filtro, ej. "Almohadas", "Bases cama", "Ropa de cama"). Si agregas
+   una categoría nueva que no existe todavía, el filtro para esa
+   categoría aparece solo, no hay que tocar nada más.
+   Formato igual a carrusel-ofertas.js (JavaScript, sin comillas
+   alrededor del array). Si un producto no tiene oferta, deja su "old"
+   en null.
 
    Requiere en el HTML:
-     <div class="oferta-carousel" id="almohadasGrid"></div>
-     <button id="amPrev">...</button>  <button id="amNext">...</button>
-     <div class="oferta-carousel" id="basecamasGrid"></div>
-     <button id="bcPrev">...</button>  <button id="bcNext">...</button>
+     <div class="destacados-filtros" id="destacadosFiltros"></div>
+     <div class="oferta-carousel" id="destacadosGrid"></div>
+     <button id="destPrev">...</button>  <button id="destNext">...</button>
    Requiere en el ámbito global (cargar ANTES que este archivo):
      - window.addToCart(id)   → carrito.js
    Expone: se suma a window.products (igual que combos.js), para que
@@ -24,17 +31,14 @@
 
 window.products = window.products || [];
 
-const ALMOHADAS = [
-  { id: 'almohada-01', name: 'Viscoelástica · Soporte cuello', tag: 'Viscoelástica · Soporte cuello', desc: 'Almohada viscoelástica con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+const PRODUCTOS_DESTACADOS = [
+  { id: 'almohada-01', name: 'Viscoelástica · Soporte cuello', tag: 'Viscoelástica · Soporte cuello', desc: 'Almohada viscoelástica con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
 
-];
+  { id: 'basecamaSencilla', name: 'Base cama Sencilla', tag: 'Madera · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 590000, now: 349000, img: 'img/basecama/basecama-sencilla-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
 
-const BASECAMAS = [
-  { id: 'basecamaSencilla', name: 'Base cama Sencilla', tag: 'Madera · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 590000, now: 349000, img: 'img/basecama/basecama-sencilla-02.png' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  { id: 'basecama-tapizada', name: 'Base cama Semidoble', tag: 'Tapizada · Antideslizante', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 790000, now: 495000, img: 'img/basecama/basecama-semidoble-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
 
-  { id: 'basecama-tapizada', name: 'Base cama Semidoble', tag: 'Tapizada · Antideslizante', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 790000, now: 495000, img: 'img/basecama/basecama-semidoble-02.png' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
-
-  { id: 'basecama-dividida', name: 'Base cama Doble dividida', tag: 'Dividida · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: null, now: 420000, img: 'img/basecama/basecama-doble-02.png' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  { id: 'basecama-dividida', name: 'Base cama Doble dividida', tag: 'Dividida · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: null, now: 420000, img: 'img/basecama/basecama-doble-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
 ];
 
 (function () {
@@ -65,19 +69,49 @@ const BASECAMAS = [
     return card;
   }
 
-  // Arma UN carrusel independiente: pinta las cards, conecta el botón
-  // "Agregar al carrito", y devuelve una función para mover el scroll
-  // con las flechas de ESE carrusel en particular (no afecta al otro).
-  function initCarousel(products, gridId, prevId, nextId) {
-    const grid = document.getElementById(gridId);
-    const prevBtn = document.getElementById(prevId);
-    const nextBtn = document.getElementById(nextId);
+  function initDestacados() {
+    const grid = document.getElementById('destacadosGrid');
+    const filtrosEl = document.getElementById('destacadosFiltros');
+    const prevBtn = document.getElementById('destPrev');
+    const nextBtn = document.getElementById('destNext');
     if (!grid) {
-      console.warn(`[destacados] Falta #${gridId} en el HTML.`);
+      console.warn('[destacados] Falta #destacadosGrid en el HTML.');
       return;
     }
 
-    products.forEach(p => grid.appendChild(buildCard(p)));
+    // Se suman al catálogo global para que detalle.html y el carrito
+    // los encuentren por id, igual que combos.js.
+    window.products = window.products.concat(PRODUCTOS_DESTACADOS);
+
+    // Filtros generados SOLOS según las categorías presentes en los datos
+    // (en el orden en que aparecen por primera vez), + "Ver todo".
+    const categorias = [...new Set(PRODUCTOS_DESTACADOS.map(p => p.category).filter(Boolean))];
+
+    function renderFiltros(activa) {
+      if (!filtrosEl) return;
+      const items = ['Ver todo', ...categorias];
+      filtrosEl.innerHTML = items.map(cat =>
+        `<button type="button" class="destacado-filtro${cat === activa ? ' active' : ''}" data-cat="${cat}">${cat}</button>`
+      ).join('');
+    }
+
+    function renderGrid(categoria) {
+      grid.innerHTML = '';
+      const lista = (categoria === 'Ver todo')
+        ? PRODUCTOS_DESTACADOS
+        : PRODUCTOS_DESTACADOS.filter(p => p.category === categoria);
+
+      lista.forEach(p => grid.appendChild(buildCard(p)));
+
+      // Si los productos filtrados no llenan el ancho visible, se centran
+      // en vez de quedar pegados a la izquierda (si llenan/desbordan el
+      // ancho, se queda con scroll normal, igual que "ofertas").
+      requestAnimationFrame(() => {
+        const cabe = grid.scrollWidth <= grid.clientWidth + 4;
+        grid.classList.toggle('is-centered', cabe);
+        updateArrows();
+      });
+    }
 
     grid.addEventListener('click', e => {
       const btn = e.target.closest('.add-btn');
@@ -91,6 +125,16 @@ const BASECAMAS = [
       btn.classList.add('added');
       setTimeout(() => { btn.textContent = 'Agregar al carrito'; btn.classList.remove('added'); }, 1400);
     });
+
+    if (filtrosEl) {
+      filtrosEl.addEventListener('click', e => {
+        const btn = e.target.closest('.destacado-filtro');
+        if (!btn) return;
+        const cat = btn.dataset.cat;
+        renderFiltros(cat);
+        renderGrid(cat);
+      });
+    }
 
     function move(dir) {
       const card = grid.querySelector('.pcard');
@@ -108,16 +152,10 @@ const BASECAMAS = [
     if (nextBtn) nextBtn.addEventListener('click', () => move(1));
     grid.addEventListener('scroll', updateArrows);
     window.addEventListener('resize', updateArrows);
-    setTimeout(updateArrows, 200);
-  }
 
-  function initDestacados() {
-    // Se suman al catálogo global para que detalle.html y el carrito
-    // los encuentren por id, igual que combos.js.
-    window.products = window.products.concat(ALMOHADAS, BASECAMAS);
-
-    initCarousel(ALMOHADAS, 'almohadasGrid', 'amPrev', 'amNext');
-    initCarousel(BASECAMAS, 'basecamasGrid', 'bcPrev', 'bcNext');
+    // Estado inicial: sin filtro, se ve todo.
+    renderFiltros('Ver todo');
+    renderGrid('Ver todo');
   }
 
   try {

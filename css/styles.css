@@ -1906,26 +1906,41 @@
        }
    }
 
-   /* ---------- destacados (2 carruseles independientes) ---------- */
-   .destacados-grid {
-       display: grid;
-       grid-template-columns: 1fr 1fr;
-       gap: 40px;
-       margin-top: 10px;
+   /* ---------- destacados (un carrusel + filtros por categoría) ---------- */
+   .destacados-filtros {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 10px;
+       margin: 14px 0 18px;
    }
 
-   .destacados-col-title {
-       font-size: 19px;
+   .destacado-filtro {
+       background: none;
+       border: none;
+       font-family: 'Fraunces', serif;
+       font-size: 16px;
        font-weight: 700;
-       color: var(--ink);
-       margin-bottom: 12px;
+       color: var(--ink-soft);
+       cursor: pointer;
+       padding: 4px 2px;
+       border-bottom: 2px solid transparent;
+       transition: .15s;
    }
 
-   @media (max-width: 860px) {
-       .destacados-grid {
-           grid-template-columns: 1fr;
-           gap: 34px;
-       }
+   .destacado-filtro:hover {
+       color: var(--ink);
+   }
+
+   .destacado-filtro.active {
+       color: var(--ink);
+       border-bottom-color: var(--gold);
+   }
+
+   /* Cuando los productos filtrados caben sin desbordar, se centran en
+      vez de quedar pegados a la izquierda (si desbordan, sigue igual
+      que el carrusel de ofertas: scroll normal a la izquierda). */
+   .oferta-carousel.is-centered {
+       justify-content: center;
    }
 
    .ver-colchones {

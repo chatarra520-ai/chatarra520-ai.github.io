@@ -276,43 +276,25 @@
       <div class="block-head">
         <h2>Destacados</h2>
       </div>
-      <div class="destacados-grid">
-        <div class="destacados-col">
-          <h3 class="destacados-col-title">Almohadas</h3>
-          <div class="oferta-carousel-wrap">
-            <div class="oferta-carousel" id="almohadasGrid"></div>
-            <div class="oc-nav">
-              <button class="oc-arrow" id="amPrev" aria-label="Anterior">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button class="oc-arrow" id="amNext" aria-label="Siguiente">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
 
-        <div class="destacados-col">
-          <h3 class="destacados-col-title">Bases cama</h3>
-          <div class="oferta-carousel-wrap">
-            <div class="oferta-carousel" id="basecamasGrid"></div>
-            <div class="oc-nav">
-              <button class="oc-arrow" id="bcPrev" aria-label="Anterior">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button class="oc-arrow" id="bcNext" aria-label="Siguiente">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
-          </div>
+      <!-- Los filtros (Almohadas / Bases cama / ...) se generan solos según
+           las categorías que existan en js/destacados.js — no se editan
+           aquí a mano. -->
+      <div class="destacados-filtros" id="destacadosFiltros"></div>
+
+      <div class="oferta-carousel-wrap">
+        <div class="oferta-carousel" id="destacadosGrid"></div>
+        <div class="oc-nav">
+          <button class="oc-arrow" id="destPrev" aria-label="Anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button class="oc-arrow" id="destNext" aria-label="Siguiente">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
