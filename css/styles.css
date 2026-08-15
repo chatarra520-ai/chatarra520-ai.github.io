@@ -1185,7 +1185,7 @@
    }
 
    .hc-text-box {
-       background: var(--ink);
+       background: color-mix(in srgb, var(--ink) 90%, transparent);
        border-radius: 5px;
        padding: 36px 20px;
        box-shadow: -2px 12px 13px -7px rgba(0, 0, 0, 0.59);
@@ -1328,21 +1328,11 @@
            min-height: 380px;
        }
 
-       .hc-text {
-           max-width: 88%;
-           padding: 0 24px;
-           justify-content: flex-end;
-           padding-bottom: 64px;
-       }
 
-       .hc-text-box {
-           padding: 26px 24px;
-       }
 
-       .hc-arrow {
-           width: 36px;
-           height: 36px;
-       }
+
+
+
    }
 
    /* ---------- ofertas carousel ---------- */
@@ -1538,7 +1528,7 @@
        border-radius: 100px;
    }
 
-   @media(max-width:860px) {
+   @media (max-width: 767px) {
        .detail-grid {
            grid-template-columns: 1fr;
            gap: 30px;
@@ -1549,12 +1539,34 @@
            width: 100%;
            height: auto;
        }
+
+       .gallery-track {
+           max-width: 340px;
+           width: 100%;
+       }
+
+       .detail-gallery .gallery-arrow {
+           display: none;
+       }
+
+       /* ---------- carousel sup ---------- */
+       .hc-text-box {
+           border-radius: 5px;
+           padding: 20px 10px;
+           width: 90%;
+       }
+
+       .hc-text {
+           justify-content: flex-end;
+           padding-bottom: 64px;
+       }
+
+       .hc-arrow {
+           width: 36px;
+           height: 36px;
+       }
+
    }
-
-
-
-
-
 
    .detail-gallery {
        display: flex;
