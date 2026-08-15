@@ -32,13 +32,37 @@
 window.products = window.products || [];
 
 const PRODUCTOS_DESTACADOS = [
-  { id: 'almohada-01', name: 'Viscoelástica · Soporte cuello', tag: 'Viscoelástica · Soporte cuello', desc: 'Almohada viscoelástica con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  {
+    id: 'almohada-01', name: 'Viscoelástica · Soporte cuello', tag: 'Viscoelástica · Soporte cuello', desc: 'Almohada viscoelástica con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
+    gallery: ['img/almohadas/almohada-01.png', 'img/almohadas/almohada-02.png'],
+    sizes: [
+      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "55 cm", largo: "35 cm", alto: null } }
+    ]
+  },
 
-  { id: 'basecamaSencilla', name: 'Base cama Sencilla', tag: 'Madera · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 590000, now: 349000, img: 'img/basecama/basecama-sencilla-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  {
+    id: 'basecamaSencilla', name: 'Base cama Sencilla', tag: 'Madera · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 590000, now: 349000, img: 'img/basecama/basecama-sencilla-02.png', category: 'Bases cama',
+    gallery: ['img/basecama/basecama-sencilla-02.png', 'img/basecama/basecama-sencilla.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
+    sizes: [
+      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } }
+    ]
+  },
 
-  { id: 'basecama-tapizada', name: 'Base cama Semidoble', tag: 'Tapizada · Antideslizante', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 790000, now: 495000, img: 'img/basecama/basecama-semidoble-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  {
+    id: 'basecama-tapizada', name: 'Base cama Semidoble', tag: 'Tapizada · Antideslizante', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 790000, now: 495000, img: 'img/basecama/basecama-semidoble-02.png', category: 'Bases cama',
+    gallery: ['img/basecama/basecama-semidoble-02.png', 'img/basecama/basecama-semidoble.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
+    sizes: [
+      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } }
+    ]
+  },
 
-  { id: 'basecama-dividida', name: 'Base cama Doble dividida', tag: 'Dividida · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: null, now: 420000, img: 'img/basecama/basecama-doble-02.png', category: 'Bases cama' }, /*Necesito minimo cinco imagenes en el detalle.  Necesito que tenga dedidas*/
+  {
+    id: 'basecama-dividida', name: 'Base cama Doble dividida', tag: 'Dividida · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: null, now: 420000, img: 'img/basecama/basecama-doble-02.png', category: 'Bases cama',
+    gallery: ['img/basecama/basecama-doble-02.png', 'img/basecama/basecama-doble.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
+    sizes: [
+      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32 cm" } }
+    ]
+  },
 ];
 
 (function () {
@@ -70,18 +94,20 @@ const PRODUCTOS_DESTACADOS = [
   }
 
   function initDestacados() {
+    // Se suman al catálogo global SIEMPRE, incluso en páginas (como
+    // detalle.html) que no tienen el carrusel visual — igual que hace
+    // combos.js. Si no se hace esto antes del "return" de abajo, el
+    // detalle nunca encuentra estos productos.
+    window.products = window.products.concat(PRODUCTOS_DESTACADOS);
+
     const grid = document.getElementById('destacadosGrid');
     const filtrosEl = document.getElementById('destacadosFiltros');
     const prevBtn = document.getElementById('destPrev');
     const nextBtn = document.getElementById('destNext');
     if (!grid) {
-      console.warn('[destacados] Falta #destacadosGrid en el HTML.');
+      console.warn('[destacados] Falta #destacadosGrid en el HTML (normal si esta página no tiene el carrusel).');
       return;
     }
-
-    // Se suman al catálogo global para que detalle.html y el carrito
-    // los encuentren por id, igual que combos.js.
-    window.products = window.products.concat(PRODUCTOS_DESTACADOS);
 
     // Filtros generados SOLOS según las categorías presentes en los datos
     // (en el orden en que aparecen por primera vez), + "Ver todo".

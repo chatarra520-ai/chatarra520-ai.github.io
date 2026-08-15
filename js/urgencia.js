@@ -8,8 +8,8 @@
   const urgencyMsgs = [
     'Hasta <em>50% OFF</em> por lanzamiento',
     'Garantía de <em>5 años</em> en colchones',
-    'Consulta los puntos<em> de entrega disponibles en tu ciudad</em>',
-    'Paga fácil y seguro: tarjetas, PSE y contraentrega',
+    'Envíos a ciudades principales. <em> ¡Consúltanos!</em>',
+    'Paga con PSE o contraentrega',
   ];
 
   function initUrgencyTicker() {

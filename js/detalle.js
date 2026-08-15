@@ -14,9 +14,8 @@
 
   const TRUST_ITEMS = [
     'Garantía de fábrica de 5 años',
-    'Despacho a nivel nacional, con seguimiento del pedido',
-    'Pago 100% seguro: tarjetas, PSE, contraentrega y cuotas',
-    'Cambio por inconformidad dentro de los primeros 30 días'
+    'Habla con nuestro asesor y conoce nuestras zonas de entrega.',
+    'Pago con PSE o contraentrega'
   ];
 
   const checkSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>`;

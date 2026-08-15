@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body id="arriba">
   <section>
     <div class="wrapper-fluid utility-bar-color">
       <div class="container utility-bar">
@@ -21,8 +21,7 @@
             <a href="index.html"><img src="img/logo.png" alt="Colchones Orión"></a>
           </div>
         </div>
-        <div class="col-9">Envíos a toda Colombia · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada ·
-          Garantía de 5 años en toda la línea Paraíso</div>
+        <div class="col-9">¡Súper oferta por hoy! · <strong>Hasta 50% OFF</strong> por lanzamiento de temporada </div>
       </div>
     </div>
   </section>
@@ -34,10 +33,12 @@
         <div class="col-9">
           <div class="nav">
             <nav class="nav-links" id="navLinks">
+              <a href="#arriba">Inicio</a>
               <a href="#ofertas">Colchones</a>
               <a href="#combos">Combos</a>
-              <a href="#destacado">Destacado</a>
-              <a href="#firmeza">Encuentra tu firmeza</a>
+              <a href="#destacados">Destacado</a>
+              <a href="nosotros.html">Nosotros</a>
+              <a href="contacto.html">Contacto</a>
             </nav>
             <div class="nav-actions">
               <button class="cart-btn" onclick="openCart()">
@@ -74,61 +75,44 @@
     </button>
     <div class="hc-dots" id="hcDots"></div>
   </div>
+  <div class="hero-franja">
+    En <span class="orion">Orion</span> fabricamos colchones que combinan comodidad, soporte y durabilidad, con
+    materiales seleccionados para
+    ofrecer
+    un descanso de calidad.
+  </div>
   <section class="hero">
-    <div class="hero-franja">
-
-    </div>
     <h1 class="hero-title">Promoción flash del día</h1>
-    <div class="wrap hero-grid">
-      <div>
-        <h1>Super Combo<br><em> Base cama - Colchon doble</em> </h1>
-        <div class="hero-ctas">
-          <a href="#ofertas" class="btn-primary">Ver ofertas de hoy</a>
-          <a href="#firmeza" class="btn-ghost">Encontrar mi firmeza ideal</a>
-        </div>
-        <div class="hero-trust">
-          <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BE8A3D" stroke-width="2.5">
-              <path d="M20 6L9 17l-5-5" />
-            </svg> Garantía de 5 años</div>
-          <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BE8A3D" stroke-width="2.5">
-              <path d="M20 6L9 17l-5-5" />
-            </svg> Envíos a todo el país</div>
-          <div><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#BE8A3D" stroke-width="2.5">
-              <path d="M20 6L9 17l-5-5" />
-            </svg> Pago 100% seguro</div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="badge-off" id="heroBadge" style="display:none;"></div>
-
-        <!-- ⚠️ Para cambiar el producto destacado del hero, edita SOLO el
-             "data-hero-product" de aquí abajo con el id real del producto
-             (el mismo que usas en detalle.html?id=...). Nombre, precio,
-             % de descuento, imagen, link y botón se arman solos con
-             js/hero.js — no se escriben a mano en ningún lado. -->
+    <div class="promocion">
+      <div class="promocion-col">
+        <div class="badge-off-02" id="heroBadge" style="display:none;"></div>
         <div class="mattress-card" data-hero-product="ColchonNube+BaseCama">
           <img id="heroImg" src="" alt="">
-          <p class="cap" id="heroCap" style="margin:16px 0 0;"></p>
-          <div class="price-tag-hero" id="heroPrices"></div>
-          <div class="hero-card-actions">
-            <a href="#" class="ver-detalle" id="heroDetalleLink">Ver especificaciones</a>
-            <button class="add-btn" id="heroAddBtn">Agregar al carrito</button>
-          </div>
+        </div>
+      </div>
+      <div class="promocion-col">
+        <div class="price-tag-hero" id="heroPrices"></div>
+        <div class="hero-card-actions">
+          <a href="#" class="ver-detalle" id="heroDetalleLink">Ver especificaciones</a>
+          <button class="add-btn" id="heroAddBtn">Agregar al carrito</button>
         </div>
       </div>
     </div>
+    <div class="wrap hero-grid">
+      <div class="hero-visual"> </div>
+    </div>
   </section>
-
+  <!-- 
   <div class="urgency">
     <div class="wrap">
       <div class="urgency-track" id="urgencyTrack"></div>
     </div>
   </div>
-
+ -->
   <section class="block" id="ofertas">
     <div class="wrap">
       <div class="block-head">
-        <h2>Todos con garantía de fábrica y <span style="color:#8f672a;">despacho a nivel nacional.</span></h2>
+        <h2>Descansa mejor <span style="color:#8f672a;">cada noche </span></h2>
         <p> </p>
       </div>
       <div class="oferta-carousel-wrap">
@@ -176,62 +160,12 @@
   </section>
 
 
-  <section class="block" id="destacado">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Productos <span style="color:#8f672a;">destcados</span></h2>
-        <h3>Los favoritos para dormir mejor.</h3>
-      </div>
-      <div class="destacado">
-
-        <div class="destacado-columna">
-          <h3 class="destacado-sub">Almohadas</h3>
-
-          <div class="destacado-carousel-wrap">
-            <div class="destacado-carousel" id="almohadasGrid"></div>
-            <div class="oc-nav">
-              <button class="oc-arrow" id="amPrev" aria-label="Anterior">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button class="oc-arrow" id="amNext" aria-label="Siguiente">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="destacado-columna">
-          <h3 class="destacado-sub">Basecamas</h3>
-
-          <div class="destacado-carousel-wrap">
-            <div class="destacado-carousel" id="basecamasGrid"></div>
-            <div class="oc-nav">
-              <button class="oc-arrow" id="bcPrev" aria-label="Anterior">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button class="oc-arrow" id="bcNext" aria-label="Siguiente">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-  </section>
-
   <section class="block" id="firmeza">
     <div class="wrap">
       <div class="firmeza">
-        <p class="eyebrow">Encuentra tu firmeza ideal</p>
-        <h2>No todos los cuerpos descansan igual</h2>
+        <h2>No todos los cuerpos descansan igual
+          <span class="eyebrow"> Encuentra tu firmeza ideal </span>
+        </h2>
         <div class="firmeza-grid">
           <div class="firm-options" id="firmOptions"></div>
           <div class="cross-section" id="crossSection">
@@ -239,47 +173,42 @@
             <p class="cross-caption" id="crossCaption"></p>
           </div>
         </div>
+
+        <!-- 
+        <div class="fimeza-fila">
+          <div class="firmeza-col">
+            <a href="firme.html" class="ver-colchones">
+              <img src="img/firm-01.png" alt="Ver colchones firmes">
+              <span>Ver colchones firmes</span>
+            </a>
+          </div>
+          <div class="firmeza-col">
+            <a href="medio.html" class="ver-colchones">
+              <img src="img/firm-02.png" alt="Ver colchones medio">
+              <span>Ver colchones medio</span>
+            </a>
+            </a>
+          </div>
+          <div class="firmeza-col">
+            <a href="suave.html" class="ver-colchones">
+              <img src="img/firm-03.png" alt="Ver colchones suave">
+              <span>Ver colchones suave</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+-->
+
+      </div>
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="block-head">
-        <h2>Selecciona la<span style="color:#8f672a;"> firmeza de tu colchón</span></h2>
-      </div>
-      <div class="fimeza-fila">
-        <div class="firmeza-col">
-          <img src="img/firm-01.png" alt="icono colchones firmes">
-          <a href="firme.html" class="ver-colchones">Ver colchones firmes</a>
-        </div>
-        <div class="firmeza-col">
-          <img src="img/firm-02.png" alt="">
-          <a href="medio.html" class="ver-colchones">Ver colchones medio</a>
-        </div>
-        <div class="firmeza-col">
-          <img src="img/firm-03.png" alt="">
-          <a href="suave.html" class="ver-colchones">Ver colchones suave</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ⚠️ DESTACADOS — 2 columnas, cada una es un carrusel INDEPENDIENTE
-       (Almohadas / Bases cama). Los productos son placeholder de
-       ejemplo, viven en js/destacados.js — reemplázalos ahí por los
-       reales cuando los tengas (mismo formato que carrusel-ofertas.js:
-       objetos con id/name/tag/img/now/old, sin comillas alrededor del
-       array porque es JavaScript, no HTML). -->
   <section class="block" id="destacados">
     <div class="wrap">
       <div class="block-head">
-        <h2>Destacados</h2>
+        <h2>Productos <span style="color:#8f672a;">destcados</span></h2>
+        <h3>Los favoritos para dormir mejor.</h3>
       </div>
-
-      <!-- Los filtros (Almohadas / Bases cama / ...) se generan solos según
-           las categorías que existan en js/destacados.js — no se editan
-           aquí a mano. -->
       <div class="destacados-filtros" id="destacadosFiltros"></div>
 
       <div class="oferta-carousel-wrap">
@@ -299,7 +228,7 @@
       </div>
     </div>
   </section>
-
+  <!--  
   <section class="block" id="confianza">
     <div class="wrap">
       <div class="block-head">
@@ -327,18 +256,60 @@
       </div>
     </div>
   </section>
+-->
+  <section class="como-comprar">
+    <div class="como-comprar-contenido">
 
+      <h2>¿Cómo comprar?</h2>
+      <p class="subtitulo">En lugar de promesas, mostremos el proceso.</p>
+
+      <div class="pasos">
+
+        <div class="paso">
+          <div class="numero">01</div>
+          <div>
+            <h3>Elige tu colchón</h3>
+            <p>Selecciona el modelo que prefieras.</p>
+          </div>
+        </div>
+
+        <div class="paso">
+          <div class="numero">02</div>
+          <div>
+            <h3>Selecciona la medida</h3>
+            <p>Elige la medida que necesitas.</p>
+          </div>
+        </div>
+
+        <div class="paso">
+          <div class="numero">03</div>
+          <div>
+            <h3>Confirmamos tu pedido</h3>
+            <p>Verificamos disponibilidad y envío.</p>
+          </div>
+        </div>
+
+        <div class="paso">
+          <div class="numero">04</div>
+          <div>
+            <h3>Recibe tu pedido</h3>
+            <p>Te informamos y coordinamos la entrega.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
   <section class="block" id="promesa">
     <div class="wrap">
       <div class="block-head">
-        <h2>Nuestra <span style="color:#8f672a;">promesa de venta</span> </h2>
+        <h2>Lo que nos <span style="color:#8f672a;">diferencia</span> </h2>
       </div>
       <div class="promesa">
 
         <div class="promesa-hijo">
           <img src="img/promesa.png" alt="imagen cama promesa de venta">
         </div>
-
         <div class="promesa-hijo">
           <div class="promesa-filas">
 
@@ -348,15 +319,13 @@
               <div class="espacio-texto">Te ayudamos a elegir la firmeza adecuada según tus necesidades.
                 Si tienes dudas, nuestro equipo estará disponible para asesorarte.</div>
             </div>
-
             <div class="fila">
               <div class="espacio-icono"><img src="img/garantia.png" alt="Sello de garantía" title="Icono de garantía">
               </div>
-              <div class="espacio-texto">Todos nuestros productos cuentan con garantía de hasta 5 años, según las
-                condiciones establecidas y desde su fecha de
-                fabricación.</div>
+              <div class="espacio-texto">Cuentan con hasta 5 años de garantía. La garantía cubre defectos de
+                fabricación, según las condiciones establecidas para
+                cada producto. </div>
             </div>
-
             <div class="fila">
               <div class="espacio-icono"><img src="img/Materiales.png" alt="Materiales seleccionados"
                   title="Icono de materiales de alta calidad"></div>
