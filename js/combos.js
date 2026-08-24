@@ -47,7 +47,6 @@
         { label: "Queen", now: 2643990, old: 2983040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 3414990, old: null, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
-
     {
       id: 'ColchonVenus+BaseCama',
       name: 'Combo Venuz basecama',
@@ -63,7 +62,6 @@
         { label: "Queen", now: 1741990, old: 1755995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 2331990, old: null, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
-
     {
       id: 'ColchonVenus+RopaCama',
       name: 'Combo Venuz ropa de cama',
@@ -79,7 +77,21 @@
         { label: "Queen", now: 1493990, old: 1563040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1994990, old: 2072500, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
-
+    {
+      id: 'ColchonGalaxy+BaseCama',
+      name: 'Combo Galaxy',
+      tag: 'Colchón Orion Galaxy, firmeza media + Basecama',
+      desc: 'Multi medidas',
+      old: 1669995, now: 1455990,
+      img: 'img/combos/RopaCama-Venus.png',
+      gallery: ['img/combos/BaseColchon-Galaxy.png', 'img/02.png', 'img/m-normal.png', 'img/combos/BaseColchon-Galaxy.png'],
+      sizes: [
+        { label: "Sencillo", now: 1295990, old: 1517995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1455990, old: 1669995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1567990, old: 1919995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1859990, old: 1875990, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 2548990, old: 2570995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
     {
       id: 'ColchonGalaxy+BaseCama',
       name: 'Combo Galaxy',
@@ -106,6 +118,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
       id: 'ColchonVenus+RopaCama',
       name: 'Combo Venuz ropa de cama',
@@ -121,30 +150,6 @@
         { label: "Queen", now: 1493990, old: 1563040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1994990, old: 2072500, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
-
-    {
-      id: 'ColchonGalaxy+BaseCama',
-      name: 'Combo Galaxy',
-      tag: 'Colchón Orion Galaxy, firmeza media + Basecama',
-      desc: 'Multi medidas',
-      old: 1669995, now: 1455990,
-      img: 'img/combos/RopaCama-Venus.png',
-      gallery: ['img/combos/BaseColchon-Galaxy.png', 'img/02.png', 'img/m-normal.png', 'img/combos/BaseColchon-Galaxy.png'],
-      sizes: [
-        { label: "Sencillo", now: 1295990, old: 1517995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
-        { label: "Semidoble", now: 1455990, old: 1669995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 1567990, old: 1919995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
-        { label: "Queen", now: 1859990, old: 1875990, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-        { label: "King", now: 2548990, old: 2570995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
-    },
-
-
-
-
-
-
-
-
   ];
 
   function initCombos() {

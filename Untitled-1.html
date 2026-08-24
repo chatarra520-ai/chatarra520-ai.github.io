@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Botón de llamada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 60px;
+    }
+
+    .btn-llamar {
+      position: relative;
+      /* necesario para posicionar el tooltip */
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #25D366;
+      /* cámbialo a tu color de marca */
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-llamar:hover {
+      background-color: #1ebe57;
+    }
+
+    /* Tooltip */
+    .btn-llamar::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 120%;
+      /* arriba del botón */
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      padding: 6px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    /* Flechita del tooltip */
+    .btn-llamar::before {
+      content: "";
+      position: absolute;
+      bottom: 112%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-top-color: #000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-llamar:hover::after,
+    .btn-llamar:hover::before,
+    .btn-llamar.mostrar-tooltip::after,
+    .btn-llamar.mostrar-tooltip::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="tel:+525512345678" class="btn-llamar" data-tooltip="Llámanos ahora" id="btnLlamar">
+    📞 Llamar
+  </a>
+
+  <script>
+    const btn = document.getElementById('btnLlamar');
+    const esTactil = window.matchMedia('(hover: none)').matches;
+
+    if (esTactil) {
+      btn.addEventListener('click', function (e) {
+        // Primer tap: solo muestra el tooltip, no dispara la llamada todavía
+        if (!btn.classList.contains('mostrar-tooltip')) {
+          e.preventDefault();
+          btn.classList.add('mostrar-tooltip');
+
+          // Oculta el tooltip solo si el usuario toca fuera del botón
+          document.addEventListener('click', function ocultar(ev) {
+            if (!btn.contains(ev.target)) {
+              btn.classList.remove('mostrar-tooltip');
+              document.removeEventListener('click', ocultar);
+            }
+          });
+        }
+        // Segundo tap (con tooltip ya visible): deja pasar el click normal → hace la llamada
+      });
+    }
+  </script>
+
+</body>
+
+</html>

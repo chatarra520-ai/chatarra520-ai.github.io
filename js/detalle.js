@@ -13,8 +13,7 @@
 (function () {
 
   const TRUST_ITEMS = [
-    'Garantía de fábrica de 5 años',
-    'Habla con nuestro asesor y conoce nuestras zonas de entrega.',
+    'Contáctanos lo antes posible, <a href="https://wa.me/573002853282?text=Hola,%20quiero%20más%20información" target="_blank" rel="noopener" class="trust-wa-link">Habla con Orion</a>.',
     'Pago con PSE o contraentrega'
   ];
 
@@ -151,7 +150,7 @@
         : [];
 
       measuresEl.innerHTML = parts.length
-        ? `<h3 class="measures-title">Confirma el tamaño de tu colchón.</h3><p class="measures-text">${selectedSize.label} — ${parts.join(' · ')}</p>`
+        ? `<h3 class="measures-title">Confirma el tamaño.</h3><p class="measures-text">${selectedSize.label} — ${parts.join(' · ')}</p>`
         : '';
     }
 
@@ -255,7 +254,11 @@
     const wrap = document.createElement('div');
     wrap.className = 'suggested-wrap';
     wrap.innerHTML = `
-      <h2 class="detail-subhead">También te puede interesar</h2>
+       <p class="detail-llama">Nuestro equipo puede asesorarte sobre firmeza, y características del colchón para ayudarte a elegir la opción más adecuada para tu descanso.
+</p>
+    
+    
+    <h2 class="detail-subhead">También te puede interesar</h2>
       <div class="suggested-grid">
         ${related.map(p => `
           <a class="suggested-card" href="detalle.html?id=${encodeURIComponent(p.id)}">

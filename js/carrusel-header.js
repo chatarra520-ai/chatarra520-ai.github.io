@@ -18,26 +18,20 @@
     {
       img: 'img/carrusel/07.png?v=1772594318&width=1400',
       imgMobile: 'img/carrusel/07-movil.png?v=1772594318&width=900',
-
-      title: 'El descanso que tu espalda pide hace meses',
-
-      cta: 'Ver oferta', target: '#ofertas'
+      title: 'El descanso que se siente desde la primera noche.',
+      cta: 'Conócelo', target: '#ofertas',
     },
     {
       img: 'img/carrusel/08.png?v=1767815535&width=1400',
       imgMobile: 'img/carrusel/08-movil.png?v=1767815535&width=900',
-
-      title: 'Firmeza media para parejas que duermen distinto',
-
-      cta: 'Comprar ahora', target: '#ofertas'
+      title: ' ¿Qué firmeza necesitas? Descubre cuál se adapta mejor a tu forma de descansar. ',
+      cta: 'Hacer el test', target: '#firmeza'
     },
     {
       img: 'img/carrusel/09.png?v=1766436427&width=1400',
       imgMobile: 'img/carrusel/09-movil.png?v=1766436427&width=900',
-
-      title: 'No adivines: hazte el test de firmeza ideal',
-
-      cta: 'Hacer el test', target: '#firmeza'
+      title: 'Fabricamos colchones para tu descanso, con el confort y la calidad que mereces.',
+      cta: 'Conoce Orión', target: '#ofertas'
     }
   ];
 

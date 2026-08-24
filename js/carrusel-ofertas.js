@@ -29,8 +29,8 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Suave',
     desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ',
     old: 3890000, now: 1945000,
-    img: 'img/suave/suave-orion-nube.png',
-    gallery: ['img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png', 'img/m-normal.png', 'img/firm-suave.png'],
+    img: 'img/suave/suave-orion-nube-05.png',
+    gallery: ['img/suave/suave-orion-nube-05.png', 'img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png', 'img/m-normal.png', 'img/firm-suave.png'],
     sizes: [
       { label: "Sencillo", now: 2692000, old: 5390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },

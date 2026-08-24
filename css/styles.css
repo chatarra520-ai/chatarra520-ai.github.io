@@ -119,6 +119,10 @@
        padding: 20px 20px;
    }
 
+   .brand-badge img {
+       width: 200px;
+   }
+
    .cat-logo {
        display: flex;
        padding: 8px 12px;
@@ -371,20 +375,9 @@
        color: var(--clay);
    }
 
-
-
    .hero-title {
        text-align: center;
    }
-
-
-
-
-
-
-
-
-
 
    .btn-primary {
        background: var(--clay);
@@ -930,6 +923,98 @@
        white-space: nowrap;
    }
 
+   .personalizada-cont {
+       display: flex;
+       align-items: center;
+       /* nuevo: centra verticalmente icono y texto entre sí y respecto al contenedor */
+       gap: 30px;
+       background-color: color-mix(in srgb, var(--clay) 10%, transparent);
+       margin: 5px 0 60px 0;
+       padding: 5px 0px;
+   }
+
+   .personalizada-cont .col-titulo {
+       flex: 25%;
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       padding-left: 20px;
+       white-space: nowrap;
+   }
+
+   .personalizada-cont .col-texto {
+       flex: 75%;
+       display: block;
+       font-size: 14px;
+       font-weight: 600;
+       color: var(--gold-deep);
+   }
+
+   .personalizada-cont .col-texto .subtitle {
+       font-family: 'Fraunces', serif;
+       font-weight: 800;
+       color: var(--ink);
+       font-size: 15px;
+
+   }
+
+   @media (max-width: 768px) {
+       .personalizada-cont {
+           flex-direction: column;
+           /* apila en vez de fila */
+           align-items: center;
+           /* centra horizontalmente ambos bloques */
+           text-align: center;
+           /* centra el texto dentro del párrafo */
+           gap: 12px;
+           /* reduce el espacio, 30px es mucho apilado */
+           padding: 20px 20px;
+       }
+
+       .personalizada-cont .col-titulo {
+           justify-content: center;
+           /* centra el ícono (antes: flex-end, para la col derecha) */
+           padding-left: 0;
+           /* ya no aplica en columna */
+       }
+   }
+
+   /*
+
+   .pre-footer {
+       background-color: var(--clay);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+   }
+
+   .pre-footer-cont {
+       display: flex;
+       margin: 0 70px;
+   }
+
+   .pre-footer .col-titulo {
+       flex: 25%;
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       font-size: 12px;
+       font-weight: 800;
+       box-sizing: border-box;
+       color: var(--ink);
+   }
+
+   .pre-footer .col-texto {
+       flex: 75%;
+       display: flex;
+       align-items: center;
+       padding: 5px 0px 5px 30px;
+       font-size: 14px;
+       line-height: 1.5;
+       box-sizing: border-box;
+   }
+*/
+
+
+
    /* ---------- footer ---------- */
    footer {
        background: var(--ink);
@@ -940,10 +1025,15 @@
 
    .foot-grid {
        display: grid;
-       grid-template-columns: 1.4fr 1fr 1fr 1fr;
+       grid-template-columns: 1fr 1fr 3fr 1fr;
        gap: 40px;
        padding-bottom: 40px;
-       border-bottom: 1px solid rgba(255, 255, 255, .1);
+   }
+
+   .foot-grid .txt {
+       font-size: 12px;
+       color: #ffffff;
+       font-style: italic;
    }
 
    .foot-grid a {
@@ -980,6 +1070,42 @@
        flex-wrap: wrap;
        gap: 10px;
    }
+
+
+   .subfoot-grid {
+       display: grid;
+       grid-template-columns: 1fr 4fr;
+       gap: 40px;
+       padding-bottom: 40px;
+   }
+
+   .subfoot-grid h5 {
+       text-transform: uppercase;
+
+   }
+
+   .foot-grid .llamada {
+       font-size: 12px;
+       color: #C9CADA;
+   }
+
+   .foot-grid .llamada::before {
+       content: "\f095";
+       /* Código Unicode para el icono de teléfono sólido en FontAwesome */
+       font-family: "Font Awesome 6 Free";
+       font-weight: 900;
+       margin-right: 5px;
+   }
+
+
+
+   .foot-grid .llamada:hover {
+       color: #ffffff
+   }
+
+
+
+
 
    @media(max-width:860px) {
 
@@ -1185,7 +1311,7 @@
    }
 
    .hc-text-box {
-       background: color-mix(in srgb, var(--ink) 90%, transparent);
+       background: color-mix(in srgb, var(--ink) 80%, transparent);
        border-radius: 5px;
        padding: 36px 20px;
        box-shadow: -2px 12px 13px -7px rgba(0, 0, 0, 0.59);
@@ -1726,6 +1852,16 @@
        margin: 30px 0 14px;
    }
 
+   .detail-llama {
+       margin-top: -15px;
+       text-align: center;
+       font-size: 12px;
+       font-weight: 600;
+       background: color-mix(in srgb, var(--ink) 10%, transparent);
+       padding: 10px 0px;
+   }
+
+
    .detail-specs {
        list-style: none;
        margin: 20px 0 26px;
@@ -2083,7 +2219,6 @@
    .promesa-filas {
        display: grid;
        grid-template-rows: repeat(4, 1fr);
-       height: 400px;
    }
 
    .fila {
@@ -2101,11 +2236,48 @@
        height: 70px;
    }
 
-   .espacio-texto {
-       display: flex;
-       align-items: center;
-       height: 70px;
-       padding: 0 20px;
+   .promesa-filas {
+       display: grid;
+       grid-template-rows: repeat(3, 1fr);
+       /* eran 4, pero solo hay 3 filas activas (una está comentada) */
+       height: auto;
+       /* quita el 400px fijo, deja que crezca según contenido */
+   }
+
+   .promesa-llamada {
+       font-size: 14px;
+       font-weight: 800;
+       text-decoration: underline;
+       color: var(--gold-deep);
+   }
+
+   .promesa-llamada:hover {
+       opacity: 0.5;
+   }
+
+   @media (max-width: 768px) {
+       .promesa {
+           flex-direction: column;
+           /* imagen arriba, filas abajo */
+       }
+
+       .promesa-filas {
+           grid-template-rows: repeat(3, 1fr);
+           /* coincide con las 3 filas reales */
+           height: auto;
+           /* que no fuerce 400px en pantallas chicas */
+       }
+
+       .fila {
+           grid-template-columns: 60px 1fr;
+           /* icono un poco más chico */
+       }
+
+       .espacio-icono,
+       .espacio-texto {
+           height: auto;
+           /* deja que el contenido defina el alto */
+       }
    }
 
    .destacado-carousel {
@@ -2124,7 +2296,7 @@
    }
 
    .como-comprar {
-       padding: 60px 20px;
+       padding: 60px 20px 0px 20px;
    }
 
    .como-comprar-contenido {
@@ -2176,4 +2348,25 @@
            grid-template-columns: 1fr;
            gap: 25px;
        }
+   }
+
+   .habla-orion {
+       font-weight: 800;
+       color: var(--ink);
+       text-decoration: underline;
+   }
+
+   .habla-orion:hover {
+       opacity: 0.5;
+   }
+
+   .trust-wa-link {
+       font-weight: 800;
+       text-decoration: underline;
+       color: var(--gold-deep);
+   }
+
+   .trust-wa-link:hover {
+       opacity: 0.5;
+       color: var(--gold-deep);
    }
