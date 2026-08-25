@@ -57,6 +57,14 @@
 
   let cart = loadCart();
 
+  // Antes de limpiar el carrito de ids "fantasma" (que ya no existen en
+  // el catálogo, ej. porque se renombró o eliminó un producto), hay que
+  // estar seguros de que YA se cargó el catálogo completo — si no,
+  // podríamos borrar por error un producto real de firme/medio/suave que
+  // simplemente todavía no había llegado (llega vía fetch, es async).
+  // catalogReady arranca en true si esta página no usa ese mecanismo.
+  let catalogReady = !window.categoriaCatalogoReady;
+
   // Resuelve el precio "ahora" de una línea del carrito contra el
   // catálogo actual: si la línea tiene "size", busca ese tamaño dentro
   // de p.sizes; si no, usa el precio base del producto (combos y
@@ -82,6 +90,22 @@
       return;
     }
 
+    const products = window.products || [];
+    const money = window.money || (n => '$' + n);
+
+    // ⚠️ Limpieza de "fantasmas": si algún id guardado ya no existe en
+    // el catálogo (producto renombrado/eliminado), se saca solo del
+    // carrito guardado — así no se queda contando para siempre sin
+    // poder quitarlo. Va ANTES de calcular el conteo, para que el
+    // número que se muestra ya sea el correcto. Solo se hace una vez
+    // que el catálogo ya cargó completo, para no borrar por error algo
+    // que solo estaba tardando en llegar (categoria-catalogo.js).
+    if (catalogReady) {
+      const antes = cart.length;
+      cart = cart.filter(ci => products.some(pp => pp.id === ci.id));
+      if (cart.length !== antes) saveCart();
+    }
+
     const count = cart.reduce((s,i) => s + i.qty, 0);
     countEl.textContent = count;
 
@@ -90,9 +114,6 @@
       footEl.innerHTML = '';
       return;
     }
-
-    const products = window.products || [];
-    const money = window.money || (n => '$' + n);
 
     itemsEl.innerHTML = cart.map(ci => {
       const p = products.find(pp => pp.id === ci.id);
@@ -187,7 +208,7 @@
   // terminen de llegar. Cuando lleguen, se vuelve a pintar para que se vean
   // bien nombre/imagen/precio de cualquier colchón de esas categorías.
   if (window.categoriaCatalogoReady) {
-    window.categoriaCatalogoReady.then(renderCart).catch(() => {});
+    window.categoriaCatalogoReady.then(() => { catalogReady = true; renderCart(); }).catch(() => { catalogReady = true; });
   }
 
 })();

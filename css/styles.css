@@ -1097,15 +1097,9 @@
        margin-right: 5px;
    }
 
-
-
    .foot-grid .llamada:hover {
        color: #ffffff
    }
-
-
-
-
 
    @media(max-width:860px) {
 
@@ -1214,11 +1208,11 @@
    }
 
    .qty-row button {
-       width: 24px;
-       height: 24px;
+
        border: 1px solid var(--line);
        border-radius: 6px;
        font-weight: 700;
+       padding: 5px 15px;
    }
 
    .qty-row span {
@@ -1231,9 +1225,14 @@
    .remove-item {
        font-size: 12px;
        color: var(--clay);
-       font-weight: 700;
        margin-left: auto;
        align-self: flex-start;
+   }
+
+   .remove-item:hover {
+       background-color: color-mix(in srgb, var(--clay) 10%, transparent);
+
+
    }
 
    .drawer-empty {
@@ -1375,6 +1374,16 @@
        max-width: 420px;
        line-height: 1.55;
        margin-bottom: 26px;
+   }
+
+   .hc-ctas {
+       display: flex;
+       gap: 12px;
+       flex-wrap: wrap;
+   }
+
+   .hc-cta-btn {
+       width: fit-content;
    }
 
    .hc-dots {
@@ -2299,6 +2308,7 @@
        padding: 60px 20px 0px 20px;
    }
 
+
    .como-comprar-contenido {
        max-width: 1100px;
        margin: 0 auto;
@@ -2328,10 +2338,16 @@
        text-align: left;
    }
 
+   .paso h3 {
+       text-align: center;
+   }
+
    .numero {
-       font-size: 32px;
-       font-weight: bold;
-       margin-bottom: 15px;
+       display: flex;
+       justify-content: center;
+       /* horizontal */
+       align-items: center;
+       /* vertical */
    }
 
    .paso h3 {
