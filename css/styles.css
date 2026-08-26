@@ -398,16 +398,15 @@
    .btn-ghost {
        padding: 15px 22px;
        border-radius: 100px;
+       border: 1px solid var(--bg);
        font-weight: 700;
        font-size: 15px;
-       border: 1.5px solid var(--ink);
-       color: var(--ink);
+       color: var(--bg);
        transition: .18s;
    }
 
    .btn-ghost:hover {
-       background: var(--ink);
-       color: var(--bg);
+       opacity: 50%;
    }
 
    .hero-trust {
