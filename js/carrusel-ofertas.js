@@ -32,11 +32,11 @@ window.products = [
     img: 'img/suave/suave-orion-nube-05.png',
     gallery: ['img/suave/suave-orion-nube-05.png', 'img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png', 'img/m-normal.png', 'img/firm-suave.png'],
     sizes: [
-      { label: "Sencillo", now: 2692000, old: 5390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
-      { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-      { label: "Doble", now: 3645000, old: 7290000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
-      { label: "Queen", now: 4045000, old: 8090000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-      { label: "King", now: 4845000, old: 9690000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
+      { label: "Sencillo", now: 1895000, old: 3790000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Semidoble", now: 1945000, old: 3890000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+      { label: "Doble", now: 2245000, old: 4490000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+      { label: "Queen", now: 2845000, old: 5690000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+      { label: "King", now: 3695000, old: 7390000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 
   {
@@ -73,7 +73,7 @@ window.products = [
 
   {
     id: 'firme-super-flex-foam',
-    name: 'Colchón Super FlexFoam',
+    name: 'Colchón Super Flex Foam',
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2018000, now: 1009000,
@@ -89,7 +89,7 @@ window.products = [
 
   {
     id: 'firme-super-flex-firm',
-    name: 'Colchón Super FlexFirm',
+    name: 'Colchón Super Flex Firm',
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
     old: 2138000, now: 1069000,
@@ -178,11 +178,11 @@ window.products = [
     gallery: ['img/Firme/firme-orion-imperium.png', 'img/Firme/firme-orion-imperium-02.png', 'img/Firme/firme-orion-imperium-04.png',
       'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
-      { label: "Sencillo", now: 5390000, old: 2692000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+      { label: "Sencillo", now: 2695000, old: 5390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 3145000, old: 6290000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
       { label: "Doble", now: 3645000, old: 7290000, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
       { label: "Queen", now: 4045000, old: 8090000, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-      { label: "King", now: 4845000, old: 6990000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
+      { label: "King", now: 4845000, old: 9690000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
   },
 ];
 

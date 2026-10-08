@@ -1867,6 +1867,7 @@
        font-weight: 600;
        background: color-mix(in srgb, var(--ink) 10%, transparent);
        padding: 10px 0px;
+       margin-top: 30px
    }
 
 
