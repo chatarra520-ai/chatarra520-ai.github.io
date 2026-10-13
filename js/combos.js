@@ -110,9 +110,9 @@
     // SuperFlexFoam
     {
       id: 'ColchonSuperFlexFoam+BaseCama',
-      name: 'Combo Colchón Super flex Foam + base cama',
-      tag: 'Colchón Colchón Super Flex Foam,  multimedidas, firmeza suabe + base cama',
-      desc: 'Colchón Colchón Super Flex Foam,  multimedidas, firmeza suabe + base cama',
+      name: 'Combo Colchón Orion Super flex Foam + base cama',
+      tag: 'Colchón Orion Super Flex Foam,  multimedidas, firmeza suabe + base cama',
+      desc: 'Colchón Orion Super Flex Foam,  multimedidas, firmeza suabe + base cama',
       old: 1259995, now: 1019990,
       img: 'img/combos/Sf-foam-bc01.png',
       gallery: ['img/combos/Sf-foam-bc02.png', 'img/combos/Sf-foam-bc01.png', 'img/combos/Sf-foam01.png', 'img/combos/Sf-foam02.png', 'img/combos/Sf-foam03.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
@@ -126,9 +126,9 @@
 
     {
       id: 'ColchonSuperFlexFoam+ropadecama',
-      name: 'Combo Colchón Super Flex Foam + ropa de cama',
-      tag: 'Colchón Colchón Super Flex Foam,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
-      desc: 'Colchón Colchón Super Flex Foam,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      name: 'Combo Colchón Orion Super Flex Foam + ropa de cama',
+      tag: 'Colchón Orion Super Flex Foam,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Super Flex Foam,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
       old: 893770, now: 846990,
       img: 'img/combos/Sf-foam-rc01.png',
       gallery: ['img/combos/Sf-foam-rc02.png', 'img/combos/Sf-foam-rc01.png', 'img/combos/Sf-foam-rc03.png', 'img/combos/Sf-foam01.png', 'img/combos/Sf-foam02.png', 'img/combos/Sf-foam03.png', 'img/combos/Sf-foam-rc04.png', 'img/m-normal.png',],
@@ -139,14 +139,11 @@
         { label: "Queen", now: 1067990, old: 1133040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1370990, old: 1442560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
-
-    // SuperFlexFirm
-
     {
       id: 'ColchonSuperFlexFirm+BaseCama',
-      name: 'Combo Colchón Super Flex Firm + Base Cama',
-      tag: 'Colchón Colchón Super Flex Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
-      desc: 'Colchón Colchón Super Flex Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      name: 'Combo Colchón Orion Super Flex Firm + Base Cama',
+      tag: 'Colchón Orion Super Flex Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Super Flex Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
       old: 1309995, now: 1068990,
       img: 'img/combos/Sf-firm-bc01.png',
       gallery: ['img/combos/Sf-firm-bc02.png', 'img/combos/Sf-firm-bc01.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
@@ -159,9 +156,9 @@
     },
     {
       id: 'ColchonSuperFlexFirm+RopaCama',
-      name: 'Combo Colchón Super Flex Firm + ropa de cama',
-      tag: 'Combo Colchón Super Flex Firm + ropa de cama,  multimedidas, firme + base cama',
-      desc: 'Combo Colchón Super Flex Firm + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
+      name: 'Combo Colchón Orion Super Flex Firm + ropa de cama',
+      tag: 'Colchón Orion Super Flex Firm + ropa de cama,  multimedidas, firme + base cama',
+      desc: 'Colchón Orion Super Flex Firm + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
       old: 1309995, now: 948990,
       img: 'img/combos/Sf-firm-rc01.png',
       gallery: ['img/combos/Sf-firm-rc02.png', 'img/combos/Sf-firm-rc01.png', 'img/combos/Sf-firm-rc03.png', 'img/combos/Sf-firm-rc04.png', 'img/m-normal.png',],
@@ -172,6 +169,122 @@
         { label: "Queen", now: 1166990, old: 1233040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1568990, old: 1642560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
+
+    {
+      id: 'ColchonSensacionFirm+BaseCama',
+      name: 'Combo Colchón Orion Sensacion Firm + Base Cama',
+      tag: 'Colchón Orion Sensacion Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Sensacion Firm,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      old: 139995, now: 992990,
+      img: 'img/combos/Sencacion-bc01.png',
+      gallery: ['img/combos/Sencacion-bc02.png', 'img/combos/Sencacion-bc01.png', 'img/combos/Sencacion03.png', 'img/combos/Sencacion04.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
+      sizes: [
+        { label: "Sencillo", now: 881990, old: 116700, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 992990, old: 139995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1087990, old: 1419995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
+    },
+    {
+      id: 'ColchonSensacionFirm+RopaCama',
+      name: 'Combo Colchón Orion Sensacion Firm + ropa de cama',
+      tag: 'Colchón Orion Sensacion Firm + ropa de cama,  multimedidas, firme + base cama',
+      desc: 'Colchón Orion Sensacion Firm + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
+      old: 943770, now: 819990,
+      img: 'img/combos/Sencacion-rc01.png',
+      gallery: ['img/combos/Sencacion-rc02.png', 'img/combos/Sencacion-rc01.png', 'img/combos/Sencacion-rc03.png', 'img/combos/Sencacion03.png', 'img/combos/Sencacion04.png', 'img/m-normal.png',],
+      sizes: [
+        { label: "Sencillo", now: 729990, old: 843770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 819990, old: 943770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 927990, old: 1073520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
+    },
+
+    {
+      id: 'ColchonEstela+BaseCama',
+      name: 'Combo Colchón Orion Estelar + Base Cama',
+      tag: 'Colchón Orion Estelar,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Estelar,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      old: 1517995, now: 1352990,
+      img: 'img/combos/Estelar-bc01.png',
+      gallery: ['img/combos/Sencacion-bc02.png', 'img/combos/Estelar-bc01.png', 'img/combos/Estelar-03.png', 'img/combos/Estelar-04.png', 'img/combos/Estelar-05.png', 'img/combos/Estelar-06.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
+      sizes: [
+        { label: "Sencillo", now: 1196990, old: 1517995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1352990, old: 1709995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1492990, old: 1869995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
+    },
+    {
+      id: 'ColchonEstelar+RopaCama',
+      name: 'Combo Colchón Orion Estelar + ropa de cama',
+      tag: 'Colchón Orion SEstelar + ropa de cama,  multimedidas, firme + base cama',
+      desc: 'Colchón Orion Estelar + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
+      old: 943770, now: 819990,
+      img: 'img/combos/Estelar-rc01.png',
+      gallery: ['img/combos/Estelar-rc02.png', 'img/combos/Estelar-rc01.png', 'img/combos/Estelar-03.png', 'img/combos/Estelar-04.png', 'img/combos/Estelar-05.png', 'img/combos/Estelar-06.png', 'img/m-normal.png',],
+      sizes: [
+        { label: "Sencillo", now: 1044990, old: 1193770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1179990, old: 1343770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1332990, old: 1523520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } }]
+    },
+
+    {
+      id: 'ColchonCosmo+BaseCama',
+      name: 'Combo Colchón Orion Cosmo + Base Cama',
+      tag: 'Colchón Orion Cosmo,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Cosmo,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      old: 1909995, now: 1532990,
+      img: 'img/combos/Cosmos-bc01.png',
+      gallery: ['img/combos/Cosmos-bc02.png', 'img/combos/Cosmos-bc01.png', 'img/combos/Cosmos04.png', 'img/combos/Cosmos05.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
+      sizes: [
+        { label: "Sencillo", now: 1286990, old: 1617995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1532990, old: 1909995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1897990, old: 2319995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 2125990, old: 2325995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 2625990, old: 2870995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
+    {
+      id: 'ColchonCosmo+RopaCama',
+      name: 'Combo Colchón Orion Cosmo + ropa de cama',
+      tag: 'Colchón Orion Cosmo + ropa de cama,  multimedidas, firme + base cama',
+      desc: 'Colchón Orion Cosmo + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
+      old: 1309995, now: 948990,
+      img: 'img/combos/Cosmos-rc01.png',
+      gallery: ['img/combos/Cosmos-rc02.png', 'img/combos/Cosmos-rc01.png', 'img/combos/Cosmos04.png', 'img/combos/Cosmos05.png', 'img/m-normal.png',],
+      sizes: [
+        { label: "Sencillo", now: 1134990, old: 1293770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1359990, old: 1543770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1737990, old: 1973520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1878990, old: 2133040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 2289990, old: 2592560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
+    {
+      id: 'ColchonImperium+BaseCama',
+      name: 'Combo Colchón Orion Imperium + Base Cama',
+      tag: 'Colchón Orion Imperium,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      desc: 'Colchón Orion Imperium,  multimedidas, firmeza suabe +  + almohada siliconada y protector siliconado',
+      old: 3609995, now: 3062990,
+      img: 'img/combos/Imperium-bc01.png',
+      gallery: ['img/combos/Imperium-bc02.png', 'img/combos/Imperium-bc01.png', 'img/combos/Imperium04.png', 'img/combos/Imperium05.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
+      sizes: [
+        { label: "Sencillo", now: 2636990, old: 3117995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 3062990, old: 3609995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 3517990, old: 4119990, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 3970990, old: 4375995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 4785990, old: 5270995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
+    {
+      id: 'ColchonImperium+RopaCama',
+      name: 'Combo Colchón Orion Imperium + ropa de cama',
+      tag: 'Colchón Orion Imperium + ropa de cama,  multimedidas, firme + base cama',
+      desc: 'Colchón Orion Imperium + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
+      old: 1309995, now: 948990,
+      img: 'img/combos/Imperium-rc01.png',
+      gallery: ['img/combos/Imperium-rc02.png', 'img/combos/Imperium-rc01.png', 'img/combos/Imperium-rc03.png', 'img/combos/Imperium04.png', 'img/combos/Imperium05.png', 'img/m-normal.png',],
+      sizes: [
+        { label: "Sencillo", now: 2485990, old: 2793770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 2889990, old: 3543770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 3357990, old: 3773520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 3723990, old: 4183040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 4449990, old: 4992560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+    },
+
   ];
 
   function initCombos() {
@@ -200,20 +313,20 @@
       const card = document.createElement('div');
       card.className = 'pcard';
       card.innerHTML = `
-        <div class="img-wrap">
-          <span class="discount-pill">-${off}%</span>
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>${p.name}</h3>
-          <p class="tag">${p.tag}</p>
-          <div class="prices">
-            <span class="old">${money(p.old)}</span>
-            <span class="now">${money(p.now)}</span>
-          </div>
-          <a class="ver-detalle" href="detalle.html?id=${encodeURIComponent(p.id)}">Ver especificaciones</a>
-          <button class="add-btn" data-id="${p.id}">Agregar al carrito</button>
-        </div>`;
+    <div class="img-wrap">
+      <span class="discount-pill">-${off}%</span>
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+    </div>
+    <div class="body">
+      <h3>${p.name}</h3>
+      <p class="tag">${p.tag}</p>
+      <div class="prices">
+        <span class="old">${money(p.old)}</span>
+        <span class="now">${money(p.now)}</span>
+      </div>
+      <a class="ver-detalle" href="detalle.html?id=${encodeURIComponent(p.id)}">Ver especificaciones</a>
+      <button class="add-btn" data-id="${p.id}">Agregar al carrito</button>
+    </div>`;
       grid.appendChild(card);
     });
 
