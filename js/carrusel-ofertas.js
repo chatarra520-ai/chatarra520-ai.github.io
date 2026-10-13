@@ -30,7 +30,18 @@ window.products = [
     desc: 'Se amoldan al cuerpo. Perfectos para quienes duermen de lado y buscan aliviar la presión en hombros y caderas ',
     old: 3890000, now: 1945000,
     img: 'img/suave/suave-orion-nube-05.png',
-    gallery: ['img/suave/suave-orion-nube-05.png', 'img/suave/suave-orion-nube.png', 'img/suave/suave-orion-nube-02.png', 'img/suave/suave-orion-nube-03.png', 'img/suave/suave-orion-nube-04.png', 'img/m-normal.png', 'img/firm-suave.png'],
+
+    //
+    gallery: [
+      'img/suave/suave-orion-nube-05.png',
+      'img/suave/suave-orion-nube.png',
+      'img/suave/NubeColchon-01.png',
+      'img/suave/NubeColchon-02.png',
+      'img/suave/suave-orion-nube-02.png',
+      'img/suave/suave-orion-nube-03.png',
+      'img/suave/suave-orion-nube-04.png',
+      'img/m-normal.png',
+      'img/firm-suave.png'],
     sizes: [
       { label: "Sencillo", now: 1895000, old: 3790000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1945000, old: 3890000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
@@ -40,13 +51,18 @@ window.products = [
   },
 
   {
-    id: 'medio-Orion-Venuz',
+    id: 'medio-Orion-Venus',
     name: 'Colchón Orion Venus',
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 2409000, now: 1204500,
     img: 'img/Medio/medio-Orion-Venus.png',
-    gallery: ['img/Medio/medio-Orion-Venus.png', 'img/Medio/medio-Orion-Venus-02.png', 'img/Medio/medio-Orion-Venus-03.png',
+    gallery: [
+      'img/Medio/medio-Orion-Venus.png',
+      'img/Medio/medio-Orion-Venus-02.png',
+      'img/Medio/medio-Orion-Venus-03.png',
+      'img/Medio/VenusColchon-02.png',
+      'img/Medio/VenusColchon-03.png',
       'img/m-normal.png', 'img/firm-medio.png'],
     sizes: [
       { label: "Sencillo", now: 1094500, old: 2189000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
@@ -61,7 +77,12 @@ window.products = [
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil', old: 2717000, now: 1358500,
     img: 'img/Medio/Medio-orion-galaxi.png',
-    gallery: ['img/Medio/Medio-orion-galaxi.png', 'img/Medio/Medio-orion-galaxi-02.png', 'img/Medio/Medio-orion-galaxi-03.png',
+    gallery: [
+      'img/Medio/Medio-orion-galaxi.png',
+      'img/Medio/GalaxiColchon01.png',
+      'img/Medio/GalaxiColchon02.png',
+      'img/Medio/Medio-orion-galaxi-02.png',
+      'img/Medio/Medio-orion-galaxi-03.png',
       'img/m-normal.png', 'img/firm-medio.png'],
     sizes: [
       { label: "Sencillo", now: 1204500, old: 2409000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
@@ -142,8 +163,15 @@ window.products = [
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 1445000, now: 1245000,
     img: 'img/Medio/medio-orion-cosmo.png',
-    gallery: ['img/Medio/medio-orion-cosmo.png', 'img/Medio/medio-orion-cosmo-02.png', 'img/Medio/medio-orion-cosmo-03.png', 'img/Medio/medio-orion-cosmo-04.png',
-      'img/m-normal.png', 'img/firm-firme.png'],
+    gallery: [
+      'img/Medio/medio-orion-cosmo.png',
+      'img/Medio/medio-orion-cosmo-02.png',
+      'img/Medio/CosmoColchon-01.png',
+      'img/Medio/CosmoColchon-02.png',
+      'img/Medio/medio-orion-cosmo-03.png',
+      'img/Medio/medio-orion-cosmo-04.png',
+      'img/m-normal.png',
+      'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 1195000, old: 2390000, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
       { label: "Semidoble", now: 1445000, old: 2490000, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },

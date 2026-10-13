@@ -928,7 +928,7 @@
        /* nuevo: centra verticalmente icono y texto entre sí y respecto al contenedor */
        gap: 30px;
        background-color: color-mix(in srgb, var(--clay) 10%, transparent);
-       margin: 5px 0 60px 0;
+       margin: 20px 0 60px 0;
        padding: 5px 0px;
    }
 

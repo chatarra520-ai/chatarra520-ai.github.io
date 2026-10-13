@@ -33,7 +33,7 @@ window.products = window.products || [];
 
 const PRODUCTOS_DESTACADOS = [
   {
-    id: 'almohada-01', name: 'Viscoelástica · Soporte cuello', tag: 'Viscoelástica · Soporte cuello', desc: 'Almohada viscoelástica con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
+    id: 'almohada-01', name: 'Siliconadas · Soporte cuello', tag: 'Siliconadas · Soporte cuello', desc: 'Almohada Siliconadas con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
     gallery: ['img/almohadas/almohada-01.png', 'img/almohadas/almohada-02.png'],
     sizes: [
       { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "55 cm", largo: "35 cm", alto: null } }
