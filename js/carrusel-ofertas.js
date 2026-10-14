@@ -81,6 +81,7 @@ window.products = [
       'img/Medio/Medio-orion-galaxi.png',
       'img/Medio/GalaxiColchon01.png',
       'img/Medio/GalaxiColchon02.png',
+      'img/Medio/GalaxiColchon03.png',
       'img/Medio/Medio-orion-galaxi-02.png',
       'img/Medio/Medio-orion-galaxi-03.png',
       'img/m-normal.png', 'img/firm-medio.png'],
