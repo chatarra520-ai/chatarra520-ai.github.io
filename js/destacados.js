@@ -103,7 +103,7 @@ const PRODUCTOS_DESTACADOS = [
       'img/basecama/basecama03-02.png',
       'img/basecama/detalle02.png',
       'img/basecama/detalle.png',
-      'img/basecama/basecama.png',],
+      'img/basecama/basecama02.png',],
     sizes: [
       { label: "Estándar", now: 319000, old: 638000, medidas: { ancho: "0.95 cm", largo: "140 cm", alto: "32 cm" } }
     ]
@@ -115,7 +115,7 @@ const PRODUCTOS_DESTACADOS = [
       'img/basecama/basecama03-02.png',
       'img/basecama/detalle02.png',
       'img/basecama/detalle.png',
-      'img/basecama/basecama.png',],
+      'img/basecama/basecama02.png',],
     sizes: [
       { label: "Estándar", now: 329000, old: 658000, medidas: { ancho: "0.95 cm", largo: "160 cm", alto: "32 cm" } }
     ]
