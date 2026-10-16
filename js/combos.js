@@ -24,13 +24,15 @@
       desc: 'Colchón Orion Nube, multimedidas, firmeza suabe + base cama',
       old: 2409995, now: 1982990,
       img: 'img/combos/Nube-bc01.png',
-      gallery: ['img/combos/Nube-bc02.png', 'img/combos/Nube-bc01.png', 'img/combos/Nube-bc03.png', 'img/combos/Nube-bc04.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
+      gallery: [
+        'img/combos/Nube-bc02.png',
+        'img/combos/Nube-bc01.png', 'img/combos/Nube-bc03.png', 'img/combos/Nube-bc04.png', 'img/combos/BC01.png', 'img/combos/BC02.png', 'img/m-normal.png'],
       sizes: [
         { label: "Sencillo", now: 1916990, old: 2317995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1982990, old: 2409995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
         { label: "Doble", now: 2257990, old: 2719995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
-        { label: "Queen", now: 2990990, old: 3175995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-        { label: "King", now: 4120995, old: 3750990, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+        { label: "Queen", now: 2890990, old: 3175995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 3750990, old: 4120995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
     {
       id: 'ColchonNube+RopaCama',
@@ -88,8 +90,8 @@
       sizes: [
         { label: "Sencillo", now: 1295990, old: 1517995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1455990, old: 1669995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 1567990, old: 1919995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
-        { label: "Queen", now: 1859990, old: 1875990, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1568990, old: 1819995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1859990, old: 1875995, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 2548990, old: 2570995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
     {
@@ -97,15 +99,15 @@
       name: 'Combo Colchón Orion Galaxy + ropa de cama',
       tag: 'Colchón Orion Galaxy,  multimedidas, firmeza suabe + almohada siliconada y protector siliconado',
       desc: 'Colchón Orion Galaxy,  multimedidas, firmeza suabe + almohada siliconada y protector siliconado',
-      old: 1669995, now: 1455990,
+      old: 1333770, now: 1280990,
       img: 'img/combos/Galaxy-rc01.png',
       gallery: ['img/combos/Galaxy-rc02.png', 'img/combos/Galaxy-rc01.png', 'img/combos/Galaxy-rc03.png', 'img/combos/Galaxy-rc04.png', 'img/m-normal.png',],
       sizes: [
-        { label: "Sencillo", now: 1295990, old: 1517995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
-        { label: "Semidoble", now: 1455990, old: 1669995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 1567990, old: 1919995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
-        { label: "Queen", now: 1859990, old: 1875990, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
-        { label: "King", now: 2548990, old: 2570995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
+        { label: "Sencillo", now: 1143990, old: 1193770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 1281990, old: 1333770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1408990, old: 1473520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Queen", now: 1612990, old: 1683040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
+        { label: "King", now: 2212990, old: 2292560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
     // SuperFlexFoam
     {
@@ -119,7 +121,7 @@
       sizes: [
         { label: "Sencillo", now: 899990, old: 1117995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1019990, old: 1259995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 1077990, old: 1319995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1277990, old: 1319995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
         { label: "Queen", now: 1463990, old: null, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1707990, old: 1720995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
@@ -159,13 +161,13 @@
       name: 'Combo Colchón Orion Super Flex Firm + ropa de cama',
       tag: 'Colchón Orion Super Flex Firm + ropa de cama,  multimedidas, firme + base cama',
       desc: 'Colchón Orion Super Flex Firm + ropa de cama,  multimedidas, firme + almohada siliconada y protector siliconado',
-      old: 1309995, now: 948990,
+      old: 943770, now: 895990,
       img: 'img/combos/Sf-firm-rc01.png',
       gallery: ['img/combos/Sf-firm-rc02.png', 'img/combos/Sf-firm-rc01.png', 'img/combos/Sf-firm-rc03.png', 'img/combos/Sf-firm-rc04.png', 'img/m-normal.png',],
       sizes: [
         { label: "Sencillo", now: 796990, old: 843770, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
-        { label: "Semidoble", now: 845990, old: 943770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 10129990, old: 1073520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Semidoble", now: 895990, old: 943770, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1012990, old: 1073520, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
         { label: "Queen", now: 1166990, old: 1233040, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1568990, old: 1642560, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },

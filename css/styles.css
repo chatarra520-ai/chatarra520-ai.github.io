@@ -2054,7 +2054,10 @@
        border-radius: 8px;
    }
 
-
+   .detail-desc strong {
+       font-size: 1.1em;
+       font-weight: 800;
+   }
 
    .related-body {
        padding: 12px 14px 16px;

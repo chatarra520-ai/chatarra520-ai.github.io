@@ -33,36 +33,95 @@ window.products = window.products || [];
 
 const PRODUCTOS_DESTACADOS = [
   {
-    id: 'almohada-01', name: 'Siliconadas · Soporte cuello', tag: 'Siliconadas · Soporte cuello', desc: 'Almohada Siliconadas con soporte especial para la zona cervical.', old: 189000, now: 94500, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
+    id: 'almohada-01', name: 'Almohada Soy 70', tag: 'Almohada siliconada · Soporte cuello', desc: 'Almohada Siliconadas con soporte especial para la zona cervical.', old: 49800, now: 24900, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
     gallery: ['img/almohadas/almohada-01.png', 'img/almohadas/almohada-02.png'],
     sizes: [
-      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "55 cm", largo: "35 cm", alto: null } }
+      { label: "Estándar", now: 24900, old: 49800, medidas: { ancho: "55 cm", largo: "35 cm", alto: null } }
+    ]
+  },
+
+
+  ///////////////   sencilla     //////////////////////////////
+
+
+  {
+    id: 'basecama 100 x 190', name: 'Basecama Royal 100 x 190 cm', tag: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', desc: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', old: 858000, now: 429000, img: 'img/basecama/basecama01-por.png', category: 'Bases cama',
+    gallery: ['img/basecama/basecama01-por.png',
+      'img/basecama/basecama01-02.png',
+      'img/basecama/detalle01.png',
+      'img/basecama/detalle.png',
+      'img/basecama/basecama.png',
+      'img/m-altura.png'],
+    sizes: [
+      { label: "100 x 190", now: 429000, old: 858000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } }
     ]
   },
 
   {
-    id: 'basecamaSencilla', name: 'Base cama Sencilla', tag: 'Madera · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 590000, now: 349000, img: 'img/basecama/basecama-sencilla-02.png', category: 'Bases cama',
-    gallery: ['img/basecama/basecama-sencilla-02.png', 'img/basecama/basecama-sencilla.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
+    id: 'basecama 100 x 200', name: 'Basecama Royal 100 x 200 cm', tag: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', desc: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', old: 858000, now: 429000, img: 'img/basecama/basecama01-por.png', category: 'Bases cama',
+    gallery: ['img/basecama/basecama01-por.png',
+      'img/basecama/basecama01-02.png',
+      'img/basecama/detalle01.png',
+      'img/basecama/detalle.png',
+      'img/basecama/basecama.png',
+      'img/m-altura.png'],
     sizes: [
-      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } }
+      { label: "100 x 200", now: 429000, old: 858000, medidas: { ancho: "100 cm", largo: "200 cm", alto: "32 cm" } }
+    ]
+  },
+  ///////////////   Doble     /////////////////////////
+  {
+    id: 'basecama 120 x 190', name: 'Basecama Royal 120 x 190 cm', tag: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', desc: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', old: 938000, now: 469000, img: 'img/basecama/baseCama02-port.png', category: 'Bases cama',
+    gallery: [
+      'img/basecama/baseCama02-port.png',
+      'img/basecama/basecama02-02.png',
+      'img/basecama/detalle.png',
+      'img/basecama/detalle01.png',
+      'img/basecama/basecama.png',
+      'img/m-altura.png'],
+    sizes: [
+      { label: "120 x 190", now: 469000, old: 938000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } }
+    ]
+  },
+  {
+    id: 'basecama 140 x 190', name: 'Basecama Royal 140 x 190 cm', tag: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', desc: 'En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm', old: 958000, now: 479000, img: 'img/basecama/baseCama02-port.png', category: 'Bases cama',
+    gallery: ['img/basecama/baseCama02-port.png',
+      'img/basecama/basecama02-02.png',
+      'img/basecama/detalle01.png',
+      'img/basecama/detalle.png',
+      'img/basecama/basecama.png',
+      'img/m-altura.png'],
+    sizes: [
+      { label: "120 x 190", now: 479000, old: 958000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32 cm" } }
+    ]
+  },
+  ///////////////  Dividida    /////////////////////////
+  {
+    id: 'basecama 0.95 x 140', name: 'Base cama doble dividida', tag: 'Base cama doble dividida. En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm.  ', desc: 'Base cama doble dividida. En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm. <strong> Valor por segmento </strong>', old: 638000, now: 319000, img: 'img/basecama/basecama03-por.png', category: 'Bases cama',
+    gallery: [
+      'img/basecama/basecama03-por.png',
+      'img/basecama/basecama03-02.png',
+      'img/basecama/detalle02.png',
+      'img/basecama/detalle.png',
+      'img/basecama/basecama.png',],
+    sizes: [
+      { label: "Estándar", now: 319000, old: 638000, medidas: { ancho: "0.95 cm", largo: "140 cm", alto: "32 cm" } }
+    ]
+  },
+  {
+    id: 'basecama 0.95 x 160', name: 'Base cama doble dividida', tag: 'Base cama doble dividida. En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm.', desc: 'Base cama doble dividida. En madera de pino nueva, textura agradable y fácil limpieza, tapizada en telas de alta resistencia, patas metálicas de 10 cm. <strong> Valor por segmento </strong>', old: 658000, now: 329000, img: 'img/basecama/basecama03-por.png', category: 'Bases cama',
+    gallery: [
+      'img/basecama/basecama03-por.png',
+      'img/basecama/basecama03-02.png',
+      'img/basecama/detalle02.png',
+      'img/basecama/detalle.png',
+      'img/basecama/basecama.png',],
+    sizes: [
+      { label: "Estándar", now: 329000, old: 658000, medidas: { ancho: "0.95 cm", largo: "160 cm", alto: "32 cm" } }
     ]
   },
 
-  {
-    id: 'basecama-tapizada', name: 'Base cama Semidoble', tag: 'Tapizada · Antideslizante', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: 790000, now: 495000, img: 'img/basecama/basecama-semidoble-02.png', category: 'Bases cama',
-    gallery: ['img/basecama/basecama-semidoble-02.png', 'img/basecama/basecama-semidoble.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
-    sizes: [
-      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } }
-    ]
-  },
 
-  {
-    id: 'basecama-dividida', name: 'Base cama Doble dividida', tag: 'Dividida · Multi-medidas', desc: 'En madera de pino nueva,  textura agradable y fácil limpieza, patas metálicas de 10 cm', old: null, now: 420000, img: 'img/basecama/basecama-doble-02.png', category: 'Bases cama',
-    gallery: ['img/basecama/basecama-doble-02.png', 'img/basecama/basecama-doble.png', 'img/basecama/detalle.png', 'img/m-altura.png'],
-    sizes: [
-      { label: "Estándar", now: 94500, old: 189000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32 cm" } }
-    ]
-  },
 ];
 
 (function () {
