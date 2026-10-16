@@ -121,7 +121,7 @@
       sizes: [
         { label: "Sencillo", now: 899990, old: 1117995, medidas: { ancho: "100 cm", largo: "190 cm", alto: null } },
         { label: "Semidoble", now: 1019990, old: 1259995, medidas: { ancho: "120 cm", largo: "190 cm", alto: null } },
-        { label: "Doble", now: 1277990, old: 1319995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
+        { label: "Doble", now: 1077990, old: 1319995, medidas: { ancho: "140 cm", largo: "190 cm", alto: null } },
         { label: "Queen", now: 1463990, old: null, medidas: { ancho: "160 cm", largo: "190 cm", alto: null } },
         { label: "King", now: 1707990, old: 1720995, medidas: { ancho: "200 cm", largo: "200 cm", alto: null } }]
     },
