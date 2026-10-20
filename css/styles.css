@@ -2389,3 +2389,37 @@
        opacity: 0.5;
        color: var(--gold-deep);
    }
+
+   /* selector colores */
+   .color-selector {
+       display: flex;
+       align-items: center;
+       gap: 14px;
+       margin: 20px 0px 0px 0px;
+   }
+
+   .color-selector .options {
+       display: flex;
+       gap: 10px;
+   }
+
+   .color-selector .color-btn {
+       width: 36px;
+       height: 36px;
+       border-radius: 50%;
+       cursor: pointer;
+       transition: all 0.2s;
+   }
+
+   .color-btn.active {
+       border: 4px solid var(--gold) !important;
+       box-sizing: border-box;
+   }
+
+   .color-disclaimer {
+       display: block;
+       width: 100%;
+       flex-basis: 100%;
+       white-space: normal;
+       margin: 10px 0px 20px 0px;
+   }

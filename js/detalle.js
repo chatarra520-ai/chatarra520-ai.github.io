@@ -36,7 +36,10 @@
   function renderProduct(root, p) {
     const money = window.money || (n => '$' + n);
     const isPlaceholder = /\[PLACEHOLDER\]|\[Completar/.test(p.name + p.tag);
+
+    // Detectores de opciones (Tallas y Colores)
     const hasSizes = Array.isArray(p.sizes) && p.sizes.length > 0;
+    const hasColors = Array.isArray(p.colors) && p.colors.length > 0; // --- NUEVO: Detector de colores ---
 
     document.title = `${p.name} — Colchones Orión`;
     const crumb = document.getElementById('crumbName');
@@ -45,6 +48,7 @@
     let selectedSize = hasSizes
       ? (p.sizes.find(s => s.label === 'Semidoble') || p.sizes[0])
       : null;
+    let selectedColor = hasColors ? p.colors[0] : null; // --- NUEVO: Color seleccionado por defecto ---
 
     function currentPricing() {
       if (hasSizes) return { now: selectedSize.now, old: selectedSize.old };
@@ -93,7 +97,24 @@
           </div>
           <div class="size-measures" id="sizeMeasures"></div>` : ''}
 
-          <div class="qty-selector">
+
+${hasColors ? `
+  <div class="color-selector" id="colorSelector">
+    <h3>Elige el Color:</h3>
+    ${p.colors.map(c => `
+      <button
+        type="button" class="color-btn ${selectedColor.id === c.id ? 'active' : ''}"
+        data-color="${c.id}" style="background-color: ${c.hex};" title="${c.name}">
+      </button>
+    `).join('')}
+    <span id="selectedColorName">${selectedColor.name}</span>
+  </div>
+  <p class="color-disclaimer">El tono del color puede variar ligeramente según la pantalla.</p>
+` : ''}
+
+
+
+            <div class="qty-selector">
             <button type="button" id="qtyMinus" aria-label="Restar">–</button>
             <span id="qtyValue">1</span>
             <button type="button" id="qtyPlus" aria-label="Sumar">+</button>
@@ -157,6 +178,7 @@
     renderPricing();
     if (hasSizes) renderMeasures();
 
+    // Lógica del selector de Tallas
     if (hasSizes) {
       const selector = document.getElementById('sizeSelector');
       function updateActiveBtn() {
@@ -176,6 +198,44 @@
         renderPricing();
         renderMeasures();
       });
+    }
+
+    // --- NUEVO: Lógica del selector de Colores ---
+    if (hasColors) {
+      const colorSelector = document.getElementById('colorSelector');
+
+      colorSelector.addEventListener('click', e => {
+        const btn = e.target.closest('.color-btn');
+        if (!btn) return;
+
+        selectedColor = p.colors.find(c => c.id === btn.dataset.color);
+
+        // Resetea todos los botones
+        colorSelector.querySelectorAll('.color-btn').forEach(b => {
+          b.style.borderColor = '#ddd';
+          b.classList.remove('active');
+        });
+
+        // Activa el botón clickeado
+        btn.style.borderColor = '#333';
+        btn.classList.add('active');
+
+        // Actualiza el texto del color
+        document.getElementById('selectedColorName').textContent = selectedColor.name;
+
+        // Cambia la imagen principal si el color tiene una imagen asignada
+        if (selectedColor.img) {
+          const mainImg = document.getElementById('detailImg');
+          if (mainImg) mainImg.src = selectedColor.img;
+        }
+      });
+
+      // Activa visualmente el primer color por defecto
+      const initialBtn = colorSelector.querySelector(`.color-btn[data-color="${selectedColor.id}"]`);
+      if (initialBtn) {
+        initialBtn.style.borderColor = '#333';
+        initialBtn.classList.add('active');
+      }
     }
 
     if (hasGallery) {
@@ -222,7 +282,9 @@
     const addBtn = document.getElementById('detailAddBtn');
     addBtn.addEventListener('click', () => {
       if (typeof window.addToCart === 'function') {
-        window.addToCart(p.id, qty, hasSizes ? selectedSize.label : null);
+        // --- NUEVO: Enviar el color seleccionado al carrito ---
+        const colorName = hasColors ? selectedColor.name : null;
+        window.addToCart(p.id, qty, hasSizes ? selectedSize.label : null, colorName);
       } else {
         console.warn('[detalle] window.addToCart no está definido.');
       }
@@ -256,8 +318,7 @@
     wrap.innerHTML = `
        <p class="detail-llama">Nuestro equipo puede asesorarte sobre firmeza, y características del colchón para ayudarte a elegir la opción más adecuada para tu descanso.
 </p>
-    
-    
+
     <h2 class="detail-subhead">También te puede interesar</h2>
       <div class="suggested-grid">
         ${related.map(p => `
@@ -273,18 +334,6 @@
       </div>`;
     root.appendChild(wrap);
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   function init() {
     const root = document.getElementById('detailRoot');
