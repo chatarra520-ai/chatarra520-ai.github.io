@@ -33,7 +33,7 @@ window.products = window.products || [];
 
 const PRODUCTOS_DESTACADOS = [
   {
-    id: 'almohada-01', name: 'Almohada Soy 70', tag: 'Almohada siliconada · Soporte cuello', desc: 'Almohada Siliconadas con soporte especial para la zona cervical.', old: 49800, now: 24900, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
+    id: 'almohada-01', name: 'Almohada siliconada', tag: 'Almohada siliconada · Soporte cuello', desc: 'Almohada Siliconadas con soporte especial para la zona cervical.', old: 49800, now: 24900, img: 'img/almohadas/almohada-01.png', category: 'Almohadas',
     gallery: ['img/almohadas/almohada-01.png', 'img/almohadas/almohada-02.png'],
     sizes: [
       { label: "Estándar", now: 24900, old: 49800, medidas: { ancho: "55 cm", largo: "35 cm", alto: null } }
