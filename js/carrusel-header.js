@@ -37,7 +37,7 @@
     {
       img: 'img/carrusel/07.png?v=1772594318&width=1400',
       imgMobile: 'img/carrusel/07-movil.png?v=1772594318&width=900',
-      title: 'El descanso que se siente desde la primera noche.',
+      title: 'El placer de un sueño feliz.',
       ctas: [
         { type: 'detalle', label: 'Ver especificaciones', target: 'medio-orion-galaxi' },
         { type: 'carrito', label: 'Agregar al carrito', target: 'suave-orion-nube' }

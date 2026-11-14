@@ -98,12 +98,12 @@ window.products = [
     name: 'Colchón Super Flex Foam',
     tag: 'altura 32 cm · Multi-medidas  · Firmeza Firme',
     desc: 'Mayor soporte y respaldo durante el descanso, Da una superficie más firme que no se hunda bajo el peso del cuerpo',
-    old: 2018000, now: 1009000,
+    old: 2018000, now: 10779000,
     img: 'img/Firme/firme-super-flex-foam.png',
     gallery: ['img/Firme/firme-super-flex-foam.png', 'img/Firme/firme-super-flex-foam-02.png', 'img/Firme/firme-super-flex-foam-03.png', 'img/m-normal.png', 'img/firm-firme.png'],
     sizes: [
       { label: "Sencillo", now: 879000, old: 1758000, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32 cm" } },
-      { label: "Semidoble", now: 1009000, old: 2018000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
+      { label: "Semidoble", now: 1779000, old: 2018000, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32 cm" } },
       { label: "Doble", now: 1069000, old: 2138000, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32 cm" } },
       { label: "Queen", now: 1259000, old: 2518000, medidas: { ancho: "160 cm", largo: "190 cm", alto: "32 cm" } },
       { label: "King", now: 1639000, old: 3278000, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32 cm" } }]
@@ -159,7 +159,7 @@ window.products = [
 
   {
     id: 'medio-orion-cosmo',
-    name: 'Colchón Orion Cosmo',
+    name: 'Colchón Orion Cosmos',
     tag: 'Doble cara · Multi-medidas  · Firmeza Media',
     desc: 'Se adaptan al cuerpo sin perder firmeza, distribuyendo bien el peso en distintas posiciones de descanso una opción versátil',
     old: 1445000, now: 1245000,
