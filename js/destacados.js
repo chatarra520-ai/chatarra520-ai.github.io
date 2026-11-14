@@ -141,6 +141,33 @@ const PRODUCTOS_DESTACADOS = [
     ]
   },
 
+
+  ///////////////  Protectores  /////////////////////////
+  // ⚠️ BORRADOR: datos de ejemplo. Reemplaza nombre, tag, desc, precio e imágenes
+  // y BORRA el texto [PLACEHOLDER] del name antes de hacer git push.
+  // La categoría 'Protectores' crea sola el botón de filtro; no hay que tocar HTML ni CSS.
+  // Para más protectores, copia este bloque y cambia id, name, precio e imágenes.
+  {
+    id: 'protector-01', name: "Protector de colchón <span style='color:#8f672a;'>Multimedidas</span>", tag: 'Protector para aumentar la durabilidad de tu colchón, antifluido abullonado', desc: 'Protector para aumentar la durabilidad de tu colchón, antifluido abullonado',
+    old: 99800, now: 44900,
+    img: 'img/protector/protector01.png', category: 'Protectores',
+    gallery: ['img/protector/protector01.png',
+      'img/protector/protector02.png',
+      'img/protector/protector03.png',
+      'img/m-altura.png'],
+    // Medidas iguales a las del colchón Venus (Sencillo, Semidoble, Doble, Queen).
+    // ⚠️ Los precios en 0 son PLACEHOLDER: pon el precio real de cada medida.
+    // El "now" de arriba (producto) debe ser igual al de Semidoble: es el precio
+    // que se ve en la card del index y el que usa el carrito si se agrega desde ahí.
+    sizes: [
+      { label: "Sencillo", now: 44900, old: 89900, medidas: { ancho: "100 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "Semidoble", now: 49900, old: 99800, medidas: { ancho: "120 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "Doble", now: 59900, old: 119800, medidas: { ancho: "140 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "Queen", now: 64900, old: 129800, medidas: { ancho: "160 cm", largo: "190 cm", alto: "32cm" } },
+      { label: "King", now: 74900, old: 149800, medidas: { ancho: "200 cm", largo: "200 cm", alto: "32cm" } }
+    ]
+  },
+
 ];
 ///////////////////////////////////////////////////////////////////////
 (function () {
